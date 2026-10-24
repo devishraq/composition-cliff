@@ -131,17 +131,3 @@ This script computes:
 2. **Vacuous Pass vs. SMT Timeout Breakdown:** Analyzes the tasks where Mode 1 passed with trivial bounds while Mode 2 hit inductive SMT timeout ceilings.
 3. Outputs structured JSON results to `results/specification_quality_analysis.json`.
 
----
-
-## 6. Citation
-
-If you use this benchmark or codebase in your research, please cite:
-
-```bibtex
-@inproceedings{smsp2026composition,
-  title={Breaking the Composition Cliff: Mutation-Guided Specification Synthesis for Multi-Function Programs},
-  author={Ishraq Tanvir},
-  booktitle={NeurIPS 2026 Workshop on Who Verifies the Agents? Toward Reliable Agent Development},
-  year={2026}
-}
-```
