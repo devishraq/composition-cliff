@@ -1,0 +1,333 @@
+{
+  "description": "Specification quality, quantifier density, and verification game diagnostic",
+  "tracks": [
+    {
+      "track": "dafny_comp",
+      "macro_complexity": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 2,
+          "exact_equalities": 9,
+          "loose_inequalities": 136,
+          "implications": 3
+        },
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 0,
+          "exact_equalities": 8,
+          "loose_inequalities": 106,
+          "implications": 4
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 0,
+          "exact_equalities": 4,
+          "loose_inequalities": 94,
+          "implications": 3
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 0,
+          "exact_equalities": 3,
+          "loose_inequalities": 100,
+          "implications": 0
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 1,
+          "exact_equalities": 22,
+          "loose_inequalities": 110,
+          "implications": 10
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 0,
+          "exact_equalities": 11,
+          "loose_inequalities": 98,
+          "implications": 0
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 0,
+          "exact_equalities": 2,
+          "loose_inequalities": 92,
+          "implications": 0
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 0,
+          "exact_equalities": 3,
+          "loose_inequalities": 137,
+          "implications": 0
+        }
+      ],
+      "head_to_head": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "joint_verified_count": 46,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "joint_verified_count": 45,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "joint_verified_count": 60,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "joint_verified_count": 47,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        }
+      ],
+      "failure_taxonomy": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "m1_pass_m2_fail_count": 31,
+          "avg_spec_len_m1_chars": 51.4,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "m1_pass_m2_fail_count": 32,
+          "avg_spec_len_m1_chars": 50.4,
+          "avg_spec_len_m2_chars": 5.2
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "m1_pass_m2_fail_count": 34,
+          "avg_spec_len_m1_chars": 51.4,
+          "avg_spec_len_m2_chars": 10.6
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "m1_pass_m2_fail_count": 27,
+          "avg_spec_len_m1_chars": 54.9,
+          "avg_spec_len_m2_chars": 19.9
+        }
+      ]
+    },
+    {
+      "track": "clover_bench",
+      "macro_complexity": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 44,
+          "exact_equalities": 91,
+          "loose_inequalities": 60,
+          "implications": 42
+        },
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 45,
+          "exact_equalities": 93,
+          "loose_inequalities": 59,
+          "implications": 39
+        },
+        {
+          "model": "google_gemini-3.7-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 48,
+          "exact_equalities": 117,
+          "loose_inequalities": 73,
+          "implications": 51
+        },
+        {
+          "model": "google_gemini-3.7-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 45,
+          "exact_equalities": 113,
+          "loose_inequalities": 68,
+          "implications": 46
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 41,
+          "exact_equalities": 99,
+          "loose_inequalities": 58,
+          "implications": 39
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 48,
+          "exact_equalities": 97,
+          "loose_inequalities": 70,
+          "implications": 44
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 47,
+          "exact_equalities": 115,
+          "loose_inequalities": 75,
+          "implications": 48
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 50,
+          "exact_equalities": 112,
+          "loose_inequalities": 75,
+          "implications": 45
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 38,
+          "exact_equalities": 90,
+          "loose_inequalities": 58,
+          "implications": 38
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 42,
+          "exact_equalities": 94,
+          "loose_inequalities": 62,
+          "implications": 42
+        },
+        {
+          "model": "z-ai_glm-5.3-flash",
+          "mode_key": "compiler_only",
+          "mode_label": "Mode 1 (Comp)",
+          "quantifiers": 49,
+          "exact_equalities": 111,
+          "loose_inequalities": 79,
+          "implications": 52
+        },
+        {
+          "model": "z-ai_glm-5.3-flash",
+          "mode_key": "mutation_cegis",
+          "mode_label": "Mode 2 (CEGIS)",
+          "quantifiers": 55,
+          "exact_equalities": 122,
+          "loose_inequalities": 84,
+          "implications": 55
+        }
+      ],
+      "head_to_head": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "joint_verified_count": 52,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "google_gemini-3.7-flash",
+          "joint_verified_count": 59,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "joint_verified_count": 56,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "joint_verified_count": 58,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "joint_verified_count": 52,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        },
+        {
+          "model": "z-ai_glm-5.3-flash",
+          "joint_verified_count": 58,
+          "m1_mean_s_adj": 1.0,
+          "m2_mean_s_adj": 1.0,
+          "m2_quality_delta": 0.0
+        }
+      ],
+      "failure_taxonomy": [
+        {
+          "model": "deepseek_deepseek-v4-flash-0731",
+          "m1_pass_m2_fail_count": 2,
+          "avg_spec_len_m1_chars": 372.5,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "google_gemini-3.7-flash",
+          "m1_pass_m2_fail_count": 0,
+          "avg_spec_len_m1_chars": 0.0,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "inclusionai_ling-3.0-flash",
+          "m1_pass_m2_fail_count": 1,
+          "avg_spec_len_m1_chars": 213.0,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "openai_gpt-5.6-luna",
+          "m1_pass_m2_fail_count": 0,
+          "avg_spec_len_m1_chars": 0.0,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "qwen_qwen3.7-flash",
+          "m1_pass_m2_fail_count": 2,
+          "avg_spec_len_m1_chars": 236.5,
+          "avg_spec_len_m2_chars": 0.0
+        },
+        {
+          "model": "z-ai_glm-5.3-flash",
+          "m1_pass_m2_fail_count": 0,
+          "avg_spec_len_m1_chars": 0.0,
+          "avg_spec_len_m2_chars": 0.0
+        }
+      ]
+    }
+  ]
+}

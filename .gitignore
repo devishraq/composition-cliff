@@ -1,0 +1,77 @@
+# ==============================================================================
+# Environment & Sensitive Credentials (NEVER COMMIT API KEYS)
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# ==============================================================================
+# Python & Virtual Environments
+# ==============================================================================
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# ==============================================================================
+# OS & Editor Metadata
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+.commandcode/
+.playwright-mcp/
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# Paper, TeX, LaTeX Caches & Submission Artifacts
+# ==============================================================================
+paper/
+Formatting_Instructions_For_NeurIPS_2026/
+*.pdf
+*.tex
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.bst
+
+# OpenReview Submissions, Drafts & Conference Metadata
+370_Breaking_the_Composition_open-review*
+Breaking_The_Composition_Cliff_Supplementary_Materials*
+*.zip
+abstract.txt
+abstract.tex
+abstract.pdf
+tldr.txt
+merge.txt
+merge.py

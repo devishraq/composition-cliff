@@ -1,0 +1,602 @@
+[
+  {
+    "task_id": 1,
+    "task_name": "abs",
+    "docstring": "Calculate the absolute value. If input is positive, return the input. Otherwise, return the negation of the input.",
+    "signature": "method Abs(x: int) returns (y: int)",
+    "ground_truth_specs": "ensures x>=0 ==> x==y\n  ensures x<0 ==> x+y==0",
+    "prompt_skeleton": "method Abs(x: int) returns (y: int)\n  // TOFILL: requires and ensures\n{\n  if x < 0 {\n    return -x;\n  } else {\n    return x;\n  }\n}",
+    "implementation_body": "{\n  if x < 0 {\n    return -x;\n  } else {\n    return x;\n  }\n}",
+    "full_code": "method Abs(x: int) returns (y: int)\n  ensures x>=0 ==> x==y\n  ensures x<0 ==> x+y==0\n{\n  if x < 0 {\n    return -x;\n  } else {\n    return x;\n  }\n}"
+  },
+  {
+    "task_id": 2,
+    "task_name": "all_digits",
+    "docstring": "Returns `true` if all characters in the string `s` are decimal digits (0-9), `false` otherwise.",
+    "signature": "method allDigits(s: string) returns (result: bool)",
+    "ground_truth_specs": "ensures  result <==> (forall i :: 0 <= i < |s| ==> s[i] in \"0123456789\")",
+    "prompt_skeleton": "method allDigits(s: string) returns (result: bool)\n  // TOFILL: requires and ensures\n{\n  result:=true ;\n  for i := 0 to |s|\n    invariant result <==> (forall ii :: 0 <= ii < i ==> s[ii] in \"0123456789\")\n  {\n    if ! (s[i] in \"0123456789\"){\n      return false;\n    }\n  }\n}",
+    "implementation_body": "{\n  result:=true ;\n  for i := 0 to |s|\n    invariant result <==> (forall ii :: 0 <= ii < i ==> s[ii] in \"0123456789\")\n  {\n    if ! (s[i] in \"0123456789\"){\n      return false;\n    }\n  }\n}",
+    "full_code": "method allDigits(s: string) returns (result: bool)\n  ensures  result <==> (forall i :: 0 <= i < |s| ==> s[i] in \"0123456789\")\n{\n  result:=true ;\n  for i := 0 to |s|\n    invariant result <==> (forall ii :: 0 <= ii < i ==> s[ii] in \"0123456789\")\n  {\n    if ! (s[i] in \"0123456789\"){\n      return false;\n    }\n  }\n}"
+  },
+  {
+    "task_id": 3,
+    "task_name": "array_append",
+    "docstring": "Appends integer b to the end of array a and returns the resulting array c.",
+    "signature": "method append(a:array<int>, b:int) returns (c:array<int>)",
+    "ground_truth_specs": "ensures  a[..] + [b] == c[..]",
+    "prompt_skeleton": "method append(a:array<int>, b:int) returns (c:array<int>)\n  // TOFILL: requires and ensures\n{\n  c := new int[a.Length+1];\n  var i:= 0;\n  while (i < a.Length)\n    invariant 0 <= i <= a.Length\n    invariant forall ii::0<=ii<i ==> c[ii]==a[ii]\n  {\n    c[i] := a[i];\n    i:=i+1;\n  }\n  c[a.Length]:=b;\n}",
+    "implementation_body": "{\n  c := new int[a.Length+1];\n  var i:= 0;\n  while (i < a.Length)\n    invariant 0 <= i <= a.Length\n    invariant forall ii::0<=ii<i ==> c[ii]==a[ii]\n  {\n    c[i] := a[i];\n    i:=i+1;\n  }\n  c[a.Length]:=b;\n}",
+    "full_code": "method append(a:array<int>, b:int) returns (c:array<int>)\n  ensures  a[..] + [b] == c[..]\n{\n  c := new int[a.Length+1];\n  var i:= 0;\n  while (i < a.Length)\n    invariant 0 <= i <= a.Length\n    invariant forall ii::0<=ii<i ==> c[ii]==a[ii]\n  {\n    c[i] := a[i];\n    i:=i+1;\n  }\n  c[a.Length]:=b;\n}"
+  },
+  {
+    "task_id": 4,
+    "task_name": "array_concat",
+    "docstring": "Concatenates two arrays a and b, returning the resulting array c.",
+    "signature": "method concat(a:array<int>, b:array<int>) returns (c:array<int>)",
+    "ground_truth_specs": "ensures c.Length==b.Length+a.Length\n  ensures forall k :: 0 <= k < a.Length ==> c[k] == a[k]\n  ensures forall k :: 0 <= k < b.Length ==> c[k+a.Length] == b[k]",
+    "prompt_skeleton": "method concat(a:array<int>, b:array<int>) returns (c:array<int>)\n  // TOFILL: requires and ensures\n{\n  c := new int[a.Length+b.Length];\n  var i:= 0;\n  while (i < c.Length)\n    invariant 0 <= i <= c.Length\n    invariant if i<a.Length then c[..i]==a[..i] else c[..i]==a[..]+b[..(i-a.Length)]\n  {\n    c[i] := if i<a.Length then a[i] else b[i-a.Length];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  c := new int[a.Length+b.Length];\n  var i:= 0;\n  while (i < c.Length)\n    invariant 0 <= i <= c.Length\n    invariant if i<a.Length then c[..i]==a[..i] else c[..i]==a[..]+b[..(i-a.Length)]\n  {\n    c[i] := if i<a.Length then a[i] else b[i-a.Length];\n    i:=i+1;\n  }\n}",
+    "full_code": "method concat(a:array<int>, b:array<int>) returns (c:array<int>)\n  ensures c.Length==b.Length+a.Length\n  ensures forall k :: 0 <= k < a.Length ==> c[k] == a[k]\n  ensures forall k :: 0 <= k < b.Length ==> c[k+a.Length] == b[k]\n{\n  c := new int[a.Length+b.Length];\n  var i:= 0;\n  while (i < c.Length)\n    invariant 0 <= i <= c.Length\n    invariant if i<a.Length then c[..i]==a[..i] else c[..i]==a[..]+b[..(i-a.Length)]\n  {\n    c[i] := if i<a.Length then a[i] else b[i-a.Length];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 5,
+    "task_name": "array_copy",
+    "docstring": "Iteratively copy an array.",
+    "signature": "method iter_copy<T(0)>(s: array<T>) returns (t: array<T>)",
+    "ground_truth_specs": "ensures s.Length==t.Length\n  ensures forall i::0<=i<s.Length ==> s[i]==t[i]",
+    "prompt_skeleton": "method iter_copy<T(0)>(s: array<T>) returns (t: array<T>)\n  // TOFILL: requires and ensures\n{\n  t := new T[s.Length];\n  var i:= 0;\n  while (i < s.Length)\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] == t[x]\n  {\n    t[i] := s[i];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  t := new T[s.Length];\n  var i:= 0;\n  while (i < s.Length)\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] == t[x]\n  {\n    t[i] := s[i];\n    i:=i+1;\n  }\n}",
+    "full_code": "method iter_copy<T(0)>(s: array<T>) returns (t: array<T>)\n  ensures s.Length==t.Length\n  ensures forall i::0<=i<s.Length ==> s[i]==t[i]\n{\n  t := new T[s.Length];\n  var i:= 0;\n  while (i < s.Length)\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] == t[x]\n  {\n    t[i] := s[i];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 6,
+    "task_name": "array_product",
+    "docstring": "Calculate the pair-wise product of two arrays.",
+    "signature": "method arrayProduct(a: array<int>, b: array<int>) returns (c: array<int> )",
+    "ground_truth_specs": "requires a.Length==b.Length\n  ensures c.Length==a.Length\n  ensures forall i:: 0 <= i< a.Length==> a[i] * b[i]==c[i]",
+    "prompt_skeleton": "method arrayProduct(a: array<int>, b: array<int>) returns (c: array<int> )\n  // TOFILL: requires and ensures\n{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] * b[j]==c[j]\n  {\n    c[i]:=a[i]*b[i];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] * b[j]==c[j]\n  {\n    c[i]:=a[i]*b[i];\n    i:=i+1;\n  }\n}",
+    "full_code": "method arrayProduct(a: array<int>, b: array<int>) returns (c: array<int> )\n  requires a.Length==b.Length\n  ensures c.Length==a.Length\n  ensures forall i:: 0 <= i< a.Length==> a[i] * b[i]==c[i]\n{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] * b[j]==c[j]\n  {\n    c[i]:=a[i]*b[i];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 7,
+    "task_name": "array_sum",
+    "docstring": "Calculate the pair-wise sum of two arrays.s",
+    "signature": "method arraySum(a: array<int>, b: array<int>) returns (c: array<int> )",
+    "ground_truth_specs": "requires a.Length==b.Length\n  ensures c.Length==a.Length\n  ensures forall i:: 0 <= i< a.Length==> a[i] + b[i]==c[i]",
+    "prompt_skeleton": "method arraySum(a: array<int>, b: array<int>) returns (c: array<int> )\n  // TOFILL: requires and ensures\n{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] + b[j]==c[j]\n  {\n    c[i]:=a[i]+b[i];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] + b[j]==c[j]\n  {\n    c[i]:=a[i]+b[i];\n    i:=i+1;\n  }\n}",
+    "full_code": "method arraySum(a: array<int>, b: array<int>) returns (c: array<int> )\n  requires a.Length==b.Length\n  ensures c.Length==a.Length\n  ensures forall i:: 0 <= i< a.Length==> a[i] + b[i]==c[i]\n{\n  c:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j:: 0 <= j< i==> a[j] + b[j]==c[j]\n  {\n    c[i]:=a[i]+b[i];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 8,
+    "task_name": "avg",
+    "docstring": "Calculate the average value of two integers. There are no restrictions nor overflow protection on the inputs.",
+    "signature": "method ComputeAvg(a: int, b: int) returns (avg:int)",
+    "ground_truth_specs": "ensures avg == (a+b)/2",
+    "prompt_skeleton": "method ComputeAvg(a: int, b: int) returns (avg:int)\n  // TOFILL: requires and ensures\n{\n  avg:= (a + b) / 2;\n}",
+    "implementation_body": "{\n  avg:= (a + b) / 2;\n}",
+    "full_code": "method ComputeAvg(a: int, b: int) returns (avg:int)\n  ensures avg == (a+b)/2\n{\n  avg:= (a + b) / 2;\n}"
+  },
+  {
+    "task_id": 9,
+    "task_name": "below_zero",
+    "docstring": "You're given a list of deposit and withdrawal operations on a bank account that starts with zero balance. Your task is to detect if at any point the balance of account fallls below zero, and at that point function should return the presum array of operations and  True. Otherwise it should return the presum array and False. Presum array s of operations is an array with length |operations| + 1, representing the cumulative sum at each step, initialized with s[0]==0.",
+    "signature": "method below_zero(operations: seq<int>) returns (s:array<int>, result:bool)",
+    "ground_truth_specs": "ensures s.Length == |operations| + 1\n  ensures s[0]==0\n  ensures forall i :: 0 <= i < s.Length-1 ==> s[i+1]==s[i]+operations[i]\n  ensures result == true ==> (exists i :: 1 <= i <= |operations| && s[i] < 0)\n  ensures result == false ==> forall i :: 0 <= i < s.Length ==> s[i] >= 0",
+    "prompt_skeleton": "method below_zero(operations: seq<int>) returns (s:array<int>, result:bool)\n  // TOFILL: requires and ensures\n{\n  result := false;\n  s := new int[|operations| + 1];\n  var i := 0;\n  s[i] := 0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant s[0]==0\n    invariant s.Length == |operations| + 1\n    invariant forall x :: 0 <= x < i-1 ==> s[x+1]==s[x]+operations[x]\n  {\n    if i>0{\n      s[i] := s[i - 1] + operations[i - 1];\n    }\n    i := i + 1;\n  }\n  i:=0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] >= 0\n  {\n    if s[i] < 0 {\n      result := true;\n      return;\n    }\n    i := i + 1;\n  }\n}",
+    "implementation_body": "{\n  result := false;\n  s := new int[|operations| + 1];\n  var i := 0;\n  s[i] := 0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant s[0]==0\n    invariant s.Length == |operations| + 1\n    invariant forall x :: 0 <= x < i-1 ==> s[x+1]==s[x]+operations[x]\n  {\n    if i>0{\n      s[i] := s[i - 1] + operations[i - 1];\n    }\n    i := i + 1;\n  }\n  i:=0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] >= 0\n  {\n    if s[i] < 0 {\n      result := true;\n      return;\n    }\n    i := i + 1;\n  }\n}",
+    "full_code": "method below_zero(operations: seq<int>) returns (s:array<int>, result:bool)\n  ensures s.Length == |operations| + 1\n  ensures s[0]==0\n  ensures forall i :: 0 <= i < s.Length-1 ==> s[i+1]==s[i]+operations[i]\n  ensures result == true ==> (exists i :: 1 <= i <= |operations| && s[i] < 0)\n  ensures result == false ==> forall i :: 0 <= i < s.Length ==> s[i] >= 0\n{\n  result := false;\n  s := new int[|operations| + 1];\n  var i := 0;\n  s[i] := 0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant s[0]==0\n    invariant s.Length == |operations| + 1\n    invariant forall x :: 0 <= x < i-1 ==> s[x+1]==s[x]+operations[x]\n  {\n    if i>0{\n      s[i] := s[i - 1] + operations[i - 1];\n    }\n    i := i + 1;\n  }\n  i:=0;\n  while i < s.Length\n    invariant 0 <= i <= s.Length\n    invariant forall x :: 0 <= x < i ==> s[x] >= 0\n  {\n    if s[i] < 0 {\n      result := true;\n      return;\n    }\n    i := i + 1;\n  }\n}"
+  },
+  {
+    "task_id": 10,
+    "task_name": "binary_search",
+    "docstring": "Binary search a sorted possibly empty array for a key. Return the index such that array[index-1] < key <= array[index].",
+    "signature": "method BinarySearch(a: array<int>, key: int) returns (n: int)",
+    "ground_truth_specs": "requires forall i,j :: 0<=i<j<a.Length ==> a[i]<=a[j]\n  ensures 0<= n <=a.Length\n  ensures forall i :: 0<= i < n ==> a[i] < key\n  ensures n == a.Length ==> forall i :: 0 <= i < a.Length ==> a[i] < key\n  ensures forall i :: n<= i < a.Length ==> a[i]>=key",
+    "prompt_skeleton": "method BinarySearch(a: array<int>, key: int) returns (n: int)\n  // TOFILL: requires and ensures\n{\n  var lo, hi := 0, a.Length;\n  while lo<hi\n    invariant 0<= lo <= hi <= a.Length\n    invariant forall i :: 0<=i<lo ==> a[i] < key\n    invariant forall i :: hi<=i<a.Length ==> a[i] >= key\n  {\n    var mid := (lo + hi) / 2;\n    if a[mid] < key {\n      lo := mid + 1;\n    } else {\n      hi := mid;\n    }\n  }\n  n:=lo;\n}",
+    "implementation_body": "{\n  var lo, hi := 0, a.Length;\n  while lo<hi\n    invariant 0<= lo <= hi <= a.Length\n    invariant forall i :: 0<=i<lo ==> a[i] < key\n    invariant forall i :: hi<=i<a.Length ==> a[i] >= key\n  {\n    var mid := (lo + hi) / 2;\n    if a[mid] < key {\n      lo := mid + 1;\n    } else {\n      hi := mid;\n    }\n  }\n  n:=lo;\n}",
+    "full_code": "method BinarySearch(a: array<int>, key: int) returns (n: int)\n  requires forall i,j :: 0<=i<j<a.Length ==> a[i]<=a[j]\n  ensures 0<= n <=a.Length\n  ensures forall i :: 0<= i < n ==> a[i] < key\n  ensures n == a.Length ==> forall i :: 0 <= i < a.Length ==> a[i] < key\n  ensures forall i :: n<= i < a.Length ==> a[i]>=key\n{\n  var lo, hi := 0, a.Length;\n  while lo<hi\n    invariant 0<= lo <= hi <= a.Length\n    invariant forall i :: 0<=i<lo ==> a[i] < key\n    invariant forall i :: hi<=i<a.Length ==> a[i] >= key\n  {\n    var mid := (lo + hi) / 2;\n    if a[mid] < key {\n      lo := mid + 1;\n    } else {\n      hi := mid;\n    }\n  }\n  n:=lo;\n}"
+  },
+  {
+    "task_id": 11,
+    "task_name": "bubble_sort",
+    "docstring": "Sorts the array a in non-decreasing order. Ensure that the sorted elements make up the same set of elements as the original.",
+    "signature": "method BubbleSort(a: array<int>)",
+    "ground_truth_specs": "modifies a\n  ensures forall i,j::0<= i < j < a.Length ==> a[i] <= a[j]\n  ensures multiset(a[..])==multiset(old(a[..]))",
+    "prompt_skeleton": "method BubbleSort(a: array<int>)\n  // TOFILL: requires and ensures\n{\n  var i := a.Length - 1;\n  while (i > 0)\n    invariant i < 0 ==> a.Length == 0\n    invariant -1 <= i < a.Length\n    invariant forall ii,jj::i <= ii< jj <a.Length ==> a[ii] <= a[jj]\n    invariant forall k,k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n    invariant multiset(a[..])==multiset(old(a[..]))\n  {\n    var j := 0;\n    while (j < i)\n      invariant 0 < i < a.Length && 0 <= j <= i\n      invariant forall ii,jj::i<= ii <= jj <a.Length ==> a[ii] <= a[jj]\n      invariant forall k, k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n      invariant forall k :: 0 <= k <= j ==> a[k] <= a[j]\n      invariant multiset(a[..])==multiset(old(a[..]))\n    {\n      if (a[j] > a[j + 1])\n      {\n        a[j], a[j + 1] := a[j + 1], a[j];\n      }\n      j := j + 1;\n    }\n    i := i - 1;\n  }\n}",
+    "implementation_body": "{\n  var i := a.Length - 1;\n  while (i > 0)\n    invariant i < 0 ==> a.Length == 0\n    invariant -1 <= i < a.Length\n    invariant forall ii,jj::i <= ii< jj <a.Length ==> a[ii] <= a[jj]\n    invariant forall k,k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n    invariant multiset(a[..])==multiset(old(a[..]))\n  {\n    var j := 0;\n    while (j < i)\n      invariant 0 < i < a.Length && 0 <= j <= i\n      invariant forall ii,jj::i<= ii <= jj <a.Length ==> a[ii] <= a[jj]\n      invariant forall k, k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n      invariant forall k :: 0 <= k <= j ==> a[k] <= a[j]\n      invariant multiset(a[..])==multiset(old(a[..]))\n    {\n      if (a[j] > a[j + 1])\n      {\n        a[j], a[j + 1] := a[j + 1], a[j];\n      }\n      j := j + 1;\n    }\n    i := i - 1;\n  }\n}",
+    "full_code": "method BubbleSort(a: array<int>)\n  modifies a\n  ensures forall i,j::0<= i < j < a.Length ==> a[i] <= a[j]\n  ensures multiset(a[..])==multiset(old(a[..]))\n{\n  var i := a.Length - 1;\n  while (i > 0)\n    invariant i < 0 ==> a.Length == 0\n    invariant -1 <= i < a.Length\n    invariant forall ii,jj::i <= ii< jj <a.Length ==> a[ii] <= a[jj]\n    invariant forall k,k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n    invariant multiset(a[..])==multiset(old(a[..]))\n  {\n    var j := 0;\n    while (j < i)\n      invariant 0 < i < a.Length && 0 <= j <= i\n      invariant forall ii,jj::i<= ii <= jj <a.Length ==> a[ii] <= a[jj]\n      invariant forall k, k'::0<=k<=i<k'<a.Length==>a[k]<=a[k']\n      invariant forall k :: 0 <= k <= j ==> a[k] <= a[j]\n      invariant multiset(a[..])==multiset(old(a[..]))\n    {\n      if (a[j] > a[j + 1])\n      {\n        a[j], a[j + 1] := a[j + 1], a[j];\n      }\n      j := j + 1;\n    }\n    i := i - 1;\n  }\n}"
+  },
+  {
+    "task_id": 12,
+    "task_name": "cal_ans",
+    "docstring": "Calculate the quotient and remainder of 191 divided by 7. Ensure that the quotient equals to 191/7 and the remainder equals to 191%7.",
+    "signature": "method CalDiv() returns (x:int, y:int)",
+    "ground_truth_specs": "ensures x==191/7\n  ensures y==191%7",
+    "prompt_skeleton": "method CalDiv() returns (x:int, y:int)\n  // TOFILL: requires and ensures\n{\n\n  x, y := 0, 191;\n  while 7 <= y\n    invariant 0 <= y && 7 * x + y == 191\n  {\n    x := x+1;\n    y:=191-7*x;\n  }\n}",
+    "implementation_body": "{\n\n  x, y := 0, 191;\n  while 7 <= y\n    invariant 0 <= y && 7 * x + y == 191\n  {\n    x := x+1;\n    y:=191-7*x;\n  }\n}",
+    "full_code": "method CalDiv() returns (x:int, y:int)\n  ensures x==191/7\n  ensures y==191%7\n{\n\n  x, y := 0, 191;\n  while 7 <= y\n    invariant 0 <= y && 7 * x + y == 191\n  {\n    x := x+1;\n    y:=191-7*x;\n  }\n}"
+  },
+  {
+    "task_id": 13,
+    "task_name": "cal_sum",
+    "docstring": "Calculate the sum from 1 to N. Require that N is a non-negative integer. Return the sum.",
+    "signature": "method Sum(N:int) returns (s:int)",
+    "ground_truth_specs": "requires N >= 0\n  ensures s == N * (N + 1) / 2",
+    "prompt_skeleton": "method Sum(N:int) returns (s:int)\n  // TOFILL: requires and ensures\n{\n  var n := 0;\n  s := 0;\n  while n != N\n    invariant 0 <= n <= N\n    invariant s == n * (n + 1) / 2\n  {\n    n := n + 1;\n    s := s + n;\n  }\n}",
+    "implementation_body": "{\n  var n := 0;\n  s := 0;\n  while n != N\n    invariant 0 <= n <= N\n    invariant s == n * (n + 1) / 2\n  {\n    n := n + 1;\n    s := s + n;\n  }\n}",
+    "full_code": "method Sum(N:int) returns (s:int)\n  requires N >= 0\n  ensures s == N * (N + 1) / 2\n{\n  var n := 0;\n  s := 0;\n  while n != N\n    invariant 0 <= n <= N\n    invariant s == n * (n + 1) / 2\n  {\n    n := n + 1;\n    s := s + n;\n  }\n}"
+  },
+  {
+    "task_id": 14,
+    "task_name": "canyon_search",
+    "docstring": "Calculate the smallest difference of any two values from two non-decreasing arrays. Require that two input arrays to be non-empty and sorted. Ensure that the return value exists as one difference and is the smallest one.",
+    "signature": "method CanyonSearch(a: array<int>, b: array<int>) returns (d:nat)",
+    "ground_truth_specs": "requires a.Length !=0 && b.Length!=0\n  requires forall i,j :: 0<=i<j<a.Length ==> a[i]<=a[j]\n  requires forall i,j :: 0<=i<j<b.Length ==> b[i]<=b[j]\n  ensures exists i,j:: 0<=i<a.Length && 0<=j<b.Length && d==if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n  ensures forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])",
+    "prompt_skeleton": "method CanyonSearch(a: array<int>, b: array<int>) returns (d:nat)\n  // TOFILL: requires and ensures\n{\n  var m,n:=0,0;\n  d:=if a[0] < b[0] then (b[0]-a[0]) else (a[0]-b[0]);\n  while m<a.Length && n<b.Length\n    invariant 0<=m<=a.Length && 0<=n<=b.Length\n    decreases a.Length -m+b.Length-n\n    invariant exists i,j:: 0<=i<a.Length && 0<=j<b.Length && d==if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n    invariant forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=(if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j]))|| (m<=i&&n<=j)\n  {\n    var t := if a[m] < b[n] then (b[n]-a[m]) else (a[m]-b[n]);\n    d:=if t<d then t else d;\n    if\n    case a[m]<=b[n] =>\n      m:=m+1;\n    case b[n]<=a[m] =>\n      n:=n+1;\n\n  }\n}",
+    "implementation_body": "{\n  var m,n:=0,0;\n  d:=if a[0] < b[0] then (b[0]-a[0]) else (a[0]-b[0]);\n  while m<a.Length && n<b.Length\n    invariant 0<=m<=a.Length && 0<=n<=b.Length\n    decreases a.Length -m+b.Length-n\n    invariant exists i,j:: 0<=i<a.Length && 0<=j<b.Length && d==if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n    invariant forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=(if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j]))|| (m<=i&&n<=j)\n  {\n    var t := if a[m] < b[n] then (b[n]-a[m]) else (a[m]-b[n]);\n    d:=if t<d then t else d;\n    if\n    case a[m]<=b[n] =>\n      m:=m+1;\n    case b[n]<=a[m] =>\n      n:=n+1;\n\n  }\n}",
+    "full_code": "method CanyonSearch(a: array<int>, b: array<int>) returns (d:nat)\n  requires a.Length !=0 && b.Length!=0\n  requires forall i,j :: 0<=i<j<a.Length ==> a[i]<=a[j]\n  requires forall i,j :: 0<=i<j<b.Length ==> b[i]<=b[j]\n  ensures exists i,j:: 0<=i<a.Length && 0<=j<b.Length && d==if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n  ensures forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n{\n  var m,n:=0,0;\n  d:=if a[0] < b[0] then (b[0]-a[0]) else (a[0]-b[0]);\n  while m<a.Length && n<b.Length\n    invariant 0<=m<=a.Length && 0<=n<=b.Length\n    decreases a.Length -m+b.Length-n\n    invariant exists i,j:: 0<=i<a.Length && 0<=j<b.Length && d==if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j])\n    invariant forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=(if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j]))|| (m<=i&&n<=j)\n  {\n    var t := if a[m] < b[n] then (b[n]-a[m]) else (a[m]-b[n]);\n    d:=if t<d then t else d;\n    if\n    case a[m]<=b[n] =>\n      m:=m+1;\n    case b[n]<=a[m] =>\n      n:=n+1;\n\n  }\n}"
+  },
+  {
+    "task_id": 15,
+    "task_name": "compare",
+    "docstring": "Return true if two elements are equal. No requirements on inputs.",
+    "signature": "method Compare<T(==)>(a: T, b: T) returns (eq: bool)",
+    "ground_truth_specs": "ensures a==b ==> eq==true\n  ensures a!=b ==> eq==false",
+    "prompt_skeleton": "method Compare<T(==)>(a: T, b: T) returns (eq: bool)\n  // TOFILL: requires and ensures\n{\n  if a == b { eq := true; } else { eq := false; }\n}",
+    "implementation_body": "{\n  if a == b { eq := true; } else { eq := false; }\n}",
+    "full_code": "method Compare<T(==)>(a: T, b: T) returns (eq: bool)\n  ensures a==b ==> eq==true\n  ensures a!=b ==> eq==false\n{\n  if a == b { eq := true; } else { eq := false; }\n}"
+  },
+  {
+    "task_id": 16,
+    "task_name": "convert_map_key",
+    "docstring": "Converts the keys of the inputs map using the function f. Require that f is an injective function from domain natural numbers to range natural numbers. Ensure that returned new map r has f(key) as the new key and the same value.",
+    "signature": "method convert_map_key(inputs: map<nat, bool>, f: nat->nat) returns(r:map<nat, bool>)",
+    "ground_truth_specs": "requires forall n1: nat, n2: nat :: n1 != n2 ==> f(n1) != f(n2)\n  ensures forall k :: k in inputs <==> f(k) in r\n  ensures forall k :: k in inputs ==> r[f(k)] == inputs[k]",
+    "prompt_skeleton": "method convert_map_key(inputs: map<nat, bool>, f: nat->nat) returns(r:map<nat, bool>)\n  // TOFILL: requires and ensures\n{\n  r:= map k | k in inputs :: f(k) := inputs[k];\n}",
+    "implementation_body": "{\n  r:= map k | k in inputs :: f(k) := inputs[k];\n}",
+    "full_code": "method convert_map_key(inputs: map<nat, bool>, f: nat->nat) returns(r:map<nat, bool>)\n  requires forall n1: nat, n2: nat :: n1 != n2 ==> f(n1) != f(n2)\n  ensures forall k :: k in inputs <==> f(k) in r\n  ensures forall k :: k in inputs ==> r[f(k)] == inputs[k]\n{\n  r:= map k | k in inputs :: f(k) := inputs[k];\n}"
+  },
+  {
+    "task_id": 17,
+    "task_name": "copy_part",
+    "docstring": "Copies `len` elements from `src` array starting at `sStart` to `dest` array starting at `dStart` and returns the modified `dest` array. Ensure r and dest have the same length. Ensure original `dest` elements outside copied range stay the same.",
+    "signature": "method copy( src: array<int>, sStart: nat, dest: array<int>, dStart: nat, len: nat) returns (r: array<int>)",
+    "ground_truth_specs": "requires src.Length >= sStart + len\n  requires dest.Length >= dStart + len\n  ensures r.Length == dest.Length\n  ensures r[..dStart] == dest[..dStart]\n  ensures r[dStart + len..] == dest[dStart + len..]\n  ensures r[dStart..len+dStart] == src[sStart..len+sStart]",
+    "prompt_skeleton": "method copy( src: array<int>, sStart: nat, dest: array<int>, dStart: nat, len: nat) returns (r: array<int>)\n  // TOFILL: requires and ensures\n{\n  if len == 0 { return dest; }\n  var i: nat := 0;\n  r := new int[dest.Length];\n  while (i < r.Length)\n    invariant i <= r.Length\n    invariant r[..i] == dest[..i]\n  {\n    r[i] := dest[i];\n    i := i + 1;\n  }\n  assert r[..]==dest[..];\n  i := 0;\n  while (i < len)\n    invariant i <= len\n    invariant r[..dStart] == dest[..dStart]\n    invariant r[(dStart + len)..] == dest[(dStart + len)..]\n    invariant r[dStart .. dStart + i] == src[sStart .. sStart + i]\n  {\n    assert r[(dStart + len)..] == dest[(dStart + len)..];\n    r[dStart + i] := src[sStart + i];\n    i := i + 1;\n  }\n}",
+    "implementation_body": "{\n  if len == 0 { return dest; }\n  var i: nat := 0;\n  r := new int[dest.Length];\n  while (i < r.Length)\n    invariant i <= r.Length\n    invariant r[..i] == dest[..i]\n  {\n    r[i] := dest[i];\n    i := i + 1;\n  }\n  assert r[..]==dest[..];\n  i := 0;\n  while (i < len)\n    invariant i <= len\n    invariant r[..dStart] == dest[..dStart]\n    invariant r[(dStart + len)..] == dest[(dStart + len)..]\n    invariant r[dStart .. dStart + i] == src[sStart .. sStart + i]\n  {\n    assert r[(dStart + len)..] == dest[(dStart + len)..];\n    r[dStart + i] := src[sStart + i];\n    i := i + 1;\n  }\n}",
+    "full_code": "method copy( src: array<int>, sStart: nat, dest: array<int>, dStart: nat, len: nat) returns (r: array<int>)\n  requires src.Length >= sStart + len\n  requires dest.Length >= dStart + len\n  ensures r.Length == dest.Length\n  ensures r[..dStart] == dest[..dStart]\n  ensures r[dStart + len..] == dest[dStart + len..]\n  ensures r[dStart..len+dStart] == src[sStart..len+sStart]\n\n{\n  if len == 0 { return dest; }\n  var i: nat := 0;\n  r := new int[dest.Length];\n  while (i < r.Length)\n    invariant i <= r.Length\n    invariant r[..i] == dest[..i]\n  {\n    r[i] := dest[i];\n    i := i + 1;\n  }\n  assert r[..]==dest[..];\n  i := 0;\n  while (i < len)\n    invariant i <= len\n    invariant r[..dStart] == dest[..dStart]\n    invariant r[(dStart + len)..] == dest[(dStart + len)..]\n    invariant r[dStart .. dStart + i] == src[sStart .. sStart + i]\n  {\n    assert r[(dStart + len)..] == dest[(dStart + len)..];\n    r[dStart + i] := src[sStart + i];\n    i := i + 1;\n  }\n}"
+  },
+  {
+    "task_id": 18,
+    "task_name": "count_lessthan",
+    "docstring": "Counts the number of integers in the numbers set that are less than the provided threshold and returns the count.",
+    "signature": "method CountLessThan(numbers: set<int>, threshold: int) returns (count: int)",
+    "ground_truth_specs": "ensures count == |set i | i in numbers && i < threshold|",
+    "prompt_skeleton": "method CountLessThan(numbers: set<int>, threshold: int) returns (count: int)\n  // TOFILL: requires and ensures\n{\n  count := 0;\n  var shrink := numbers;\n  var grow := {};\n  while |shrink | > 0\n    decreases shrink\n    invariant shrink + grow == numbers\n    invariant grow !! shrink\n    invariant count == |set i | i in grow && i < threshold|\n  {\n    var i: int :| i in shrink;\n    shrink := shrink - {i};\n    var grow' := grow+{i};\n    assert (set i | i in grow' && i < threshold) ==\n           (set i | i in grow && i < threshold )+ if i < threshold then {i} else {};\n    grow := grow + {i};\n    if i < threshold {\n      count := count + 1;\n    }\n  }\n}",
+    "implementation_body": "{\n  count := 0;\n  var shrink := numbers;\n  var grow := {};\n  while |shrink | > 0\n    decreases shrink\n    invariant shrink + grow == numbers\n    invariant grow !! shrink\n    invariant count == |set i | i in grow && i < threshold|\n  {\n    var i: int :| i in shrink;\n    shrink := shrink - {i};\n    var grow' := grow+{i};\n    assert (set i | i in grow' && i < threshold) ==\n           (set i | i in grow && i < threshold )+ if i < threshold then {i} else {};\n    grow := grow + {i};\n    if i < threshold {\n      count := count + 1;\n    }\n  }\n}",
+    "full_code": "method CountLessThan(numbers: set<int>, threshold: int) returns (count: int)\n  ensures count == |set i | i in numbers && i < threshold|\n{\n  count := 0;\n  var shrink := numbers;\n  var grow := {};\n  while |shrink | > 0\n    decreases shrink\n    invariant shrink + grow == numbers\n    invariant grow !! shrink\n    invariant count == |set i | i in grow && i < threshold|\n  {\n    var i: int :| i in shrink;\n    shrink := shrink - {i};\n    var grow' := grow+{i};\n    assert (set i | i in grow' && i < threshold) ==\n           (set i | i in grow && i < threshold )+ if i < threshold then {i} else {};\n    grow := grow + {i};\n    if i < threshold {\n      count := count + 1;\n    }\n  }\n}"
+  },
+  {
+    "task_id": 19,
+    "task_name": "double_quadruple",
+    "docstring": "Returns two integers, where the first is double the input value x and the second is quadruple the input value x.",
+    "signature": "method DoubleQuadruple(x: int) returns (a: int, b: int)",
+    "ground_truth_specs": "ensures a == 2 * x && b == 4 * x",
+    "prompt_skeleton": "method DoubleQuadruple(x: int) returns (a: int, b: int)\n  // TOFILL: requires and ensures\n{\n  a := 2 * x;\n  b := 2 * a;\n}",
+    "implementation_body": "{\n  a := 2 * x;\n  b := 2 * a;\n}",
+    "full_code": "method DoubleQuadruple(x: int) returns (a: int, b: int)\n  ensures a == 2 * x && b == 4 * x\n{\n  a := 2 * x;\n  b := 2 * a;\n}"
+  },
+  {
+    "task_id": 20,
+    "task_name": "even_list",
+    "docstring": "Extracts and returns an array containing all the even numbers from the provided arr, preserving their original order. An element appears in the output if and only if it is even and in the input. Ensure the original order is preserved.",
+    "signature": "method FindEvenNumbers (arr: array<int>) returns (evenNumbers: array<int>)",
+    "ground_truth_specs": "ensures forall x {:trigger (x%2) }:: x in arr[..] &&  (x%2==0)==> x in evenNumbers[..]\n  ensures forall x :: x !in arr[..] ==> x !in evenNumbers[..]\n  ensures forall k :: 0 <= k < evenNumbers.Length ==> evenNumbers[k] % 2 == 0\n  ensures forall k, l :: 0 <= k < l < evenNumbers.Length ==>\n                           exists n, m :: 0 <= n < m < arr.Length && evenNumbers[k] == arr[n] && evenNumbers[l] == arr[m]",
+    "prompt_skeleton": "method FindEvenNumbers (arr: array<int>) returns (evenNumbers: array<int>)\n  // TOFILL: requires and ensures\n{\n  var evenList: seq<int> := [];\n  ghost var indices: seq<int> := [];\n\n  for i := 0 to arr.Length\n    invariant 0 <= i <= arr.Length\n    invariant 0 <= |evenList| <= i\n    invariant forall x  {:trigger (x%2) }:: (x in arr[..i] && (x%2==0) )==> x in evenList[..]\n    invariant forall k :: 0 <= k < |evenList| ==> evenList[k] % 2 == 0\n    invariant forall x :: x !in arr[..i] ==> x !in evenList\n    invariant |evenList| == |indices|\n    invariant forall k :: 0 <= k < |indices| ==> indices[k] < i\n    invariant forall k, l :: 0 <= k < l < |indices| ==> indices[k] < indices[l]\n    invariant forall k :: 0 <= k < |evenList| ==> 0 <= indices[k] < i <= arr.Length && arr[indices[k]] == evenList[k]\n  {\n    if arr[i]%2==0\n    {\n      evenList := evenList + [arr[i]];\n      indices := indices + [i];\n    }\n  }\n\n  evenNumbers := new int[|evenList|](i requires 0 <= i < |evenList| => evenList[i]);\n  assert evenList == evenNumbers[..];\n}",
+    "implementation_body": "{\n  var evenList: seq<int> := [];\n  ghost var indices: seq<int> := [];\n\n  for i := 0 to arr.Length\n    invariant 0 <= i <= arr.Length\n    invariant 0 <= |evenList| <= i\n    invariant forall x  {:trigger (x%2) }:: (x in arr[..i] && (x%2==0) )==> x in evenList[..]\n    invariant forall k :: 0 <= k < |evenList| ==> evenList[k] % 2 == 0\n    invariant forall x :: x !in arr[..i] ==> x !in evenList\n    invariant |evenList| == |indices|\n    invariant forall k :: 0 <= k < |indices| ==> indices[k] < i\n    invariant forall k, l :: 0 <= k < l < |indices| ==> indices[k] < indices[l]\n    invariant forall k :: 0 <= k < |evenList| ==> 0 <= indices[k] < i <= arr.Length && arr[indices[k]] == evenList[k]\n  {\n    if arr[i]%2==0\n    {\n      evenList := evenList + [arr[i]];\n      indices := indices + [i];\n    }\n  }\n\n  evenNumbers := new int[|evenList|](i requires 0 <= i < |evenList| => evenList[i]);\n  assert evenList == evenNumbers[..];\n}",
+    "full_code": "method FindEvenNumbers (arr: array<int>) returns (evenNumbers: array<int>)\n  ensures forall x {:trigger (x%2) }:: x in arr[..] &&  (x%2==0)==> x in evenNumbers[..]\n  ensures forall x :: x !in arr[..] ==> x !in evenNumbers[..]\n  ensures forall k :: 0 <= k < evenNumbers.Length ==> evenNumbers[k] % 2 == 0\n  ensures forall k, l :: 0 <= k < l < evenNumbers.Length ==>\n                           exists n, m :: 0 <= n < m < arr.Length && evenNumbers[k] == arr[n] && evenNumbers[l] == arr[m]\n\n{\n  var evenList: seq<int> := [];\n  ghost var indices: seq<int> := [];\n\n  for i := 0 to arr.Length\n    invariant 0 <= i <= arr.Length\n    invariant 0 <= |evenList| <= i\n    invariant forall x  {:trigger (x%2) }:: (x in arr[..i] && (x%2==0) )==> x in evenList[..]\n    invariant forall k :: 0 <= k < |evenList| ==> evenList[k] % 2 == 0\n    invariant forall x :: x !in arr[..i] ==> x !in evenList\n    invariant |evenList| == |indices|\n    invariant forall k :: 0 <= k < |indices| ==> indices[k] < i\n    invariant forall k, l :: 0 <= k < l < |indices| ==> indices[k] < indices[l]\n    invariant forall k :: 0 <= k < |evenList| ==> 0 <= indices[k] < i <= arr.Length && arr[indices[k]] == evenList[k]\n  {\n    if arr[i]%2==0\n    {\n      evenList := evenList + [arr[i]];\n      indices := indices + [i];\n    }\n  }\n\n  evenNumbers := new int[|evenList|](i requires 0 <= i < |evenList| => evenList[i]);\n  assert evenList == evenNumbers[..];\n}"
+  },
+  {
+    "task_id": 21,
+    "task_name": "find",
+    "docstring": "Find a key in a possibly empty array. Return the index of its first occurance. Ensure index is in range. If not found, return -1.",
+    "signature": "method Find(a: array<int>, key: int) returns (index: int)",
+    "ground_truth_specs": "ensures -1<=index<a.Length\n  ensures index!=-1 ==> a[index]==key && (forall i :: 0 <= i < index ==> a[i] != key)\n  ensures index == -1 ==> (forall i::0 <= i < a.Length ==> a[i] != key)",
+    "prompt_skeleton": "method Find(a: array<int>, key: int) returns (index: int)\n  // TOFILL: requires and ensures\n{\n  index := 0;\n  while index < a.Length\n    invariant 0<=index<=a.Length\n    invariant (forall i::0 <= i < index==>a[i] != key)\n  {\n    if a[index] == key { return; }\n    index := index + 1;\n  }\n  if index >= a.Length  {\n    index := -1;\n  }\n}",
+    "implementation_body": "{\n  index := 0;\n  while index < a.Length\n    invariant 0<=index<=a.Length\n    invariant (forall i::0 <= i < index==>a[i] != key)\n  {\n    if a[index] == key { return; }\n    index := index + 1;\n  }\n  if index >= a.Length  {\n    index := -1;\n  }\n}",
+    "full_code": "method Find(a: array<int>, key: int) returns (index: int)\n  ensures -1<=index<a.Length\n  ensures index!=-1 ==> a[index]==key && (forall i :: 0 <= i < index ==> a[i] != key)\n  ensures index == -1 ==> (forall i::0 <= i < a.Length ==> a[i] != key)\n{\n  index := 0;\n  while index < a.Length\n    invariant 0<=index<=a.Length\n    invariant (forall i::0 <= i < index==>a[i] != key)\n  {\n    if a[index] == key { return; }\n    index := index + 1;\n  }\n  if index >= a.Length  {\n    index := -1;\n  }\n}"
+  },
+  {
+    "task_id": 22,
+    "task_name": "has_close_elements",
+    "docstring": "Check if in given list of numbers, are any two numbers closer to each other than given non-negative threshold.",
+    "signature": "method has_close_elements(numbers: seq<real>, threshold: real) returns (res: bool)",
+    "ground_truth_specs": "requires threshold >= 0.0\n  ensures res ==> exists i: int, j: int :: 0 <= i < |numbers| && 0 <= j < |numbers| && i != j && (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) < threshold\n  ensures !res ==> (forall i: int, j: int :: 1 <= i < |numbers| && 0 <= j < i ==>  (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) >= threshold)",
+    "prompt_skeleton": "method has_close_elements(numbers: seq<real>, threshold: real) returns (res: bool)\n  // TOFILL: requires and ensures\n{\n\n  res := false;\n  var idx: int := 0;\n  while idx < |numbers| && !res\n    invariant 0 <= idx <= |numbers|\n    invariant !res\n    invariant forall i: int, j: int :: 0 <= i < idx && 0 <= j < i ==> (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) >= threshold\n  {\n    var idx2: int := 0;\n    while idx2 < idx && !res\n      invariant 0 <= idx <= |numbers|\n      invariant 0 <= idx2 <= idx\n      invariant !res\n      invariant forall j: int :: 0 <= j < idx2 ==> (if numbers[idx] - numbers[j] < 0.0 then numbers[j] - numbers[idx] else numbers[idx] - numbers[j]) >= threshold\n    {\n\n      var distance :=  (if numbers[idx2] - numbers[idx] < 0.0 then numbers[idx] - numbers[idx2] else numbers[idx2] - numbers[idx]);\n      if distance < threshold  {\n        res := true;\n        return;\n      }\n\n      idx2 := idx2 + 1;\n    }\n    idx := idx + 1;\n  }\n}",
+    "implementation_body": "{\n\n  res := false;\n  var idx: int := 0;\n  while idx < |numbers| && !res\n    invariant 0 <= idx <= |numbers|\n    invariant !res\n    invariant forall i: int, j: int :: 0 <= i < idx && 0 <= j < i ==> (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) >= threshold\n  {\n    var idx2: int := 0;\n    while idx2 < idx && !res\n      invariant 0 <= idx <= |numbers|\n      invariant 0 <= idx2 <= idx\n      invariant !res\n      invariant forall j: int :: 0 <= j < idx2 ==> (if numbers[idx] - numbers[j] < 0.0 then numbers[j] - numbers[idx] else numbers[idx] - numbers[j]) >= threshold\n    {\n\n      var distance :=  (if numbers[idx2] - numbers[idx] < 0.0 then numbers[idx] - numbers[idx2] else numbers[idx2] - numbers[idx]);\n      if distance < threshold  {\n        res := true;\n        return;\n      }\n\n      idx2 := idx2 + 1;\n    }\n    idx := idx + 1;\n  }\n}",
+    "full_code": "method has_close_elements(numbers: seq<real>, threshold: real) returns (res: bool)\n  requires threshold >= 0.0\n  ensures res ==> exists i: int, j: int :: 0 <= i < |numbers| && 0 <= j < |numbers| && i != j && (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) < threshold\n  ensures !res ==> (forall i: int, j: int :: 1 <= i < |numbers| && 0 <= j < i ==>  (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) >= threshold)\n\n\n{\n\n  res := false;\n  var idx: int := 0;\n  while idx < |numbers| && !res\n    invariant 0 <= idx <= |numbers|\n    invariant !res\n    invariant forall i: int, j: int :: 0 <= i < idx && 0 <= j < i ==> (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) >= threshold\n  {\n    var idx2: int := 0;\n    while idx2 < idx && !res\n      invariant 0 <= idx <= |numbers|\n      invariant 0 <= idx2 <= idx\n      invariant !res\n      invariant forall j: int :: 0 <= j < idx2 ==> (if numbers[idx] - numbers[j] < 0.0 then numbers[j] - numbers[idx] else numbers[idx] - numbers[j]) >= threshold\n    {\n\n      var distance :=  (if numbers[idx2] - numbers[idx] < 0.0 then numbers[idx] - numbers[idx2] else numbers[idx2] - numbers[idx]);\n      if distance < threshold  {\n        res := true;\n        return;\n      }\n\n      idx2 := idx2 + 1;\n    }\n    idx := idx + 1;\n  }\n}"
+  },
+  {
+    "task_id": 23,
+    "task_name": "insert",
+    "docstring": "This insert method inserts elements from array nl into array line at the position at, shifting subsequent elements to the right. The length of line and nl before insertion are represented by l and p respectively. It mandates that 0 <= l + p <= line.Length, 0 <= p <= nl.Length, and 0 <= at <= l. The method modifies line such that for all i in 0 <= i < p, line[at + i] equals nl[i], and all other elements of line maintain their original values in the adjusted positions after the insertion.",
+    "signature": "method insert(line:array<char>, l:int, nl:array<char>, p:int, at:int)",
+    "ground_truth_specs": "requires 0 <= l+p <= line.Length\n  requires 0 <= p <= nl.Length\n  requires 0 <= at <= l\n  modifies line\n  ensures forall i :: (0<=i<p) ==> line[at+i] == nl[i]\n  ensures forall i :: (0<=i<at) ==> line[i] == old(line[i])\n  ensures forall i :: (at+p<=i<l+p) ==> line[i] == old(line[i-p])",
+    "prompt_skeleton": "method insert(line:array<char>, l:int, nl:array<char>, p:int, at:int)\n  // TOFILL: requires and ensures\n{\n  ghost var initialLine := line[..];\n\n  var i:int := l;\n  while(i>at)\n    invariant line[0..i] == initialLine[0..i]\n    invariant line[i+p..l+p] == initialLine[i..l]\n    invariant at<=i<=l\n  {\n    i := i - 1;\n    line[i+p] := line[i];\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at+p..l+p] == initialLine[at..l];\n\n  i := 0;\n  while(i<p)\n    invariant 0<=i<=p\n    invariant line[0..at] == initialLine[0..at]\n    invariant line[at..at+i] == nl[0..i]\n    invariant line[at+p..l+p] == initialLine[at..l]\n  {\n    line[at + i] := nl[i];\n    i := i + 1;\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at..at+p] == nl[0..p];\n  assert line[at+p..l+p] == initialLine[at..l];\n}",
+    "implementation_body": "{\n  ghost var initialLine := line[..];\n\n  var i:int := l;\n  while(i>at)\n    invariant line[0..i] == initialLine[0..i]\n    invariant line[i+p..l+p] == initialLine[i..l]\n    invariant at<=i<=l\n  {\n    i := i - 1;\n    line[i+p] := line[i];\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at+p..l+p] == initialLine[at..l];\n\n  i := 0;\n  while(i<p)\n    invariant 0<=i<=p\n    invariant line[0..at] == initialLine[0..at]\n    invariant line[at..at+i] == nl[0..i]\n    invariant line[at+p..l+p] == initialLine[at..l]\n  {\n    line[at + i] := nl[i];\n    i := i + 1;\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at..at+p] == nl[0..p];\n  assert line[at+p..l+p] == initialLine[at..l];\n}",
+    "full_code": "method insert(line:array<char>, l:int, nl:array<char>, p:int, at:int)\n  requires 0 <= l+p <= line.Length\n  requires 0 <= p <= nl.Length\n  requires 0 <= at <= l\n  modifies line\n  ensures forall i :: (0<=i<p) ==> line[at+i] == nl[i]\n  ensures forall i :: (0<=i<at) ==> line[i] == old(line[i])\n  ensures forall i :: (at+p<=i<l+p) ==> line[i] == old(line[i-p])\n{\n  ghost var initialLine := line[..];\n\n  var i:int := l;\n  while(i>at)\n    invariant line[0..i] == initialLine[0..i]\n    invariant line[i+p..l+p] == initialLine[i..l]\n    invariant at<=i<=l\n  {\n    i := i - 1;\n    line[i+p] := line[i];\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at+p..l+p] == initialLine[at..l];\n\n  i := 0;\n  while(i<p)\n    invariant 0<=i<=p\n    invariant line[0..at] == initialLine[0..at]\n    invariant line[at..at+i] == nl[0..i]\n    invariant line[at+p..l+p] == initialLine[at..l]\n  {\n    line[at + i] := nl[i];\n    i := i + 1;\n  }\n\n  assert line[0..at] == initialLine[0..at];\n  assert line[at..at+p] == nl[0..p];\n  assert line[at+p..l+p] == initialLine[at..l];\n}"
+  },
+  {
+    "task_id": 24,
+    "task_name": "integer_square_root",
+    "docstring": "Find the square root of a natural number.",
+    "signature": "method SquareRoot(N:nat) returns (r:nat)",
+    "ground_truth_specs": "ensures r*r <= N < (r+1)*(r+1)",
+    "prompt_skeleton": "method SquareRoot(N:nat) returns (r:nat)\n  // TOFILL: requires and ensures\n{\n  r:=0;\n  while (r+1)*(r+1)<=N\n    invariant r*r<=N\n  {\n    r:=r+1;\n  }\n}",
+    "implementation_body": "{\n  r:=0;\n  while (r+1)*(r+1)<=N\n    invariant r*r<=N\n  {\n    r:=r+1;\n  }\n}",
+    "full_code": "method SquareRoot(N:nat) returns (r:nat)\n  ensures r*r <= N < (r+1)*(r+1)\n{\n  r:=0;\n  while (r+1)*(r+1)<=N\n    invariant r*r<=N\n  {\n    r:=r+1;\n  }\n}"
+  },
+  {
+    "task_id": 25,
+    "task_name": "is_even",
+    "docstring": "Check if an integer is even. The integer can be either positive or negative or zero.",
+    "signature": "method ComputeIsEven(x:int) returns (is_even:bool)",
+    "ground_truth_specs": "ensures (x % 2 == 0)==is_even",
+    "prompt_skeleton": "method ComputeIsEven(x:int) returns (is_even:bool)\n  // TOFILL: requires and ensures\n{\n  is_even:=false;\n  if x%2==0{\n    is_even:=true;\n  }\n}",
+    "implementation_body": "{\n  is_even:=false;\n  if x%2==0{\n    is_even:=true;\n  }\n}",
+    "full_code": "method ComputeIsEven(x:int) returns (is_even:bool)\n  ensures (x % 2 == 0)==is_even\n{\n  is_even:=false;\n  if x%2==0{\n    is_even:=true;\n  }\n}"
+  },
+  {
+    "task_id": 26,
+    "task_name": "is_palindrome",
+    "docstring": "Given an seq<char> x, return true if x is a palindrome, and false otherwise.",
+    "signature": "method IsPalindrome(x: seq<char>) returns (result: bool)",
+    "ground_truth_specs": "ensures result <==> (forall i :: 0 <= i < |x| ==> x[i] == x[|x| - i - 1])",
+    "prompt_skeleton": "method IsPalindrome(x: seq<char>) returns (result: bool)\n  // TOFILL: requires and ensures\n{\n  if |x|==0 {\n    return true;\n  }\n  var i := 0;\n  var j := |x| - 1;\n  result := true;\n  while (i < j)\n    invariant 0<=i<=j+1 && 0<=j < |x|\n    invariant i+j==|x|-1\n    invariant (forall k :: 0 <= k < i ==> x[k] == x[|x| - k - 1])\n  {\n    if x[i] != x[j] {\n      result := false;\n      return;\n    }\n    i := i + 1;\n    j := j - 1;\n  }\n}",
+    "implementation_body": "{\n  if |x|==0 {\n    return true;\n  }\n  var i := 0;\n  var j := |x| - 1;\n  result := true;\n  while (i < j)\n    invariant 0<=i<=j+1 && 0<=j < |x|\n    invariant i+j==|x|-1\n    invariant (forall k :: 0 <= k < i ==> x[k] == x[|x| - k - 1])\n  {\n    if x[i] != x[j] {\n      result := false;\n      return;\n    }\n    i := i + 1;\n    j := j - 1;\n  }\n}",
+    "full_code": "method IsPalindrome(x: seq<char>) returns (result: bool)\n  ensures result <==> (forall i :: 0 <= i < |x| ==> x[i] == x[|x| - i - 1])\n{\n  if |x|==0 {\n    return true;\n  }\n  var i := 0;\n  var j := |x| - 1;\n  result := true;\n  while (i < j)\n    invariant 0<=i<=j+1 && 0<=j < |x|\n    invariant i+j==|x|-1\n    invariant (forall k :: 0 <= k < i ==> x[k] == x[|x| - k - 1])\n  {\n    if x[i] != x[j] {\n      result := false;\n      return;\n    }\n    i := i + 1;\n    j := j - 1;\n  }\n}"
+  },
+  {
+    "task_id": 27,
+    "task_name": "linear_search1",
+    "docstring": "Linearly search for an element in a possibly empty array and return the index of its first appearance. Return the length of the array if not found.",
+    "signature": "method LinearSearch(a: array<int>, e: int) returns (n:int)",
+    "ground_truth_specs": "ensures 0<=n<=a.Length\n  ensures n==a.Length || a[n]==e\n  ensures forall i::0<=i < n ==> e!=a[i]",
+    "prompt_skeleton": "method LinearSearch(a: array<int>, e: int) returns (n:int)\n  // TOFILL: requires and ensures\n{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}",
+    "implementation_body": "{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}",
+    "full_code": "method LinearSearch(a: array<int>, e: int) returns (n:int)\n  ensures 0<=n<=a.Length\n  ensures n==a.Length || a[n]==e\n  ensures forall i::0<=i < n ==> e!=a[i]\n{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}"
+  },
+  {
+    "task_id": 28,
+    "task_name": "linear_search2",
+    "docstring": "Linearly search for an element in a possibly empty array and return the index of its first appearance. Require that the input array contains the element. Ensure the returned index is the first appearance of the element.",
+    "signature": "method LinearSearch(a: array<int>, e: int) returns (n:int)",
+    "ground_truth_specs": "requires exists i::0<=i<a.Length && a[i]==e\n  ensures 0<=n<a.Length && a[n]==e\n  ensures forall k :: 0 <= k < n ==> a[k]!=e",
+    "prompt_skeleton": "method LinearSearch(a: array<int>, e: int) returns (n:int)\n  // TOFILL: requires and ensures\n{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}",
+    "implementation_body": "{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}",
+    "full_code": "method LinearSearch(a: array<int>, e: int) returns (n:int)\n  requires exists i::0<=i<a.Length && a[i]==e\n  ensures 0<=n<a.Length && a[n]==e\n  ensures forall k :: 0 <= k < n ==> a[k]!=e\n\n{\n  n :=0;\n  while n!=a.Length\n    invariant 0<=n<=a.Length\n    invariant forall i::0<=i<n ==> e!=a[i]\n  {\n    if e==a[n]{\n      return;\n    }\n    n:=n+1;\n  }\n}"
+  },
+  {
+    "task_id": 29,
+    "task_name": "linear_search3",
+    "docstring": "Linearly search for an existing element that satisfies a predicate in an array. Return the index of its first appearance. Require that the input array contains such an element. Ensure that no previous elements satisfy such predicate.",
+    "signature": "method LinearSearch3<T>(a: array<T>, P: T -> bool) returns (n: int)",
+    "ground_truth_specs": "requires exists i :: 0 <= i < a.Length && P(a[i])\n  ensures 0 <= n < a.Length && P(a[n])\n  ensures forall k :: 0 <= k < n ==> !P(a[k])",
+    "prompt_skeleton": "method LinearSearch3<T>(a: array<T>, P: T -> bool) returns (n: int)\n  // TOFILL: requires and ensures\n{\n  n := 0;\n  while true\n    invariant 0 <= n < a.Length\n    invariant exists i :: n <= i < a.Length && P(a[i])\n    invariant  forall k :: 0 <= k < n ==> !P(a[k])\n    decreases a.Length - n\n  {\n    if P(a[n]) {\n      return;\n    }\n    n := n + 1;\n  }\n}",
+    "implementation_body": "{\n  n := 0;\n  while true\n    invariant 0 <= n < a.Length\n    invariant exists i :: n <= i < a.Length && P(a[i])\n    invariant  forall k :: 0 <= k < n ==> !P(a[k])\n    decreases a.Length - n\n  {\n    if P(a[n]) {\n      return;\n    }\n    n := n + 1;\n  }\n}",
+    "full_code": "method LinearSearch3<T>(a: array<T>, P: T -> bool) returns (n: int)\n  requires exists i :: 0 <= i < a.Length && P(a[i])\n  ensures 0 <= n < a.Length && P(a[n])\n  ensures forall k :: 0 <= k < n ==> !P(a[k])\n{\n  n := 0;\n  while true\n    invariant 0 <= n < a.Length\n    invariant exists i :: n <= i < a.Length && P(a[i])\n    invariant  forall k :: 0 <= k < n ==> !P(a[k])\n    decreases a.Length - n\n  {\n    if P(a[n]) {\n      return;\n    }\n    n := n + 1;\n  }\n}"
+  },
+  {
+    "task_id": 30,
+    "task_name": "longest_prefix",
+    "docstring": "This method returns the longest common prefix between two possibly empty sequences of characters. Ensure first that the prefix is shorter than two inputs, then ensure that it is equal to the first few chars of the inputs. Then ensure that it is the longest prefix, which means that either prefix is equal to either of the inputs, or the next character in inputs does not equal.",
+    "signature": "method LongestCommonPrefix(str1: seq<char>, str2: seq<char>) returns (prefix: seq<char>)",
+    "ground_truth_specs": "ensures |prefix| <= |str1| && prefix == str1[0..|prefix|]&& |prefix| <= |str2| && prefix == str2[0..|prefix|]\n  ensures |prefix|==|str1| || |prefix|==|str2| || (str1[|prefix|]!=str2[|prefix|])",
+    "prompt_skeleton": "method LongestCommonPrefix(str1: seq<char>, str2: seq<char>) returns (prefix: seq<char>)\n  // TOFILL: requires and ensures\n{\n  prefix := [];\n  var minLength := if |str1| <|str2| then |str1| else |str2|;\n\n  for idx:= 0 to minLength\n    invariant |prefix|==idx <=  minLength<=|str1| && minLength<=|str2|\n    invariant |prefix| <= |str1| && prefix == str1[0..|prefix|]&& |prefix| <= |str2| && prefix == str2[0..|prefix|]\n  {\n    if str1[idx] != str2[idx] {\n      return;\n    }\n    prefix := prefix + [str1[idx]];\n  }\n}",
+    "implementation_body": "{\n  prefix := [];\n  var minLength := if |str1| <|str2| then |str1| else |str2|;\n\n  for idx:= 0 to minLength\n    invariant |prefix|==idx <=  minLength<=|str1| && minLength<=|str2|\n    invariant |prefix| <= |str1| && prefix == str1[0..|prefix|]&& |prefix| <= |str2| && prefix == str2[0..|prefix|]\n  {\n    if str1[idx] != str2[idx] {\n      return;\n    }\n    prefix := prefix + [str1[idx]];\n  }\n}",
+    "full_code": "method LongestCommonPrefix(str1: seq<char>, str2: seq<char>) returns (prefix: seq<char>)\n  ensures |prefix| <= |str1| && prefix == str1[0..|prefix|]&& |prefix| <= |str2| && prefix == str2[0..|prefix|]\n  ensures |prefix|==|str1| || |prefix|==|str2| || (str1[|prefix|]!=str2[|prefix|])\n{\n  prefix := [];\n  var minLength := if |str1| <|str2| then |str1| else |str2|;\n\n  for idx:= 0 to minLength\n    invariant |prefix|==idx <=  minLength<=|str1| && minLength<=|str2|\n    invariant |prefix| <= |str1| && prefix == str1[0..|prefix|]&& |prefix| <= |str2| && prefix == str2[0..|prefix|]\n  {\n    if str1[idx] != str2[idx] {\n      return;\n    }\n    prefix := prefix + [str1[idx]];\n  }\n}"
+  },
+  {
+    "task_id": 31,
+    "task_name": "max_array",
+    "docstring": "Returns the maximum value m present in the array a. Ensure that such an element appears in the array and is the maximum element.",
+    "signature": "method maxArray(a: array<int>) returns (m: int)",
+    "ground_truth_specs": "requires a.Length >= 1\n  ensures forall k :: 0 <= k < a.Length ==> m >= a[k]\n  ensures exists k :: 0 <= k < a.Length && m == a[k]",
+    "prompt_skeleton": "method maxArray(a: array<int>) returns (m: int)\n  // TOFILL: requires and ensures\n{\n  m := a[0];\n  var index := 1;\n  while (index < a.Length)\n    invariant 0 <= index <= a.Length\n    invariant forall k :: 0 <= k < index ==> m >= a[k]\n    invariant exists k :: 0 <= k < index && m == a[k]\n    decreases a.Length - index\n  {\n    m := if m>a[index] then  m else a[index];\n    index := index + 1;\n  }\n}",
+    "implementation_body": "{\n  m := a[0];\n  var index := 1;\n  while (index < a.Length)\n    invariant 0 <= index <= a.Length\n    invariant forall k :: 0 <= k < index ==> m >= a[k]\n    invariant exists k :: 0 <= k < index && m == a[k]\n    decreases a.Length - index\n  {\n    m := if m>a[index] then  m else a[index];\n    index := index + 1;\n  }\n}",
+    "full_code": "method maxArray(a: array<int>) returns (m: int)\n  requires a.Length >= 1\n  ensures forall k :: 0 <= k < a.Length ==> m >= a[k]\n  ensures exists k :: 0 <= k < a.Length && m == a[k]\n{\n  m := a[0];\n  var index := 1;\n  while (index < a.Length)\n    invariant 0 <= index <= a.Length\n    invariant forall k :: 0 <= k < index ==> m >= a[k]\n    invariant exists k :: 0 <= k < index && m == a[k]\n    decreases a.Length - index\n  {\n    m := if m>a[index] then  m else a[index];\n    index := index + 1;\n  }\n}"
+  },
+  {
+    "task_id": 32,
+    "task_name": "min_array",
+    "docstring": "Return the value of the minimum element in a non-empty array. Ensure that such an element appears in the array and is the minimum element.",
+    "signature": "method minArray(a: array<int>) returns (r:int)",
+    "ground_truth_specs": "requires a.Length > 0\n  ensures forall i :: 0 <= i < a.Length ==> r <= a[i]\n  ensures exists i :: 0 <= i < a.Length && r == a[i]",
+    "prompt_skeleton": "method minArray(a: array<int>) returns (r:int)\n  // TOFILL: requires and ensures\n{\n  r:=a[0];\n  var i:=1;\n  while i<a.Length\n    invariant 0 <= i <= a.Length\n    invariant forall x :: 0 <= x < i ==> r <= a[x]\n    invariant exists x :: 0 <= x < i && r == a[x]\n  {\n    if r>a[i]{\n      r:=a[i];\n    }\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  r:=a[0];\n  var i:=1;\n  while i<a.Length\n    invariant 0 <= i <= a.Length\n    invariant forall x :: 0 <= x < i ==> r <= a[x]\n    invariant exists x :: 0 <= x < i && r == a[x]\n  {\n    if r>a[i]{\n      r:=a[i];\n    }\n    i:=i+1;\n  }\n}",
+    "full_code": "method minArray(a: array<int>) returns (r:int)\n  requires a.Length > 0\n  ensures forall i :: 0 <= i < a.Length ==> r <= a[i]\n  ensures exists i :: 0 <= i < a.Length && r == a[i]\n{\n  r:=a[0];\n  var i:=1;\n  while i<a.Length\n    invariant 0 <= i <= a.Length\n    invariant forall x :: 0 <= x < i ==> r <= a[x]\n    invariant exists x :: 0 <= x < i && r == a[x]\n  {\n    if r>a[i]{\n      r:=a[i];\n    }\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 33,
+    "task_name": "min_of_two",
+    "docstring": "Return the min of two values.",
+    "signature": "method Min(x: int, y:int) returns (z: int)",
+    "ground_truth_specs": "ensures x<=y ==> z==x\n  ensures x>y ==> z==y",
+    "prompt_skeleton": "method Min(x: int, y:int) returns (z: int)\n  // TOFILL: requires and ensures\n{\n  if x < y {\n    return x;\n  } else {\n    return y;\n  }\n}",
+    "implementation_body": "{\n  if x < y {\n    return x;\n  } else {\n    return y;\n  }\n}",
+    "full_code": "method Min(x: int, y:int) returns (z: int)\n  ensures x<=y ==> z==x\n  ensures x>y ==> z==y\n{\n  if x < y {\n    return x;\n  } else {\n    return y;\n  }\n}"
+  },
+  {
+    "task_id": 34,
+    "task_name": "modify_2d_array",
+    "docstring": "Modifies the value at one specified index of a 2D array of natural numbers.\nRequire each inner array is unique.\nEnsure all first-order arraies is the same.\nEnsure that only 'arr[index1][index2]' is set to `val` and no other elements are changed.",
+    "signature": "method modify_array_element(arr: array<array<nat>>, index1: nat, index2: nat, val: nat)",
+    "ground_truth_specs": "requires index1 < arr.Length\n  requires index2 < arr[index1].Length\n  requires forall i: nat, j:nat :: i < arr.Length && j < arr.Length && i != j ==> arr[i] != arr[j]\n  modifies arr[index1]\n  ensures forall i: nat :: 0 <= i < arr.Length ==> arr[i] == old(arr[i])\n  ensures forall i: nat, j: nat :: 0 <= i < arr.Length && 0 <= j < arr[i].Length && (i != index1 || j != index2) ==> arr[i][j] == old(arr[i][j])\n  ensures  arr[index1][index2] == val",
+    "prompt_skeleton": "method modify_array_element(arr: array<array<nat>>, index1: nat, index2: nat, val: nat)\n  // TOFILL: requires and ensures\n{\n  arr[index1][index2] := val;\n}",
+    "implementation_body": "{\n  arr[index1][index2] := val;\n}",
+    "full_code": "method modify_array_element(arr: array<array<nat>>, index1: nat, index2: nat, val: nat)\n  requires index1 < arr.Length\n  requires index2 < arr[index1].Length\n  requires forall i: nat, j:nat :: i < arr.Length && j < arr.Length && i != j ==> arr[i] != arr[j]\n  modifies arr[index1]\n  ensures forall i: nat :: 0 <= i < arr.Length ==> arr[i] == old(arr[i])\n  ensures forall i: nat, j: nat :: 0 <= i < arr.Length && 0 <= j < arr[i].Length && (i != index1 || j != index2) ==> arr[i][j] == old(arr[i][j])\n  ensures  arr[index1][index2] == val\n{\n  arr[index1][index2] := val;\n}"
+  },
+  {
+    "task_id": 35,
+    "task_name": "multi_return",
+    "docstring": "Return the sum and difference of two integers.",
+    "signature": "method MultipleReturns(x: int, y: int) returns (more: int, less: int)",
+    "ground_truth_specs": "ensures more == x+y\n  ensures less == x-y",
+    "prompt_skeleton": "method MultipleReturns(x: int, y: int) returns (more: int, less: int)\n  // TOFILL: requires and ensures\n{\n  more := x + y;\n  less := x - y;\n}",
+    "implementation_body": "{\n  more := x + y;\n  less := x - y;\n}",
+    "full_code": "method MultipleReturns(x: int, y: int) returns (more: int, less: int)\n  ensures more == x+y\n  ensures less == x-y\n{\n  more := x + y;\n  less := x - y;\n}"
+  },
+  {
+    "task_id": 36,
+    "task_name": "online_max",
+    "docstring": "Require that the input array to be non-empty and x is an non-zero index into the array. Return the index of the first element that is strictly larger than m, the maximum element in the first x elements, or return the last index. Ensure the returned index is larger than or equal to x. Ensure the ghost variable represents the largest element in the first x elements of the array (DO NOT use max).",
+    "signature": "method onlineMax(a: array<int>, x: int) returns (ghost m:int, p:int)",
+    "ground_truth_specs": "requires 1<=x<a.Length\n  requires a.Length!=0\n  ensures x<=p<a.Length\n  ensures forall i::0<=i<x==> a[i]<=m\n  ensures exists i::0<=i<x && a[i]==m\n  ensures x<=p<a.Length-1 ==> (forall i::0<=i<p ==> a[i]<a[p])\n  ensures (forall i::x<=i<a.Length && a[i]<=m) ==> p==a.Length-1",
+    "prompt_skeleton": "method onlineMax(a: array<int>, x: int) returns (ghost m:int, p:int)\n  // TOFILL: requires and ensures\n{\n  p:= 0;\n  var best := a[0];\n  var i:=1;\n  while i<x\n    invariant 0<=i<=x\n    invariant forall j::0<=j<i==> a[j]<=best\n    invariant exists j::0<=j<i && a[j]==best\n  {\n    if a[i]>best{\n      best:=a[i];\n    }\n    i:=i+1;\n  }\n  m:=best;\n  i:=x;\n  while i<a.Length\n    invariant x<=i<=a.Length\n    invariant forall j::x<=j<i ==> a[j]<=m\n  {\n    if a[i]>best{\n      p:=i;\n      return;\n    }\n    i:=i+1;\n  }\n  p:=a.Length-1;\n\n}",
+    "implementation_body": "{\n  p:= 0;\n  var best := a[0];\n  var i:=1;\n  while i<x\n    invariant 0<=i<=x\n    invariant forall j::0<=j<i==> a[j]<=best\n    invariant exists j::0<=j<i && a[j]==best\n  {\n    if a[i]>best{\n      best:=a[i];\n    }\n    i:=i+1;\n  }\n  m:=best;\n  i:=x;\n  while i<a.Length\n    invariant x<=i<=a.Length\n    invariant forall j::x<=j<i ==> a[j]<=m\n  {\n    if a[i]>best{\n      p:=i;\n      return;\n    }\n    i:=i+1;\n  }\n  p:=a.Length-1;\n\n}",
+    "full_code": "method onlineMax(a: array<int>, x: int) returns (ghost m:int, p:int)\n  requires 1<=x<a.Length\n  requires a.Length!=0\n  ensures x<=p<a.Length\n  ensures forall i::0<=i<x==> a[i]<=m\n  ensures exists i::0<=i<x && a[i]==m\n  ensures x<=p<a.Length-1 ==> (forall i::0<=i<p ==> a[i]<a[p])\n  ensures (forall i::x<=i<a.Length && a[i]<=m) ==> p==a.Length-1\n{\n  p:= 0;\n  var best := a[0];\n  var i:=1;\n  while i<x\n    invariant 0<=i<=x\n    invariant forall j::0<=j<i==> a[j]<=best\n    invariant exists j::0<=j<i && a[j]==best\n  {\n    if a[i]>best{\n      best:=a[i];\n    }\n    i:=i+1;\n  }\n  m:=best;\n  i:=x;\n  while i<a.Length\n    invariant x<=i<=a.Length\n    invariant forall j::x<=j<i ==> a[j]<=m\n  {\n    if a[i]>best{\n      p:=i;\n      return;\n    }\n    i:=i+1;\n  }\n  p:=a.Length-1;\n\n}"
+  },
+  {
+    "task_id": 37,
+    "task_name": "only_once",
+    "docstring": "Determines whether key appears exactly once in the array a.",
+    "signature": "method only_once<T(==)>(a: array<T>, key: T) returns (b:bool)",
+    "ground_truth_specs": "ensures (multiset(a[..])[key] ==1 ) <==> b",
+    "prompt_skeleton": "method only_once<T(==)>(a: array<T>, key: T) returns (b:bool)\n  // TOFILL: requires and ensures\n{\n  var i := 0;\n  b := false;\n  var keyCount := 0;\n  while i < a.Length\n    invariant 0 <= i <= a.Length\n    invariant multiset(a[..i])[key] == keyCount\n    invariant b <==> (keyCount == 1)\n  {\n    if (a[i] == key)\n    {\n      keyCount := keyCount + 1;\n    }\n    if (keyCount == 1)\n    { b := true; }\n    else\n    { b := false; }\n    i := i + 1;\n  }\n\n  assert a[..a.Length] == a[..];\n}",
+    "implementation_body": "{\n  var i := 0;\n  b := false;\n  var keyCount := 0;\n  while i < a.Length\n    invariant 0 <= i <= a.Length\n    invariant multiset(a[..i])[key] == keyCount\n    invariant b <==> (keyCount == 1)\n  {\n    if (a[i] == key)\n    {\n      keyCount := keyCount + 1;\n    }\n    if (keyCount == 1)\n    { b := true; }\n    else\n    { b := false; }\n    i := i + 1;\n  }\n\n  assert a[..a.Length] == a[..];\n}",
+    "full_code": "method only_once<T(==)>(a: array<T>, key: T) returns (b:bool)\n  ensures (multiset(a[..])[key] ==1 ) <==> b\n{\n  var i := 0;\n  b := false;\n  var keyCount := 0;\n  while i < a.Length\n    invariant 0 <= i <= a.Length\n    invariant multiset(a[..i])[key] == keyCount\n    invariant b <==> (keyCount == 1)\n  {\n    if (a[i] == key)\n    {\n      keyCount := keyCount + 1;\n    }\n    if (keyCount == 1)\n    { b := true; }\n    else\n    { b := false; }\n    i := i + 1;\n  }\n\n  assert a[..a.Length] == a[..];\n}"
+  },
+  {
+    "task_id": 38,
+    "task_name": "quotient",
+    "docstring": "Find the quotient and remainder of a division of a dividsor and a dividend. \nRequire the dividend to be non-zero.\nEnsure that the divisor equals to quotient times dividend plus remainder. Ensure that the quotient and remainder are positive. Ensure the remainder less than th dividend.",
+    "signature": "method Quotient(x: nat, y:nat) returns (r:int, q:int)",
+    "ground_truth_specs": "requires y != 0\n  ensures q * y + r == x && 0 <= r < y && 0 <= q",
+    "prompt_skeleton": "method Quotient(x: nat, y:nat) returns (r:int, q:int)\n  // TOFILL: requires and ensures\n{\n  r:=x;\n  q:=0;\n  while y<=r\n    invariant q*y+r==x && r>=0\n    decreases r\n  {\n    r:=r-y;\n    q:=q+1;\n\n  }\n}",
+    "implementation_body": "{\n  r:=x;\n  q:=0;\n  while y<=r\n    invariant q*y+r==x && r>=0\n    decreases r\n  {\n    r:=r-y;\n    q:=q+1;\n\n  }\n}",
+    "full_code": "method Quotient(x: nat, y:nat) returns (r:int, q:int)\n  requires y != 0\n  ensures q * y + r == x && 0 <= r < y && 0 <= q\n{\n  r:=x;\n  q:=0;\n  while y<=r\n    invariant q*y+r==x && r>=0\n    decreases r\n  {\n    r:=r-y;\n    q:=q+1;\n\n  }\n}"
+  },
+  {
+    "task_id": 39,
+    "task_name": "remove_front",
+    "docstring": "Removes the front element from the array a and returns the resulting array c.",
+    "signature": "method remove_front(a:array<int>) returns (c:array<int>)",
+    "ground_truth_specs": "requires a.Length>0\n  ensures  a[1..] == c[..]",
+    "prompt_skeleton": "method remove_front(a:array<int>) returns (c:array<int>)\n  // TOFILL: requires and ensures\n{\n  c := new int[a.Length-1];\n  var i:= 1;\n  while (i < a.Length)\n    invariant 1 <= i <= a.Length\n    invariant forall ii::1<=ii<i ==> c[ii-1]==a[ii]\n  {\n    c[i-1] := a[i];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  c := new int[a.Length-1];\n  var i:= 1;\n  while (i < a.Length)\n    invariant 1 <= i <= a.Length\n    invariant forall ii::1<=ii<i ==> c[ii-1]==a[ii]\n  {\n    c[i-1] := a[i];\n    i:=i+1;\n  }\n}",
+    "full_code": "method remove_front(a:array<int>) returns (c:array<int>)\n  requires a.Length>0\n  ensures  a[1..] == c[..]\n{\n  c := new int[a.Length-1];\n  var i:= 1;\n  while (i < a.Length)\n    invariant 1 <= i <= a.Length\n    invariant forall ii::1<=ii<i ==> c[ii-1]==a[ii]\n  {\n    c[i-1] := a[i];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 40,
+    "task_name": "replace",
+    "docstring": "Replace all elements in the old array strictly greater than k with -1. Elements in the old array less than or equal to k remains unchanged. Use twostate specifiation. Distinguish old(arr) and arr.",
+    "signature": "method replace(arr: array<int>, k: int)",
+    "ground_truth_specs": "modifies arr\n  ensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) > k ==> arr[i] == -1\n  ensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) <= k ==> arr[i] == old(arr[i])",
+    "prompt_skeleton": "method replace(arr: array<int>, k: int)\n  // TOFILL: requires and ensures\n{\n  var i := 0;\n  while i < arr.Length\n    decreases arr.Length - i\n    invariant 0 <= i <= arr.Length\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) > k ==> arr[j] == -1\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) <= k ==> arr[j] == old(arr[j])\n    invariant forall j :: i <= j < arr.Length ==> old(arr[j]) == arr[j]\n  {\n    if arr[i] > k {\n      arr[i] := -1;\n    }\n    i := i + 1;\n  }\n}",
+    "implementation_body": "{\n  var i := 0;\n  while i < arr.Length\n    decreases arr.Length - i\n    invariant 0 <= i <= arr.Length\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) > k ==> arr[j] == -1\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) <= k ==> arr[j] == old(arr[j])\n    invariant forall j :: i <= j < arr.Length ==> old(arr[j]) == arr[j]\n  {\n    if arr[i] > k {\n      arr[i] := -1;\n    }\n    i := i + 1;\n  }\n}",
+    "full_code": "method replace(arr: array<int>, k: int)\n  modifies arr\n  ensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) > k ==> arr[i] == -1\n  ensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) <= k ==> arr[i] == old(arr[i])\n{\n  var i := 0;\n  while i < arr.Length\n    decreases arr.Length - i\n    invariant 0 <= i <= arr.Length\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) > k ==> arr[j] == -1\n    invariant forall j :: 0 <= j < i ==> old(arr[j]) <= k ==> arr[j] == old(arr[j])\n    invariant forall j :: i <= j < arr.Length ==> old(arr[j]) == arr[j]\n  {\n    if arr[i] > k {\n      arr[i] := -1;\n    }\n    i := i + 1;\n  }\n}"
+  },
+  {
+    "task_id": 41,
+    "task_name": "return_seven",
+    "docstring": "Return integer 7 regardless of input.",
+    "signature": "method M(x: int) returns (seven: int)",
+    "ground_truth_specs": "ensures seven==7",
+    "prompt_skeleton": "method M(x: int) returns (seven: int)\n  // TOFILL: requires and ensures\n{\n  seven := 7;\n}",
+    "implementation_body": "{\n  seven := 7;\n}",
+    "full_code": "method M(x: int) returns (seven: int)\n  ensures seven==7\n{\n  seven := 7;\n}"
+  },
+  {
+    "task_id": 42,
+    "task_name": "reverse",
+    "docstring": "This method reverses the provided integer array `a` in-place.",
+    "signature": "method reverse(a: array<int>)",
+    "ground_truth_specs": "modifies a\n  ensures forall i :: 0 <= i < a.Length ==> a[i] == old(a[a.Length - 1 - i])",
+    "prompt_skeleton": "method reverse(a: array<int>)\n  // TOFILL: requires and ensures\n{\n  var i := 0;\n  while i <a.Length / 2\n    invariant 0 <= i <= a.Length/2\n    invariant forall k :: 0 <= k < i || a.Length-1-i < k <= a.Length-1 ==> a[k] == old(a[a.Length-1-k])\n    invariant forall k :: i <= k <= a.Length-1-i ==> a[k] == old(a[k])\n  {\n    a[i], a[a.Length-1-i] := a[a.Length-1-i], a[i];\n    i := i + 1;\n  }\n}",
+    "implementation_body": "{\n  var i := 0;\n  while i <a.Length / 2\n    invariant 0 <= i <= a.Length/2\n    invariant forall k :: 0 <= k < i || a.Length-1-i < k <= a.Length-1 ==> a[k] == old(a[a.Length-1-k])\n    invariant forall k :: i <= k <= a.Length-1-i ==> a[k] == old(a[k])\n  {\n    a[i], a[a.Length-1-i] := a[a.Length-1-i], a[i];\n    i := i + 1;\n  }\n}",
+    "full_code": "method reverse(a: array<int>)\n  modifies a\n  ensures forall i :: 0 <= i < a.Length ==> a[i] == old(a[a.Length - 1 - i])\n{\n  var i := 0;\n  while i <a.Length / 2\n    invariant 0 <= i <= a.Length/2\n    invariant forall k :: 0 <= k < i || a.Length-1-i < k <= a.Length-1 ==> a[k] == old(a[a.Length-1-k])\n    invariant forall k :: i <= k <= a.Length-1-i ==> a[k] == old(a[k])\n  {\n    a[i], a[a.Length-1-i] := a[a.Length-1-i], a[i];\n    i := i + 1;\n  }\n}"
+  },
+  {
+    "task_id": 43,
+    "task_name": "rotate",
+    "docstring": "Rotate the array by the offset to the left.",
+    "signature": "method rotate(a: array<int>, offset:int) returns (b: array<int> )",
+    "ground_truth_specs": "requires 0<=offset\n  ensures b.Length==a.Length\n  ensures forall  i::0<=i<a.Length ==>  b[i]==a[(i+offset)%a.Length]",
+    "prompt_skeleton": "method rotate(a: array<int>, offset:int) returns (b: array<int> )\n  // TOFILL: requires and ensures\n{\n  b:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j ::0<=j<i ==> b[j]==a[(j+offset)%a.Length]\n  {\n    b[i]:=a[(i+offset)%a.Length];\n    i:=i+1;\n  }\n}",
+    "implementation_body": "{\n  b:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j ::0<=j<i ==> b[j]==a[(j+offset)%a.Length]\n  {\n    b[i]:=a[(i+offset)%a.Length];\n    i:=i+1;\n  }\n}",
+    "full_code": "method rotate(a: array<int>, offset:int) returns (b: array<int> )\n  requires 0<=offset\n  ensures b.Length==a.Length\n  ensures forall  i::0<=i<a.Length ==>  b[i]==a[(i+offset)%a.Length]\n{\n  b:= new int[a.Length];\n  var i:=0;\n  while i<a.Length\n    invariant 0<=i<=a.Length\n    invariant forall j ::0<=j<i ==> b[j]==a[(j+offset)%a.Length]\n  {\n    b[i]:=a[(i+offset)%a.Length];\n    i:=i+1;\n  }\n}"
+  },
+  {
+    "task_id": 44,
+    "task_name": "selectionsort",
+    "docstring": "Use selection sort to sort a possibly empty array. Ensure that all elements remain the same.",
+    "signature": "method SelectionSort(a: array<int>)",
+    "ground_truth_specs": "modifies a\n  ensures forall i,j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\n  ensures multiset(a[..]) == old(multiset(a[..]))",
+    "prompt_skeleton": "method SelectionSort(a: array<int>)\n  // TOFILL: requires and ensures\n{\n  var n:= 0;\n  while n != a.Length\n    invariant 0 <= n <= a.Length\n    invariant forall i, j :: 0 <= i < n <= j < a.Length ==> a[i] <= a[j]\n    invariant forall i,j :: 0 <= i < j < n ==> a[i] <= a[j]\n    invariant multiset(a[..]) == old(multiset(a[..]))\n  {\n    var mindex, m := n, n+1;\n    while m != a.Length\n      invariant n <= mindex < m <= a.Length\n      invariant forall i :: n <= i < m ==> a[mindex] <= a[i]\n    {\n      if a[m] < a[mindex] {\n        mindex := m;\n      }\n      m := m+1;\n    }\n    a[n], a[mindex] := a[mindex], a[n];\n    n := n+1;\n  }\n}",
+    "implementation_body": "{\n  var n:= 0;\n  while n != a.Length\n    invariant 0 <= n <= a.Length\n    invariant forall i, j :: 0 <= i < n <= j < a.Length ==> a[i] <= a[j]\n    invariant forall i,j :: 0 <= i < j < n ==> a[i] <= a[j]\n    invariant multiset(a[..]) == old(multiset(a[..]))\n  {\n    var mindex, m := n, n+1;\n    while m != a.Length\n      invariant n <= mindex < m <= a.Length\n      invariant forall i :: n <= i < m ==> a[mindex] <= a[i]\n    {\n      if a[m] < a[mindex] {\n        mindex := m;\n      }\n      m := m+1;\n    }\n    a[n], a[mindex] := a[mindex], a[n];\n    n := n+1;\n  }\n}",
+    "full_code": "method SelectionSort(a: array<int>)\n  modifies a\n  ensures forall i,j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\n  ensures multiset(a[..]) == old(multiset(a[..]))\n{\n  var n:= 0;\n  while n != a.Length\n    invariant 0 <= n <= a.Length\n    invariant forall i, j :: 0 <= i < n <= j < a.Length ==> a[i] <= a[j]\n    invariant forall i,j :: 0 <= i < j < n ==> a[i] <= a[j]\n    invariant multiset(a[..]) == old(multiset(a[..]))\n  {\n    var mindex, m := n, n+1;\n    while m != a.Length\n      invariant n <= mindex < m <= a.Length\n      invariant forall i :: n <= i < m ==> a[mindex] <= a[i]\n    {\n      if a[m] < a[mindex] {\n        mindex := m;\n      }\n      m := m+1;\n    }\n    a[n], a[mindex] := a[mindex], a[n];\n    n := n+1;\n  }\n}"
+  },
+  {
+    "task_id": 45,
+    "task_name": "seq_to_array",
+    "docstring": "Convert a sequence into an array in the original order.",
+    "signature": "method ToArray<T>(xs: seq<T>) returns (a: array<T>)",
+    "ground_truth_specs": "ensures fresh(a)\n  ensures a.Length == |xs|\n  ensures forall i :: 0 <= i < |xs| ==> a[i] == xs[i]",
+    "prompt_skeleton": "method ToArray<T>(xs: seq<T>) returns (a: array<T>)\n  // TOFILL: requires and ensures\n{\n  a := new T[|xs|](i requires 0 <= i < |xs| => xs[i]);\n}",
+    "implementation_body": "{\n  a := new T[|xs|](i requires 0 <= i < |xs| => xs[i]);\n}",
+    "full_code": "method ToArray<T>(xs: seq<T>) returns (a: array<T>)\n  ensures fresh(a)\n  ensures a.Length == |xs|\n  ensures forall i :: 0 <= i < |xs| ==> a[i] == xs[i]\n{\n  a := new T[|xs|](i requires 0 <= i < |xs| => xs[i]);\n}"
+  },
+  {
+    "task_id": 46,
+    "task_name": "set_to_seq",
+    "docstring": "Convert a set into a seq. Ensure that the set contains the same set of elements as the seq.",
+    "signature": "method SetToSeq<T>(s: set<T>) returns (xs: seq<T>)",
+    "ground_truth_specs": "ensures multiset(s) == multiset(xs)",
+    "prompt_skeleton": "method SetToSeq<T>(s: set<T>) returns (xs: seq<T>)\n  // TOFILL: requires and ensures\n{\n  xs := [];\n  var left: set<T> := s;\n  while left != {}\n    invariant multiset(left) + multiset(xs) == multiset(s)\n  {\n    var x :| x in left;\n    left := left - {x};\n    xs := xs + [x];\n  }\n}",
+    "implementation_body": "{\n  xs := [];\n  var left: set<T> := s;\n  while left != {}\n    invariant multiset(left) + multiset(xs) == multiset(s)\n  {\n    var x :| x in left;\n    left := left - {x};\n    xs := xs + [x];\n  }\n}",
+    "full_code": "method SetToSeq<T>(s: set<T>) returns (xs: seq<T>)\n  ensures multiset(s) == multiset(xs)\n{\n  xs := [];\n  var left: set<T> := s;\n  while left != {}\n    invariant multiset(left) + multiset(xs) == multiset(s)\n  {\n    var x :| x in left;\n    left := left - {x};\n    xs := xs + [x];\n  }\n}"
+  },
+  {
+    "task_id": 47,
+    "task_name": "slope_search",
+    "docstring": "Search for the index of an existing key in a slope represented by an 2-D array. Require the slope to be a plane whose height is non-decreasing on the same x-axis (horizontal line) or same y-axis (vertical line). Require that such an element exists.",
+    "signature": "method SlopeSearch(a: array2<int>, key: int) returns (m:int, n:int)",
+    "ground_truth_specs": "requires forall i,j,j'::0<=i<a.Length0 && 0<=j<j'<a.Length1 ==> a[i,j]<=a[i,j']\n  requires forall i,i',j::0<=i<i'<a.Length0 && 0<=j<a.Length1 ==> a[i,j]<=a[i',j]\n  requires exists i,j :: 0<=i<a.Length0 && 0<=j<a.Length1 && a[i,j]==key\n  ensures 0<=m<a.Length0 && 0<=n<a.Length1\n  ensures a[m,n]==key",
+    "prompt_skeleton": "method SlopeSearch(a: array2<int>, key: int) returns (m:int, n:int)\n  // TOFILL: requires and ensures\n{\n  m,n:=0, a.Length1-1;\n  while a[m,n] !=key\n    invariant 0<=m<a.Length0 && 0<=n<a.Length1\n    invariant exists i,j :: m<=i<a.Length0 && 0<=j<=n && a[i,j]==key\n    decreases a.Length0-m+n\n  {\n    if a[m,n] < key {\n      m:=m+1;\n\n    }else{\n      n:=n-1;\n    }\n  }\n}",
+    "implementation_body": "{\n  m,n:=0, a.Length1-1;\n  while a[m,n] !=key\n    invariant 0<=m<a.Length0 && 0<=n<a.Length1\n    invariant exists i,j :: m<=i<a.Length0 && 0<=j<=n && a[i,j]==key\n    decreases a.Length0-m+n\n  {\n    if a[m,n] < key {\n      m:=m+1;\n\n    }else{\n      n:=n-1;\n    }\n  }\n}",
+    "full_code": "method SlopeSearch(a: array2<int>, key: int) returns (m:int, n:int)\n  requires forall i,j,j'::0<=i<a.Length0 && 0<=j<j'<a.Length1 ==> a[i,j]<=a[i,j']\n  requires forall i,i',j::0<=i<i'<a.Length0 && 0<=j<a.Length1 ==> a[i,j]<=a[i',j]\n  requires exists i,j :: 0<=i<a.Length0 && 0<=j<a.Length1 && a[i,j]==key\n  ensures 0<=m<a.Length0 && 0<=n<a.Length1\n  ensures a[m,n]==key\n{\n  m,n:=0, a.Length1-1;\n  while a[m,n] !=key\n    invariant 0<=m<a.Length0 && 0<=n<a.Length1\n    invariant exists i,j :: m<=i<a.Length0 && 0<=j<=n && a[i,j]==key\n    decreases a.Length0-m+n\n  {\n    if a[m,n] < key {\n      m:=m+1;\n\n    }else{\n      n:=n-1;\n    }\n  }\n}"
+  },
+  {
+    "task_id": 48,
+    "task_name": "swap",
+    "docstring": "Swap two integers.",
+    "signature": "method Swap(X: int, Y: int) returns(x: int, y: int)",
+    "ground_truth_specs": "ensures x==Y\n  ensures y==X",
+    "prompt_skeleton": "method Swap(X: int, Y: int) returns(x: int, y: int)\n  // TOFILL: requires and ensures\n{\n  x, y := X, Y;\n\n  var tmp := x;\n  x := y;\n  y := tmp;\n\n  assert x == Y && y == X;\n}",
+    "implementation_body": "{\n  x, y := X, Y;\n\n  var tmp := x;\n  x := y;\n  y := tmp;\n\n  assert x == Y && y == X;\n}",
+    "full_code": "method Swap(X: int, Y: int) returns(x: int, y: int)\n  ensures x==Y\n  ensures y==X\n{\n  x, y := X, Y;\n\n  var tmp := x;\n  x := y;\n  y := tmp;\n\n  assert x == Y && y == X;\n}"
+  },
+  {
+    "task_id": 49,
+    "task_name": "swap_arith",
+    "docstring": "Swap two integers. There are no restrictions on the inputs.",
+    "signature": "method SwapArithmetic(X: int, Y: int) returns(x: int, y: int)",
+    "ground_truth_specs": "ensures x==Y\n  ensures y==X",
+    "prompt_skeleton": "method SwapArithmetic(X: int, Y: int) returns(x: int, y: int)\n  // TOFILL: requires and ensures\n{\n  x, y := X, Y;\n\n  x := y - x;\n  y := y - x;\n  x := y + x;\n\n}",
+    "implementation_body": "{\n  x, y := X, Y;\n\n  x := y - x;\n  y := y - x;\n  x := y + x;\n\n}",
+    "full_code": "method SwapArithmetic(X: int, Y: int) returns(x: int, y: int)\n  ensures x==Y\n  ensures y==X\n\n{\n  x, y := X, Y;\n\n  x := y - x;\n  y := y - x;\n  x := y + x;\n\n}"
+  },
+  {
+    "task_id": 50,
+    "task_name": "swap_bitvector",
+    "docstring": "Swap two bitvectors.",
+    "signature": "method SwapBitvectors(X: bv8, Y: bv8) returns(x: bv8, y: bv8)",
+    "ground_truth_specs": "ensures x==Y\n  ensures y==X",
+    "prompt_skeleton": "method SwapBitvectors(X: bv8, Y: bv8) returns(x: bv8, y: bv8)\n  // TOFILL: requires and ensures\n{\n  x, y := X, Y;\n\n  x := x ^ y;\n  y := x ^ y;\n  x := x ^ y;\n\n}",
+    "implementation_body": "{\n  x, y := X, Y;\n\n  x := x ^ y;\n  y := x ^ y;\n  x := x ^ y;\n\n}",
+    "full_code": "method SwapBitvectors(X: bv8, Y: bv8) returns(x: bv8, y: bv8)\n  ensures x==Y\n  ensures y==X\n{\n  x, y := X, Y;\n\n  x := x ^ y;\n  y := x ^ y;\n  x := x ^ y;\n\n}"
+  },
+  {
+    "task_id": 51,
+    "task_name": "swap_in_array",
+    "docstring": "Swaps the elements at indices i and j in the array arr and make sure no other elements change.",
+    "signature": "method swap(arr: array<int>, i: int, j: int)",
+    "ground_truth_specs": "requires 0 <= i < arr.Length && 0 <= j < arr.Length\n  modifies arr\n  ensures arr[i] == old(arr[j]) && arr[j] == old(arr[i])\n  ensures forall k :: 0 <= k < arr.Length && k != i && k != j ==> arr[k] == old(arr[k])",
+    "prompt_skeleton": "method swap(arr: array<int>, i: int, j: int)\n  // TOFILL: requires and ensures\n{\n  var tmp := arr[i];\n  arr[i] := arr[j];\n  arr[j] := tmp;\n}",
+    "implementation_body": "{\n  var tmp := arr[i];\n  arr[i] := arr[j];\n  arr[j] := tmp;\n}",
+    "full_code": "method swap(arr: array<int>, i: int, j: int)\n  requires 0 <= i < arr.Length && 0 <= j < arr.Length\n  modifies arr\n  ensures arr[i] == old(arr[j]) && arr[j] == old(arr[i])\n  ensures forall k :: 0 <= k < arr.Length && k != i && k != j ==> arr[k] == old(arr[k])\n{\n  var tmp := arr[i];\n  arr[i] := arr[j];\n  arr[j] := tmp;\n}"
+  },
+  {
+    "task_id": 52,
+    "task_name": "swap_sim",
+    "docstring": "Simultaneously swaps the values of X and Y and returns the swapped values as x and y.",
+    "signature": "method SwapSimultaneous(X: int, Y: int) returns(x: int, y: int)",
+    "ground_truth_specs": "ensures x==Y\n  ensures y==X",
+    "prompt_skeleton": "method SwapSimultaneous(X: int, Y: int) returns(x: int, y: int)\n  // TOFILL: requires and ensures\n{\n  x, y := X, Y;\n  x, y := y, x;\n}",
+    "implementation_body": "{\n  x, y := X, Y;\n  x, y := y, x;\n}",
+    "full_code": "method SwapSimultaneous(X: int, Y: int) returns(x: int, y: int)\n  ensures x==Y\n  ensures y==X\n{\n  x, y := X, Y;\n  x, y := y, x;\n}"
+  },
+  {
+    "task_id": 53,
+    "task_name": "test_array",
+    "docstring": "Test an array assignment operation. Index j is within range of array. Assign index j to be 60. All other elements remain unchanged.",
+    "signature": "method TestArrayElements(a:array<int>, j: nat)",
+    "ground_truth_specs": "requires 0<=j < a.Length\n  modifies a\n  ensures a[j] == 60\n  ensures forall k :: 0 <= k < a.Length && k != j ==> a[k] == old(a[k])",
+    "prompt_skeleton": "method TestArrayElements(a:array<int>, j: nat)\n  // TOFILL: requires and ensures\n{\n  a[j] := 60;\n}",
+    "implementation_body": "{\n  a[j] := 60;\n}",
+    "full_code": "method TestArrayElements(a:array<int>, j: nat)\n  requires 0<=j < a.Length\n  modifies a\n  ensures a[j] == 60\n  ensures forall k :: 0 <= k < a.Length && k != j ==> a[k] == old(a[k])\n{\n  a[j] := 60;\n}"
+  },
+  {
+    "task_id": 54,
+    "task_name": "triple",
+    "docstring": "Triple the input.",
+    "signature": "method Triple (x:int) returns (r:int)",
+    "ground_truth_specs": "ensures r==3*x",
+    "prompt_skeleton": "method Triple (x:int) returns (r:int)\n  // TOFILL: requires and ensures\n{\n  r:= x*3;\n}",
+    "implementation_body": "{\n  r:= x*3;\n}",
+    "full_code": "method Triple (x:int) returns (r:int)\n  ensures r==3*x\n{\n  r:= x*3;\n}"
+  },
+  {
+    "task_id": 55,
+    "task_name": "triple2",
+    "docstring": "Triple the input. There are no restrictions on the input.",
+    "signature": "method Triple (x:int) returns (r:int)",
+    "ground_truth_specs": "ensures r==3*x",
+    "prompt_skeleton": "method Triple (x:int) returns (r:int)\n  // TOFILL: requires and ensures\n{\n  if {\n    case x<18 =>\n      var a,b := 2*x, 4*x;\n      r:=(a+b)/2;\n    case 0<=x =>\n      var y:=2*x;\n      r:= x+y;\n  }\n}",
+    "implementation_body": "{\n  if {\n    case x<18 =>\n      var a,b := 2*x, 4*x;\n      r:=(a+b)/2;\n    case 0<=x =>\n      var y:=2*x;\n      r:= x+y;\n  }\n}",
+    "full_code": "method Triple (x:int) returns (r:int)\n  ensures r==3*x\n{\n  if {\n    case x<18 =>\n      var a,b := 2*x, 4*x;\n      r:=(a+b)/2;\n    case 0<=x =>\n      var y:=2*x;\n      r:= x+y;\n  }\n}"
+  },
+  {
+    "task_id": 56,
+    "task_name": "triple3",
+    "docstring": "Triple the input. There are no restrictions on the input.",
+    "signature": "method Triple (x:int) returns (r:int)",
+    "ground_truth_specs": "ensures r==3*x",
+    "prompt_skeleton": "method Triple (x:int) returns (r:int)\n  // TOFILL: requires and ensures\n{\n  if x==0 {\n    r:=0;\n  }\n  else{\n    var y:=2*x;\n    r:= x+y;\n  }\n}",
+    "implementation_body": "{\n  if x==0 {\n    r:=0;\n  }\n  else{\n    var y:=2*x;\n    r:= x+y;\n  }\n}",
+    "full_code": "method Triple (x:int) returns (r:int)\n  ensures r==3*x\n{\n  if x==0 {\n    r:=0;\n  }\n  else{\n    var y:=2*x;\n    r:= x+y;\n  }\n}"
+  },
+  {
+    "task_id": 57,
+    "task_name": "triple4",
+    "docstring": "Returns the triple of the input value x.",
+    "signature": "method Triple (x:int) returns (r:int)",
+    "ground_truth_specs": "ensures r==3*x",
+    "prompt_skeleton": "method Triple (x:int) returns (r:int)\n  // TOFILL: requires and ensures\n{\n  var y:= x*2;\n  r := y+x;\n}",
+    "implementation_body": "{\n  var y:= x*2;\n  r := y+x;\n}",
+    "full_code": "method Triple (x:int) returns (r:int)\n  ensures r==3*x\n{\n  var y:= x*2;\n  r := y+x;\n}"
+  },
+  {
+    "task_id": 58,
+    "task_name": "two_sum",
+    "docstring": "Given an array of integers nums and an integer target, return the first pair of indices i < j of the two numbers such that they add up to target. \nRequire that such pair (i , j) exist in the array. \nEnsure for all i less than returned i and for all j, that no other i, j exists.\nEnsure for all j between returned i j, no other j exist.",
+    "signature": "method twoSum(nums: array<int>, target: int) returns (i: int, j: int)",
+    "ground_truth_specs": "requires nums.Length > 1\n  requires exists i,j::0 <= i < j < nums.Length &&  nums[i] + nums[j] == target\n  ensures 0 <= i < j < nums.Length && nums[i] + nums[j] == target\n  ensures forall ii,jj:: (0 <= ii < i && ii < jj < nums.Length)  ==> nums[ii] + nums[jj] != target\n  ensures forall jj:: i < jj < j ==> nums[i] + nums[jj] != target",
+    "prompt_skeleton": "method twoSum(nums: array<int>, target: int) returns (i: int, j: int)\n  // TOFILL: requires and ensures\n{\n  var n := nums.Length;\n  i := 0;\n  j := 1;\n  while i < n - 1\n    invariant 0 <= i < j <= n\n    invariant forall ii, jj :: 0 <= ii < i && ii < jj < n ==> nums[ii] + nums[jj] != target\n  {\n    j := i + 1;\n    while j < n\n      invariant 0 <= i < j <= n\n      invariant forall jj :: i < jj < j ==> nums[i] + nums[jj] != target\n    {\n      if nums[i] + nums[j] == target {\n        return;\n      }\n      j := j + 1;\n    }\n\n    i := i + 1;\n  }\n}",
+    "implementation_body": "{\n  var n := nums.Length;\n  i := 0;\n  j := 1;\n  while i < n - 1\n    invariant 0 <= i < j <= n\n    invariant forall ii, jj :: 0 <= ii < i && ii < jj < n ==> nums[ii] + nums[jj] != target\n  {\n    j := i + 1;\n    while j < n\n      invariant 0 <= i < j <= n\n      invariant forall jj :: i < jj < j ==> nums[i] + nums[jj] != target\n    {\n      if nums[i] + nums[j] == target {\n        return;\n      }\n      j := j + 1;\n    }\n\n    i := i + 1;\n  }\n}",
+    "full_code": "method twoSum(nums: array<int>, target: int) returns (i: int, j: int)\n  requires nums.Length > 1\n  requires exists i,j::0 <= i < j < nums.Length &&  nums[i] + nums[j] == target\n  ensures 0 <= i < j < nums.Length && nums[i] + nums[j] == target\n  ensures forall ii,jj:: (0 <= ii < i && ii < jj < nums.Length)  ==> nums[ii] + nums[jj] != target\n  ensures forall jj:: i < jj < j ==> nums[i] + nums[jj] != target\n{\n  var n := nums.Length;\n  i := 0;\n  j := 1;\n  while i < n - 1\n    invariant 0 <= i < j <= n\n    invariant forall ii, jj :: 0 <= ii < i && ii < jj < n ==> nums[ii] + nums[jj] != target\n  {\n    j := i + 1;\n    while j < n\n      invariant 0 <= i < j <= n\n      invariant forall jj :: i < jj < j ==> nums[i] + nums[jj] != target\n    {\n      if nums[i] + nums[j] == target {\n        return;\n      }\n      j := j + 1;\n    }\n\n    i := i + 1;\n  }\n}"
+  },
+  {
+    "task_id": 59,
+    "task_name": "update_array",
+    "docstring": "Verify some array assignment operations. Index 7 is assigned to 516. Index 4 increments by 3. All other elements stay the same. The array is at least 8 in length.",
+    "signature": "method UpdateElements(a: array<int>)",
+    "ground_truth_specs": "requires a.Length >= 8\n  modifies a\n  ensures old(a[4]) +3 == a[4]\n  ensures a[7]==516\n  ensures forall i::0 <= i<a.Length ==> i != 7 && i != 4 ==> a[i] == old(a[i])",
+    "prompt_skeleton": "method UpdateElements(a: array<int>)\n  // TOFILL: requires and ensures\n{\n  a[4] := a[4] + 3;\n  a[7] := 516;\n}",
+    "implementation_body": "{\n  a[4] := a[4] + 3;\n  a[7] := 516;\n}",
+    "full_code": "method UpdateElements(a: array<int>)\n  requires a.Length >= 8\n  modifies a\n  ensures old(a[4]) +3 == a[4]\n  ensures a[7]==516\n  ensures forall i::0 <= i<a.Length ==> i != 7 && i != 4 ==> a[i] == old(a[i])\n{\n  a[4] := a[4] + 3;\n  a[7] := 516;\n}"
+  },
+  {
+    "task_id": 60,
+    "task_name": "update_map",
+    "docstring": "Merges two maps m1 and m2, where keys present in m2 take precedence over m1. Ensure no new elements appear.",
+    "signature": "method update_map<K(!new), V>(m1: map<K, V>, m2: map<K, V>) returns (r: map<K, V>)",
+    "ground_truth_specs": "ensures (forall k :: k in m2 ==> k in r)\n  ensures (forall k :: k in m1 ==> k in r)\n  ensures  (forall k :: k in m2 ==> r[k] == m2[k])\n  ensures  (forall k :: !(k in m2) && k in m1 ==> r[k] == m1[k])\n  ensures  (forall k :: !(k in m2) && !(k in m1) ==> !(k in r))",
+    "prompt_skeleton": "method update_map<K(!new), V>(m1: map<K, V>, m2: map<K, V>) returns (r: map<K, V>)\n  // TOFILL: requires and ensures\n{\n  r:= map k | k in (m1.Keys + m2.Keys) :: if k in m2 then m2[k] else m1[k];\n}",
+    "implementation_body": "{\n  r:= map k | k in (m1.Keys + m2.Keys) :: if k in m2 then m2[k] else m1[k];\n}",
+    "full_code": "method update_map<K(!new), V>(m1: map<K, V>, m2: map<K, V>) returns (r: map<K, V>)\n  ensures (forall k :: k in m2 ==> k in r)\n  ensures (forall k :: k in m1 ==> k in r)\n  ensures  (forall k :: k in m2 ==> r[k] == m2[k])\n  ensures  (forall k :: !(k in m2) && k in m1 ==> r[k] == m1[k])\n  ensures  (forall k :: !(k in m2) && !(k in m1) ==> !(k in r))\n{\n  r:= map k | k in (m1.Keys + m2.Keys) :: if k in m2 then m2[k] else m1[k];\n}"
+  }
+]

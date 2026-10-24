@@ -1,0 +1,1448 @@
+{
+  "abs": {
+    "task_name": "abs",
+    "total_mutants": 9,
+    "killable_mutants_count": 7,
+    "equivalent_mutants_count": 2,
+    "killable_mutant_ids": [
+      "ROR_L2_f2eda520",
+      "ROR_L2_7ba32b12",
+      "CID_L2_47e8c364",
+      "AOR_L3_02cca20b",
+      "AOR_L3_24d87683",
+      "RSM_L3_a01f19e0",
+      "RSM_L5_d1a9812d"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L2_fb87db80",
+      "CR_L2_016bc3df"
+    ],
+    "gt_raw_score": 0.7778
+  },
+  "all_digits": {
+    "task_name": "all_digits",
+    "total_mutants": 6,
+    "killable_mutants_count": 6,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L3_0739e411",
+      "CR_L6_1fd40601",
+      "CR_L6_67a60c49",
+      "CR_L6_1c0f8846",
+      "CID_L6_da18f6b4",
+      "RSM_L7_d27cc11c"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "array_append": {
+    "task_name": "array_append",
+    "total_mutants": 12,
+    "killable_mutants_count": 11,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "AOR_L2_5cd9f96f",
+      "AOR_L2_8aba4724",
+      "CR_L2_2cff4ff4",
+      "CR_L2_09844868",
+      "CR_L3_d922b2a3",
+      "ROR_L4_5effb516",
+      "ROR_L4_39543edb",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_57edb131"
+    ],
+    "gt_raw_score": 0.9167
+  },
+  "array_concat": {
+    "task_name": "array_concat",
+    "total_mutants": 15,
+    "killable_mutants_count": 14,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "AOR_L2_2bbfbe29",
+      "AOR_L2_8e84b317",
+      "CR_L3_d922b2a3",
+      "ROR_L4_4bb9933c",
+      "ROR_L4_16d71143",
+      "ROR_L8_e714bd26",
+      "ROR_L8_779fcf34",
+      "ROR_L8_44bcf512",
+      "AOR_L8_486582af",
+      "AOR_L8_69bb94fd",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_52961c30"
+    ],
+    "gt_raw_score": 0.9333
+  },
+  "array_copy": {
+    "task_name": "array_copy",
+    "total_mutants": 8,
+    "killable_mutants_count": 7,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L3_d922b2a3",
+      "ROR_L4_70940b73",
+      "ROR_L4_d5f71c02",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_5d790b97"
+    ],
+    "gt_raw_score": 0.875
+  },
+  "array_product": {
+    "task_name": "array_product",
+    "total_mutants": 10,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L3_1087b9d5",
+      "ROR_L4_99f5f0f9",
+      "ROR_L4_a9c5f401",
+      "AOR_L8_e562c945",
+      "AOR_L8_377b6056",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_ed1d0055"
+    ],
+    "gt_raw_score": 0.9
+  },
+  "array_sum": {
+    "task_name": "array_sum",
+    "total_mutants": 10,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L3_1087b9d5",
+      "ROR_L4_99f5f0f9",
+      "ROR_L4_a9c5f401",
+      "AOR_L8_b75d912e",
+      "AOR_L8_114c2596",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_ed1d0055"
+    ],
+    "gt_raw_score": 0.9
+  },
+  "avg": {
+    "task_name": "avg",
+    "total_mutants": 5,
+    "killable_mutants_count": 5,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_fbf9e20c",
+      "AOR_L2_0a3c8d3c",
+      "CR_L2_0b5d1505",
+      "CR_L2_c70af419",
+      "CR_L2_5b4980bd"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "below_zero": {
+    "task_name": "below_zero",
+    "total_mutants": 42,
+    "killable_mutants_count": 38,
+    "equivalent_mutants_count": 4,
+    "killable_mutant_ids": [
+      "AOR_L3_133bdaf7",
+      "AOR_L3_fcd417ad",
+      "CR_L3_0d21f757",
+      "CR_L3_538ed157",
+      "CR_L4_4e200b33",
+      "CR_L5_3f1b92a6",
+      "ROR_L6_ded9874d",
+      "ROR_L6_4c1d7a6b",
+      "ROR_L12_59bfcedd",
+      "ROR_L12_d6009057",
+      "CR_L12_7a143f0d",
+      "CID_L12_5a38e22f",
+      "AOR_L13_d98ab781",
+      "AOR_L13_0ed7aceb",
+      "AOR_L13_599536f2",
+      "AOR_L13_05d2d590",
+      "AOR_L13_2c6e7da2",
+      "AOR_L13_0e2fded0",
+      "CR_L13_7274d436",
+      "CR_L13_807e699a",
+      "CR_L13_c3d77285",
+      "CR_L13_4cdb22f8",
+      "AOR_L15_466bf9b4",
+      "AOR_L15_b68dfcfe",
+      "CR_L15_edf9fa52",
+      "CR_L15_9fd29e57",
+      "ROR_L18_be79b699",
+      "ROR_L18_f2b709a0",
+      "ROR_L22_40e4f010",
+      "ROR_L22_7bdaae1d",
+      "ROR_L22_6fb0facc",
+      "CR_L22_53648c0b",
+      "CID_L22_5e275b83",
+      "RSM_L24_0fb7eb72",
+      "AOR_L26_612de198",
+      "AOR_L26_91de23a7",
+      "CR_L26_87c31533",
+      "CR_L26_b032fed6"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L6_71e5d5c9",
+      "ROR_L12_7e180d45",
+      "CR_L17_d9e1a5e5",
+      "ROR_L18_bd4c7cdd"
+    ],
+    "gt_raw_score": 0.9048
+  },
+  "binary_search": {
+    "task_name": "binary_search",
+    "total_mutants": 17,
+    "killable_mutants_count": 16,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_6b173bfe",
+      "ROR_L3_e4bfe705",
+      "ROR_L3_a49c9965",
+      "AOR_L8_4636e1d8",
+      "AOR_L8_18e24ed4",
+      "CR_L8_caf20dfa",
+      "CR_L8_0d8810b4",
+      "CR_L8_16b32276",
+      "ROR_L9_1c0b484f",
+      "ROR_L9_e4ff2905",
+      "ROR_L9_08eec416",
+      "CID_L9_9d28f57a",
+      "AOR_L10_0256d76c",
+      "AOR_L10_3e024833",
+      "CR_L10_f6aaf2c6",
+      "CR_L10_230be026"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_d8199583"
+    ],
+    "gt_raw_score": 0.9412
+  },
+  "bubble_sort": {
+    "task_name": "bubble_sort",
+    "total_mutants": 35,
+    "killable_mutants_count": 33,
+    "equivalent_mutants_count": 2,
+    "killable_mutant_ids": [
+      "AOR_L2_b9b4e5e3",
+      "AOR_L2_9d6b0d29",
+      "CR_L2_4c8b35a3",
+      "CR_L2_af48bd63",
+      "ROR_L3_2cb129c7",
+      "ROR_L3_424f0f2e",
+      "ROR_L3_13b65a42",
+      "CR_L3_aedc8b51",
+      "CR_L10_d047d77b",
+      "ROR_L11_0db330d5",
+      "ROR_L11_e86cc1ac",
+      "ROR_L18_e47b1e7c",
+      "ROR_L18_103a5b91",
+      "AOR_L18_efaf7c8a",
+      "AOR_L18_19e1f868",
+      "CR_L18_128e207e",
+      "CR_L18_adc6469f",
+      "AOR_L20_59abf6c7",
+      "AOR_L20_f8cae8a8",
+      "AOR_L20_a286dc7c",
+      "AOR_L20_c073b7cc",
+      "CR_L20_fcf2bc99",
+      "CR_L20_314976ed",
+      "CR_L20_41a54795",
+      "CR_L20_be2b4f54",
+      "AOR_L22_472d7465",
+      "AOR_L22_0512f817",
+      "CR_L22_2cc129bb",
+      "CR_L22_71784ea2",
+      "AOR_L24_591cf5d2",
+      "AOR_L24_c9e576c2",
+      "CR_L24_3826816d",
+      "CR_L24_ce03c78b"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L11_0b7e2901",
+      "ROR_L18_ca3c22ec"
+    ],
+    "gt_raw_score": 0.9429
+  },
+  "cal_ans": {
+    "task_name": "cal_ans",
+    "total_mutants": 24,
+    "killable_mutants_count": 21,
+    "equivalent_mutants_count": 3,
+    "killable_mutant_ids": [
+      "CR_L3_a7eaf760",
+      "CR_L3_e79c4d2e",
+      "CR_L3_f81485b6",
+      "CR_L3_c2a1dc58",
+      "ROR_L4_dc85dda6",
+      "ROR_L4_b874b652",
+      "CR_L4_bc230192",
+      "AOR_L7_34122bc8",
+      "AOR_L7_3314b719",
+      "CR_L7_a5de276d",
+      "CR_L7_679470c1",
+      "AOR_L8_c31c730d",
+      "AOR_L8_9f84faab",
+      "AOR_L8_decb23c0",
+      "AOR_L8_5d30dc56",
+      "CR_L8_8688e676",
+      "CR_L8_56cf65ea",
+      "CR_L8_b4fde721",
+      "CR_L8_1ed1aec1",
+      "CR_L8_374135c8",
+      "CR_L8_1a11aab6"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_f6475737",
+      "CR_L4_d5e27f8b",
+      "CR_L4_788062c6"
+    ],
+    "gt_raw_score": 0.875
+  },
+  "cal_sum": {
+    "task_name": "cal_sum",
+    "total_mutants": 9,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_4f76314e",
+      "CR_L3_293fae39",
+      "ROR_L4_f8a860a1",
+      "AOR_L8_2c2a2ceb",
+      "AOR_L8_740d5371",
+      "CR_L8_6ef4b7b2",
+      "CR_L8_176db3f2",
+      "AOR_L9_8f1ffe0b",
+      "AOR_L9_09a07f05"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "canyon_search": {
+    "task_name": "canyon_search",
+    "total_mutants": 45,
+    "killable_mutants_count": 38,
+    "equivalent_mutants_count": 7,
+    "killable_mutant_ids": [
+      "CR_L2_f12e584f",
+      "CR_L2_e8232e2a",
+      "ROR_L3_d84626b2",
+      "ROR_L3_c5863811",
+      "AOR_L3_36453a9f",
+      "AOR_L3_e3d92ee3",
+      "AOR_L3_11ddcbea",
+      "AOR_L3_f71ea6ac",
+      "CR_L3_63491e8d",
+      "CR_L3_91e5f788",
+      "CR_L3_6f2b12f8",
+      "CR_L3_a1d9a24d",
+      "CR_L3_27b263e3",
+      "CR_L3_86379621",
+      "ROR_L4_c68e63e7",
+      "ROR_L4_82c7b08f",
+      "ROR_L4_af050568",
+      "ROR_L4_d40e262b",
+      "ROR_L10_76f2fb75",
+      "ROR_L10_a67d1b4c",
+      "AOR_L10_0ac3dcd7",
+      "AOR_L10_f7b13976",
+      "AOR_L10_6a3116e1",
+      "AOR_L10_26d8486d",
+      "ROR_L11_1858edc2",
+      "ROR_L11_55b6fbf7",
+      "ROR_L13_c47ed9e2",
+      "ROR_L13_8c4dd5e0",
+      "AOR_L14_46338626",
+      "AOR_L14_63ac975a",
+      "CR_L14_7c226fb9",
+      "CR_L14_25e670ce",
+      "ROR_L15_76cbc949",
+      "ROR_L15_a3acfc14",
+      "AOR_L16_0dc49787",
+      "AOR_L16_3c464375",
+      "CR_L16_d149cdbb",
+      "CR_L16_7b2548be"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_85081995",
+      "ROR_L4_21afaf5d",
+      "ROR_L4_4268ab0a",
+      "ROR_L10_4d041ed4",
+      "ROR_L11_57da90b7",
+      "ROR_L13_d329504d",
+      "ROR_L15_35ab88fc"
+    ],
+    "gt_raw_score": 0.8444
+  },
+  "compare": {
+    "task_name": "compare",
+    "total_mutants": 2,
+    "killable_mutants_count": 2,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L2_1a020fbe",
+      "CID_L2_e13877fc"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "convert_map_key": {
+    "task_name": "convert_map_key",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "copy_part": {
+    "task_name": "copy_part",
+    "total_mutants": 24,
+    "killable_mutants_count": 22,
+    "equivalent_mutants_count": 2,
+    "killable_mutant_ids": [
+      "ROR_L2_434202d9",
+      "CR_L2_50cd7b86",
+      "CID_L2_40deda32",
+      "RSM_L2_39189f11",
+      "CR_L3_be7060f0",
+      "ROR_L5_72a01c3a",
+      "ROR_L5_7ed84173",
+      "AOR_L10_cde64283",
+      "AOR_L10_fc24daa4",
+      "CR_L10_1da9a0e4",
+      "CR_L10_a49cac2a",
+      "CR_L13_1301508d",
+      "ROR_L14_e3233999",
+      "ROR_L14_56af88ad",
+      "AOR_L21_99ba7819",
+      "AOR_L21_a71df78c",
+      "AOR_L21_0568abe8",
+      "AOR_L21_0262977e",
+      "AOR_L22_2b50c6d0",
+      "AOR_L22_8a918046",
+      "CR_L22_575c536c",
+      "CR_L22_9d440fca"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L5_96679a67",
+      "ROR_L14_0b0e8061"
+    ],
+    "gt_raw_score": 0.9167
+  },
+  "count_lessthan": {
+    "task_name": "count_lessthan",
+    "total_mutants": 27,
+    "killable_mutants_count": 26,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_b53bf8b8",
+      "ROR_L5_8bf8231a",
+      "ROR_L5_3cbb6bde",
+      "CR_L5_8384a6e9",
+      "AOR_L12_adea77ff",
+      "AOR_L12_09125986",
+      "AOR_L13_82b4b543",
+      "AOR_L13_53802823",
+      "ROR_L15_2ca51405",
+      "ROR_L15_35975190",
+      "ROR_L15_b2517da4",
+      "ROR_L15_117e28ed",
+      "ROR_L15_94c813c7",
+      "ROR_L15_21a4317d",
+      "AOR_L15_e307d82b",
+      "AOR_L15_15d02209",
+      "AOR_L16_b3706c39",
+      "AOR_L16_39da1519",
+      "ROR_L17_7716b8ff",
+      "ROR_L17_6579e881",
+      "ROR_L17_b132a493",
+      "CID_L17_a5d50dd6",
+      "AOR_L18_510958eb",
+      "AOR_L18_9202cb37",
+      "CR_L18_bd1734fe",
+      "CR_L18_a2190680"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L5_ca11f7ee"
+    ],
+    "gt_raw_score": 0.963
+  },
+  "double_quadruple": {
+    "task_name": "double_quadruple",
+    "total_mutants": 10,
+    "killable_mutants_count": 10,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_278f0ddd",
+      "AOR_L2_f227735e",
+      "CR_L2_6d5e4146",
+      "CR_L2_0ab4fc6d",
+      "CR_L2_0b4c2fb4",
+      "AOR_L3_d46ba54e",
+      "AOR_L3_0ad4d9c7",
+      "CR_L3_9828b7c8",
+      "CR_L3_25f835d9",
+      "CR_L3_2a3155e3"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "even_list": {
+    "task_name": "even_list",
+    "total_mutants": 29,
+    "killable_mutants_count": 29,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L2_40a81f84",
+      "ROR_L2_b987b2d0",
+      "ROR_L2_773ea3d0",
+      "ROR_L2_48c1f80e",
+      "ROR_L2_9c2c9ca6",
+      "ROR_L2_5092f33e",
+      "ROR_L3_34ab8143",
+      "ROR_L3_3ffc88a5",
+      "ROR_L3_4e9fe57d",
+      "ROR_L3_32b799da",
+      "ROR_L3_d3a21bc2",
+      "ROR_L3_980d9746",
+      "CR_L5_d5b0aa39",
+      "ROR_L16_81975f11",
+      "CR_L16_f9b39359",
+      "CR_L16_543e169f",
+      "CR_L16_cc37b27b",
+      "CR_L16_0008d105",
+      "AOR_L18_3b9c0f95",
+      "AOR_L18_476c3c1e",
+      "AOR_L19_6693f259",
+      "AOR_L19_ba3a67ea",
+      "ROR_L23_e0601db3",
+      "ROR_L23_714f2421",
+      "ROR_L23_347c78d6",
+      "ROR_L23_9d3135aa",
+      "ROR_L23_b8f40bf1",
+      "ROR_L23_c555d4dc",
+      "CR_L23_d3abf663"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "find": {
+    "task_name": "find",
+    "total_mutants": 19,
+    "killable_mutants_count": 16,
+    "equivalent_mutants_count": 3,
+    "killable_mutant_ids": [
+      "CR_L2_ee4528aa",
+      "ROR_L3_a1bd2eb4",
+      "ROR_L3_c6a7c819",
+      "ROR_L7_bba71ae7",
+      "CID_L7_82dc3b08",
+      "RSM_L7_3bac7803",
+      "AOR_L8_54c02dfd",
+      "AOR_L8_68509a81",
+      "CR_L8_0eabb7e6",
+      "CR_L8_92cc68e6",
+      "ROR_L10_f81ae862",
+      "CID_L10_4cfd3cd8",
+      "AOR_L11_8d9bca6f",
+      "AOR_L11_34c5e368",
+      "CR_L11_b04d9fd6",
+      "CR_L11_793fc79c"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_55380df5",
+      "ROR_L10_05426dde",
+      "ROR_L10_1077136d"
+    ],
+    "gt_raw_score": 0.8421
+  },
+  "has_close_elements": {
+    "task_name": "has_close_elements",
+    "total_mutants": 32,
+    "killable_mutants_count": 29,
+    "equivalent_mutants_count": 3,
+    "killable_mutant_ids": [
+      "CR_L4_f173488d",
+      "ROR_L5_34ffc5af",
+      "ROR_L5_28e2b302",
+      "CR_L10_fb453b43",
+      "ROR_L11_e4c7ac74",
+      "ROR_L11_ba53e42e",
+      "ROR_L18_a8b2ef31",
+      "ROR_L18_3e7be691",
+      "AOR_L18_3c65e916",
+      "AOR_L18_a41c12ba",
+      "AOR_L18_b2928495",
+      "AOR_L18_199db957",
+      "AOR_L18_22e35f28",
+      "AOR_L18_21cf47b3",
+      "CR_L18_709e5435",
+      "CR_L18_2dc3848f",
+      "ROR_L19_4c88866f",
+      "ROR_L19_d34de9d4",
+      "ROR_L19_ea621d41",
+      "CID_L19_e8ebf0c7",
+      "RSM_L21_a132d6ba",
+      "AOR_L24_a7530c06",
+      "AOR_L24_27d20809",
+      "CR_L24_f5985760",
+      "CR_L24_4db8e9fb",
+      "AOR_L26_3cabede4",
+      "AOR_L26_88a38b8b",
+      "CR_L26_f7308dfa",
+      "CR_L26_febc07cd"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L5_a8c498de",
+      "ROR_L11_adbe4d96",
+      "ROR_L18_20bee9c7"
+    ],
+    "gt_raw_score": 0.9062
+  },
+  "insert": {
+    "task_name": "insert",
+    "total_mutants": 19,
+    "killable_mutants_count": 18,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "ROR_L5_4adef4c7",
+      "ROR_L5_8609a8f9",
+      "AOR_L10_3db03570",
+      "AOR_L10_fc24daa4",
+      "CR_L10_90a04957",
+      "CR_L10_0aaea610",
+      "AOR_L11_d7cbf294",
+      "AOR_L11_857c26cb",
+      "CR_L17_de7ae373",
+      "ROR_L18_eb8cb28f",
+      "ROR_L18_135efa96",
+      "ROR_L18_79b7e425",
+      "AOR_L24_92315e18",
+      "AOR_L24_c500e9e3",
+      "AOR_L25_8652cbd0",
+      "AOR_L25_0fea9f28",
+      "CR_L25_169ff1ee",
+      "CR_L25_d91fd6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L5_3aa19f3d"
+    ],
+    "gt_raw_score": 0.9474
+  },
+  "integer_square_root": {
+    "task_name": "integer_square_root",
+    "total_mutants": 18,
+    "killable_mutants_count": 18,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_1b27bd16",
+      "ROR_L3_9e6fc706",
+      "ROR_L3_93e1531e",
+      "ROR_L3_831c64a9",
+      "AOR_L3_04f74786",
+      "AOR_L3_5aaf7e32",
+      "AOR_L3_0f89f1e0",
+      "AOR_L3_3393530f",
+      "AOR_L3_9ad9d43c",
+      "AOR_L3_aa44833b",
+      "CR_L3_ed237a30",
+      "CR_L3_45d559c4",
+      "CR_L3_60b3e616",
+      "CR_L3_f6700beb",
+      "AOR_L6_0c792e34",
+      "AOR_L6_87f70122",
+      "CR_L6_f3b86dd5",
+      "CR_L6_fafa08c6"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "is_even": {
+    "task_name": "is_even",
+    "total_mutants": 6,
+    "killable_mutants_count": 6,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L3_a5add6da",
+      "CR_L3_6f3ad91d",
+      "CR_L3_a8e5e606",
+      "CR_L3_d33f5776",
+      "CR_L3_9bbe13df",
+      "CID_L3_61b5763e"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "is_palindrome": {
+    "task_name": "is_palindrome",
+    "total_mutants": 23,
+    "killable_mutants_count": 23,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L2_ffda0c58",
+      "CR_L2_967a6939",
+      "CID_L2_da919ad2",
+      "RSM_L3_901c4058",
+      "CR_L5_0277cc1a",
+      "AOR_L6_7a15ae15",
+      "AOR_L6_1f11f4d4",
+      "CR_L6_8567b8d7",
+      "CR_L6_c7723f9e",
+      "ROR_L8_98e21e55",
+      "ROR_L8_6b3d0a0a",
+      "ROR_L8_fbdd9e68",
+      "ROR_L13_616a3cde",
+      "CID_L13_3078fca2",
+      "RSM_L15_862d309b",
+      "AOR_L17_e0dca45f",
+      "AOR_L17_3239bb4e",
+      "CR_L17_4cafce26",
+      "CR_L17_c3f1a12c",
+      "AOR_L18_c7e66ab8",
+      "AOR_L18_b3f81c8a",
+      "CR_L18_79e810e8",
+      "CR_L18_befdb1ac"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "linear_search1": {
+    "task_name": "linear_search1",
+    "total_mutants": 9,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_d5ddca1d",
+      "ROR_L3_8856d4b8",
+      "ROR_L7_a479239a",
+      "CID_L7_751a61b6",
+      "RSM_L8_086c86ca",
+      "AOR_L10_c26b4b38",
+      "AOR_L10_5f27a6d2",
+      "CR_L10_15ff5b6d",
+      "CR_L10_bafe34e9"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "linear_search2": {
+    "task_name": "linear_search2",
+    "total_mutants": 9,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_d5ddca1d",
+      "ROR_L3_8856d4b8",
+      "ROR_L7_a479239a",
+      "CID_L7_751a61b6",
+      "RSM_L8_086c86ca",
+      "AOR_L10_c26b4b38",
+      "AOR_L10_5f27a6d2",
+      "CR_L10_15ff5b6d",
+      "CR_L10_bafe34e9"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "linear_search3": {
+    "task_name": "linear_search3",
+    "total_mutants": 7,
+    "killable_mutants_count": 7,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_7c54d0f1",
+      "CID_L9_001585ed",
+      "RSM_L10_ee106cf3",
+      "AOR_L12_3ad1cd59",
+      "AOR_L12_34d73b7a",
+      "CR_L12_ebf62397",
+      "CR_L12_ef83819f"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "longest_prefix": {
+    "task_name": "longest_prefix",
+    "total_mutants": 9,
+    "killable_mutants_count": 8,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "ROR_L3_e4328288",
+      "ROR_L3_28b86676",
+      "CR_L5_532638ce",
+      "ROR_L9_c66aa91a",
+      "CID_L9_f1310d64",
+      "RSM_L10_ee106cf3",
+      "AOR_L12_800391d3",
+      "AOR_L12_42bb4bfe"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_155f12d5"
+    ],
+    "gt_raw_score": 0.8889
+  },
+  "max_array": {
+    "task_name": "max_array",
+    "total_mutants": 13,
+    "killable_mutants_count": 11,
+    "equivalent_mutants_count": 2,
+    "killable_mutant_ids": [
+      "CR_L2_58125b1f",
+      "CR_L3_93fbe0f9",
+      "CR_L3_2acf8722",
+      "ROR_L4_c4d9bbd4",
+      "ROR_L4_e778128b",
+      "ROR_L10_a0f18479",
+      "ROR_L10_7c32518c",
+      "AOR_L11_561d12b5",
+      "AOR_L11_1bc26460",
+      "CR_L11_e96ec085",
+      "CR_L11_9f663056"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_4aa0f9be",
+      "ROR_L10_472fa82f"
+    ],
+    "gt_raw_score": 0.8462
+  },
+  "min_array": {
+    "task_name": "min_array",
+    "total_mutants": 14,
+    "killable_mutants_count": 12,
+    "equivalent_mutants_count": 2,
+    "killable_mutant_ids": [
+      "CR_L2_ea705923",
+      "CR_L3_939255da",
+      "CR_L3_37eb13e3",
+      "ROR_L4_99f5f0f9",
+      "ROR_L4_a9c5f401",
+      "ROR_L9_d889b0a5",
+      "ROR_L9_c7d2e16d",
+      "CID_L9_907be3ee",
+      "AOR_L12_fb67d366",
+      "AOR_L12_af202f49",
+      "CR_L12_9c474643",
+      "CR_L12_b2f50cc8"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_ed1d0055",
+      "ROR_L9_bb7707fe"
+    ],
+    "gt_raw_score": 0.8571
+  },
+  "min_of_two": {
+    "task_name": "min_of_two",
+    "total_mutants": 6,
+    "killable_mutants_count": 5,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "ROR_L2_68c46cc5",
+      "ROR_L2_327b2a5e",
+      "CID_L2_8930b828",
+      "RSM_L3_618e1090",
+      "RSM_L5_003ef725"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L2_f20d61cb"
+    ],
+    "gt_raw_score": 0.8333
+  },
+  "modify_2d_array": {
+    "task_name": "modify_2d_array",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "multi_return": {
+    "task_name": "multi_return",
+    "total_mutants": 4,
+    "killable_mutants_count": 4,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_32f9de2f",
+      "AOR_L2_6f53321d",
+      "AOR_L3_931e069e",
+      "AOR_L3_1c3accd7"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "online_max": {
+    "task_name": "online_max",
+    "total_mutants": 31,
+    "killable_mutants_count": 26,
+    "equivalent_mutants_count": 5,
+    "killable_mutant_ids": [
+      "CR_L3_698ee7fe",
+      "CR_L4_a4d29551",
+      "CR_L4_fb90bf5b",
+      "ROR_L5_e7575e4e",
+      "ROR_L5_cf5a3754",
+      "ROR_L10_ae14b352",
+      "ROR_L10_f0a8681f",
+      "CID_L10_7c163b18",
+      "AOR_L13_c523f57b",
+      "AOR_L13_ae9e1b5c",
+      "CR_L13_51bec68f",
+      "CR_L13_c7f780cf",
+      "ROR_L17_c34fea09",
+      "ROR_L21_d3d284d9",
+      "ROR_L21_18ae7376",
+      "ROR_L21_9b3228ab",
+      "CID_L21_2ae9e535",
+      "RSM_L23_eaf18968",
+      "AOR_L25_fb847fb4",
+      "AOR_L25_a4958498",
+      "CR_L25_e3abef0e",
+      "CR_L25_671baab4",
+      "AOR_L27_fe72fd0a",
+      "AOR_L27_6384debc",
+      "CR_L27_06f93896",
+      "CR_L27_911e71ef"
+    ],
+    "equivalent_mutant_ids": [
+      "CR_L2_ad8db7ee",
+      "ROR_L5_f18ff60d",
+      "ROR_L10_573f431f",
+      "ROR_L17_51a9e9cd",
+      "ROR_L17_ad6d19d2"
+    ],
+    "gt_raw_score": 0.8387
+  },
+  "only_once": {
+    "task_name": "only_once",
+    "total_mutants": 17,
+    "killable_mutants_count": 16,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_5f2e5017",
+      "CR_L4_529b66b9",
+      "ROR_L5_83d92909",
+      "ROR_L5_bbe9d1ab",
+      "ROR_L10_49d85a6e",
+      "AOR_L12_dc6c2222",
+      "AOR_L12_6332f681",
+      "CR_L12_1eba46bb",
+      "CR_L12_4ce0f9dd",
+      "ROR_L14_8dee860c",
+      "CR_L14_bbb62d5c",
+      "CR_L14_d9a002f9",
+      "AOR_L18_78bebd80",
+      "AOR_L18_5a218fc3",
+      "CR_L18_92d89bf1",
+      "CR_L18_7eb447fc"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L5_741dc547"
+    ],
+    "gt_raw_score": 0.9412
+  },
+  "quotient": {
+    "task_name": "quotient",
+    "total_mutants": 10,
+    "killable_mutants_count": 10,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L3_dad16886",
+      "ROR_L4_ae565a2e",
+      "ROR_L4_e2f7c806",
+      "ROR_L4_690764e2",
+      "AOR_L8_f23d7370",
+      "AOR_L8_92c6fb60",
+      "AOR_L9_544188d3",
+      "AOR_L9_d607431c",
+      "CR_L9_7ffe68e0",
+      "CR_L9_15f8a269"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "remove_front": {
+    "task_name": "remove_front",
+    "total_mutants": 17,
+    "killable_mutants_count": 16,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "AOR_L2_4891410a",
+      "AOR_L2_8aba4724",
+      "CR_L2_f0716409",
+      "CR_L2_722acd5d",
+      "CR_L3_26ea8e80",
+      "CR_L3_bab63fa7",
+      "ROR_L4_5effb516",
+      "ROR_L4_39543edb",
+      "AOR_L8_272ede99",
+      "AOR_L8_37d57a40",
+      "CR_L8_ae36abb7",
+      "CR_L8_bc442f52",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_57edb131"
+    ],
+    "gt_raw_score": 0.9412
+  },
+  "replace": {
+    "task_name": "replace",
+    "total_mutants": 16,
+    "killable_mutants_count": 15,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_5f2e5017",
+      "ROR_L3_f320823e",
+      "ROR_L3_19409417",
+      "ROR_L10_6d41a79b",
+      "ROR_L10_d8190670",
+      "ROR_L10_9aa08c3c",
+      "CID_L10_f464c733",
+      "AOR_L11_aa15f370",
+      "AOR_L11_b012a4db",
+      "CR_L11_7636ec9e",
+      "CR_L11_fb0d0dbe",
+      "AOR_L13_ed2e1bb5",
+      "AOR_L13_3f93ae66",
+      "CR_L13_fd283f88",
+      "CR_L13_66208ffe"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_c023d9ee"
+    ],
+    "gt_raw_score": 0.9375
+  },
+  "return_seven": {
+    "task_name": "return_seven",
+    "total_mutants": 3,
+    "killable_mutants_count": 3,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_8c837c34",
+      "CR_L2_00dc027d",
+      "CR_L2_6a20f4d4"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "reverse": {
+    "task_name": "reverse",
+    "total_mutants": 23,
+    "killable_mutants_count": 22,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_5f2e5017",
+      "ROR_L3_a879bf87",
+      "ROR_L3_33940dbe",
+      "CR_L3_e93ef13b",
+      "CR_L3_34f1d982",
+      "CR_L3_f457d157",
+      "AOR_L8_1b11b291",
+      "AOR_L8_5b0f4a7e",
+      "AOR_L8_738ca587",
+      "AOR_L8_b7f61bbe",
+      "AOR_L8_520dc7dc",
+      "AOR_L8_0c7e50fe",
+      "AOR_L8_28a025b6",
+      "AOR_L8_f2f2e660",
+      "CR_L8_ec2a7bb5",
+      "CR_L8_496ce8d7",
+      "CR_L8_f4e17dbd",
+      "CR_L8_e231a4b4",
+      "AOR_L9_4c91340d",
+      "AOR_L9_1d5d0495",
+      "CR_L9_7207fe0d",
+      "CR_L9_e86af880"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_ab6f96db"
+    ],
+    "gt_raw_score": 0.9565
+  },
+  "rotate": {
+    "task_name": "rotate",
+    "total_mutants": 10,
+    "killable_mutants_count": 9,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L3_1087b9d5",
+      "ROR_L4_99f5f0f9",
+      "ROR_L4_a9c5f401",
+      "AOR_L8_59db0736",
+      "AOR_L8_71aa87c4",
+      "AOR_L9_6084056c",
+      "AOR_L9_f1e6340b",
+      "CR_L9_dfbdfeb1",
+      "CR_L9_8947c6c2"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L4_ed1d0055"
+    ],
+    "gt_raw_score": 0.9
+  },
+  "selectionsort": {
+    "task_name": "selectionsort",
+    "total_mutants": 19,
+    "killable_mutants_count": 18,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "CR_L2_e7b338bb",
+      "ROR_L3_73da5b8c",
+      "AOR_L9_18146dc7",
+      "AOR_L9_ca47ce18",
+      "CR_L9_f7132250",
+      "CR_L9_80ec47e8",
+      "ROR_L10_a0859b8d",
+      "ROR_L14_4cf1dae4",
+      "ROR_L14_33573f3e",
+      "CID_L14_c2f4a4fa",
+      "AOR_L17_da5bccfc",
+      "AOR_L17_8c0f6a6e",
+      "CR_L17_df5999d2",
+      "CR_L17_bc234ebc",
+      "AOR_L20_5fde4f3b",
+      "AOR_L20_29d1a580",
+      "CR_L20_ab92a7af",
+      "CR_L20_740a4893"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L14_fdbdc9cc"
+    ],
+    "gt_raw_score": 0.9474
+  },
+  "seq_to_array": {
+    "task_name": "seq_to_array",
+    "total_mutants": 7,
+    "killable_mutants_count": 7,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L2_38908674",
+      "ROR_L2_b10a0138",
+      "ROR_L2_8f98e06a",
+      "ROR_L2_516a58b2",
+      "ROR_L2_da62550b",
+      "ROR_L2_4983945e",
+      "CR_L2_6b9fa250"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "set_to_seq": {
+    "task_name": "set_to_seq",
+    "total_mutants": 11,
+    "killable_mutants_count": 11,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L3_b052051f",
+      "ROR_L3_18578be7",
+      "ROR_L3_8619520e",
+      "ROR_L3_13e82e5e",
+      "ROR_L3_ef1edbaf",
+      "ROR_L3_19a3a9fa",
+      "ROR_L4_aaae6d8e",
+      "AOR_L8_26f39620",
+      "AOR_L8_716570cd",
+      "AOR_L9_06e2e192",
+      "AOR_L9_5b288302"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "slope_search": {
+    "task_name": "slope_search",
+    "total_mutants": 18,
+    "killable_mutants_count": 17,
+    "equivalent_mutants_count": 1,
+    "killable_mutant_ids": [
+      "AOR_L2_912bd649",
+      "AOR_L2_2b45a54f",
+      "CR_L2_b64769bd",
+      "CR_L2_742691e5",
+      "CR_L2_eaadeb16",
+      "ROR_L3_5f7c8873",
+      "ROR_L8_053be59a",
+      "ROR_L8_58817342",
+      "CID_L8_b7d3d176",
+      "AOR_L9_0192ae77",
+      "AOR_L9_cc7dd8f9",
+      "CR_L9_f9b3e01a",
+      "CR_L9_67aaeaa9",
+      "AOR_L12_09abf30a",
+      "AOR_L12_a917483a",
+      "CR_L12_144c0fe7",
+      "CR_L12_3f15d443"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L8_df753219"
+    ],
+    "gt_raw_score": 0.9444
+  },
+  "swap": {
+    "task_name": "swap",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "swap_arith": {
+    "task_name": "swap_arith",
+    "total_mutants": 6,
+    "killable_mutants_count": 6,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L4_65d0b9b0",
+      "AOR_L4_164bd21b",
+      "AOR_L5_c723a6b7",
+      "AOR_L5_44b49ed9",
+      "AOR_L6_876b3e53",
+      "AOR_L6_9f1b9f6d"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "swap_bitvector": {
+    "task_name": "swap_bitvector",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "swap_in_array": {
+    "task_name": "swap_in_array",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "swap_sim": {
+    "task_name": "swap_sim",
+    "total_mutants": 0,
+    "killable_mutants_count": 0,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "test_array": {
+    "task_name": "test_array",
+    "total_mutants": 3,
+    "killable_mutants_count": 3,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "CR_L2_20078385",
+      "CR_L2_57d861ae",
+      "CR_L2_7a85c4e6"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "triple": {
+    "task_name": "triple",
+    "total_mutants": 5,
+    "killable_mutants_count": 5,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_bfd40161",
+      "AOR_L2_51b4a1ff",
+      "CR_L2_55dd32bc",
+      "CR_L2_bfd43198",
+      "CR_L2_f2f289a3"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "triple2": {
+    "task_name": "triple2",
+    "total_mutants": 32,
+    "killable_mutants_count": 25,
+    "equivalent_mutants_count": 7,
+    "killable_mutant_ids": [
+      "ROR_L3_31a82c31",
+      "AOR_L4_201aa09f",
+      "AOR_L4_f5dd4053",
+      "AOR_L4_923ef74f",
+      "AOR_L4_d7a91d5d",
+      "CR_L4_0d03c7ce",
+      "CR_L4_b0b211a1",
+      "CR_L4_235946f5",
+      "CR_L4_7d5f2e4c",
+      "CR_L4_3b59f405",
+      "CR_L4_fa661e4f",
+      "AOR_L5_488415ff",
+      "AOR_L5_8c74de28",
+      "CR_L5_cbdc1aa6",
+      "CR_L5_3456cc99",
+      "CR_L5_30f85f7a",
+      "ROR_L6_30e4df72",
+      "ROR_L6_403a73dc",
+      "AOR_L7_f07daffc",
+      "AOR_L7_6b24fd5f",
+      "CR_L7_2b8109fd",
+      "CR_L7_29719f16",
+      "CR_L7_a47f1dd2",
+      "AOR_L8_e06758e1",
+      "AOR_L8_0932e46a"
+    ],
+    "equivalent_mutant_ids": [
+      "ROR_L3_25ac2326",
+      "ROR_L3_e41638c0",
+      "CR_L3_9cd9ab82",
+      "CR_L3_a4414723",
+      "CR_L3_80572416",
+      "ROR_L6_d20dbf5c",
+      "CR_L6_b999698c"
+    ],
+    "gt_raw_score": 0.7812
+  },
+  "triple3": {
+    "task_name": "triple3",
+    "total_mutants": 11,
+    "killable_mutants_count": 11,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "ROR_L2_bf8da5da",
+      "CR_L2_588dc489",
+      "CID_L2_5d05fe86",
+      "CR_L3_9802bcf9",
+      "AOR_L6_5d66919a",
+      "AOR_L6_49100956",
+      "CR_L6_dcd6638c",
+      "CR_L6_ecf44bef",
+      "CR_L6_dd0ba1f8",
+      "AOR_L7_7f711715",
+      "AOR_L7_06954628"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "triple4": {
+    "task_name": "triple4",
+    "total_mutants": 7,
+    "killable_mutants_count": 7,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_c6e44479",
+      "AOR_L2_62ad2c70",
+      "CR_L2_0273f8c3",
+      "CR_L2_1cf54c23",
+      "CR_L2_81d4951e",
+      "AOR_L3_e078d9b9",
+      "AOR_L3_252fa717"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "two_sum": {
+    "task_name": "two_sum",
+    "total_mutants": 30,
+    "killable_mutants_count": 23,
+    "equivalent_mutants_count": 7,
+    "killable_mutant_ids": [
+      "CR_L3_8cc267ae",
+      "CR_L4_63c69317",
+      "ROR_L5_18589958",
+      "CR_L5_08547af8",
+      "AOR_L9_3e120b1d",
+      "AOR_L9_7056707b",
+      "CR_L9_3124a360",
+      "CR_L9_73fb541c",
+      "ROR_L10_d5b788af",
+      "ROR_L10_4affc230",
+      "ROR_L14_e1568094",
+      "AOR_L14_47a8b009",
+      "AOR_L14_f391525e",
+      "CID_L14_743e6ef9",
+      "RSM_L15_862d309b",
+      "AOR_L17_f0e9df22",
+      "AOR_L17_6fa99ff7",
+      "CR_L17_cf677ca8",
+      "CR_L17_898b1641",
+      "AOR_L20_874e3a2b",
+      "AOR_L20_e885682a",
+      "CR_L20_358054b5",
+      "CR_L20_26b90458"
+    ],
+    "equivalent_mutant_ids": [
+      "CR_L4_c9e0aece",
+      "ROR_L5_582f8a6c",
+      "ROR_L5_a2dfad76",
+      "AOR_L5_6a9145be",
+      "AOR_L5_e964f1f3",
+      "CR_L5_558518c9",
+      "ROR_L10_0023041f"
+    ],
+    "gt_raw_score": 0.7667
+  },
+  "update_array": {
+    "task_name": "update_array",
+    "total_mutants": 17,
+    "killable_mutants_count": 17,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_1805099d",
+      "AOR_L2_571e104e",
+      "CR_L2_d76a5cf4",
+      "CR_L2_fa4f285f",
+      "CR_L2_c5a5b72d",
+      "CR_L2_8d955854",
+      "CR_L2_6dafa425",
+      "CR_L2_ad8f9b90",
+      "CR_L2_85d7ec11",
+      "CR_L2_67603a1d",
+      "CR_L2_f60f55a2",
+      "CR_L3_65710a66",
+      "CR_L3_2292c82d",
+      "CR_L3_8d4a59d0",
+      "CR_L3_bf461362",
+      "CR_L3_fee2495a",
+      "CR_L3_2fc94eb3"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  },
+  "update_map": {
+    "task_name": "update_map",
+    "total_mutants": 2,
+    "killable_mutants_count": 2,
+    "equivalent_mutants_count": 0,
+    "killable_mutant_ids": [
+      "AOR_L2_f1b9d9ff",
+      "AOR_L2_4330cb5f"
+    ],
+    "equivalent_mutant_ids": [],
+    "gt_raw_score": 1.0
+  }
+}

@@ -1,0 +1,3693 @@
+{
+ "model_slug": "google/gemini-3.7-flash",
+ "eval_mode": "zero_shot",
+ "dafny_version": "4.11.0",
+ "hyperparameters": {
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 32768,
+  "max_turns": 4
+ },
+ "tasks": [
+  {
+   "task_name": "abs",
+   "loc": 7,
+   "loop_count": 0,
+   "total_ast_mutants": 9,
+   "gt_killable_mutants": 7,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures y >= 0\nensures x >= 0 ==> y == x\nensures x < 0 ==> y == -x",
+   "final_raw_score": 0.7778,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 642,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures y >= 0\nensures x >= 0 ==> y == x\nensures x < 0 ==> y == -x",
+     "reasoning_chain": "**Developing Dafny Specification**\n\nI am currently focused on generating the formal `requires` and `ensures` clauses for the `Abs` Dafny method. My recent work involves translating the provided docstr... [truncated for submission size]",
+     "candidate_specs": "ensures y >= 0\nensures x >= 0 ==> y == x\nensures x < 0 ==> y == -x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 36.8493,
+     "prompt_tokens": 193,
+     "cached_tokens": 0,
+     "completion_tokens": 449,
+     "reasoning_tokens": 420,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.7778,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 1,
+       "killed": 0
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 2,
+       "killed": 2
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "all_digits",
+   "loc": 10,
+   "loop_count": 1,
+   "total_ast_mutants": 6,
+   "gt_killable_mutants": 6,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures result <==> (forall i :: 0 <= i < |s| ==> s[i] in \"0123456789\")",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 880,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures result <==> (forall i :: 0 <= i < |s| ==> s[i] in \"0123456789\")",
+     "reasoning_chain": "**Defining Requirements**\n\nI am currently focused on establishing the formal specifications for the `allDigits` method. My intent is to define that the method should return `true` if and only if every... [truncated for submission size]",
+     "candidate_specs": "ensures result <==> (forall i :: 0 <= i < |s| ==> s[i] in \"0123456789\")",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 37.4897,
+     "prompt_tokens": 258,
+     "cached_tokens": 0,
+     "completion_tokens": 622,
+     "reasoning_tokens": 586,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "array_append",
+   "loc": 12,
+   "loop_count": 1,
+   "total_ast_mutants": 12,
+   "gt_killable_mutants": 11,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures fresh(c)\nensures c.Length == a.Length + 1\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i]\nensures c[a.Length] == b\nensures c[..] == a[..] + [b]",
+   "final_raw_score": 0.9167,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 765,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(c)\nensures c.Length == a.Length + 1\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i]\nensures c[a.Length] == b\nensures c[..] == a[..] + [b]",
+     "reasoning_chain": "**Defining Array Specifications**\n\nI am currently focused on defining the formal specifications, specifically the `requires` and `ensures` clauses, for the `append` Dafny method. My aim is to ensure t... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(c)\nensures c.Length == a.Length + 1\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i]\nensures c[a.Length] == b\nensures c[..] == a[..] + [b]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 69.5958,
+     "prompt_tokens": 267,
+     "cached_tokens": 0,
+     "completion_tokens": 498,
+     "reasoning_tokens": 427,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9167,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "array_concat",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 15,
+   "gt_killable_mutants": 14,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures fresh(c)\nensures c.Length == a.Length + b.Length\nensures c[..] == a[..] + b[..]",
+   "final_raw_score": 0.9333,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 796,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(c)\nensures c.Length == a.Length + b.Length\nensures c[..] == a[..] + b[..]",
+     "reasoning_chain": "**Generating Dafny Specification**\n\nI am now focused on defining the formal `requires` and `ensures` clauses for the `concat` method in Dafny. My goal is to precisely capture the pre- and post-conditi... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(c)\nensures c.Length == a.Length + b.Length\nensures c[..] == a[..] + b[..]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 84.0351,
+     "prompt_tokens": 292,
+     "cached_tokens": 0,
+     "completion_tokens": 504,
+     "reasoning_tokens": 467,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9333,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 5
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "array_copy",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 8,
+   "gt_killable_mutants": 7,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures fresh(t)\nensures t.Length == s.Length\nensures s[..] == t[..]",
+   "final_raw_score": 0.875,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 825,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(t)\nensures t.Length == s.Length\nensures s[..] == t[..]",
+     "reasoning_chain": "**Developing Iterative Specification**\n\nI'm currently focused on crafting precise `requires` and `ensures` clauses for the `iter_copy` Dafny method. My aim is to establish rigorous preconditions and p... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(t)\nensures t.Length == s.Length\nensures s[..] == t[..]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 47.5632,
+     "prompt_tokens": 248,
+     "cached_tokens": 0,
+     "completion_tokens": 577,
+     "reasoning_tokens": 549,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.875,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "array_product",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 10,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i] * b[i]",
+   "final_raw_score": 0.9,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 626,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i] * b[i]",
+     "reasoning_chain": "**Developing Formal Specifications**\n\nI am currently focused on defining the `requires` and `ensures` clauses for the `arrayProduct` method. My aim is to clearly articulate the preconditions, ensuring... [truncated for submission size]",
+     "candidate_specs": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i] * b[i]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 51.4033,
+     "prompt_tokens": 259,
+     "cached_tokens": 0,
+     "completion_tokens": 367,
+     "reasoning_tokens": 312,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "array_sum",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 10,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i] + b[i]",
+   "final_raw_score": 0.9,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 625,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i] + b[i]",
+     "reasoning_chain": "**Developing Array Sum Specification**\n\nI'm currently focused on crafting robust Dafny specifications for an `arraySum` method. My primary goal is to accurately capture the intent of pairwise array su... [truncated for submission size]",
+     "candidate_specs": "requires a.Length == b.Length\nensures fresh(c)\nensures c.Length == a.Length\nensures forall i :: 0 <= i < a.Length ==> c[i] == a[i] + b[i]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 53.8859,
+     "prompt_tokens": 260,
+     "cached_tokens": 0,
+     "completion_tokens": 365,
+     "reasoning_tokens": 310,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "avg",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 5,
+   "gt_killable_mutants": 5,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures avg == (a + b) / 2",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 361,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures avg == (a + b) / 2",
+     "reasoning_chain": "**Developing Dafny Specs**\n\nI'm currently focusing on generating the `requires` and `ensures` clauses for the `ComputeAvg` method. My aim is to accurately capture the intent of calculating the average... [truncated for submission size]",
+     "candidate_specs": "ensures avg == (a + b) / 2",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 12.1291,
+     "prompt_tokens": 180,
+     "cached_tokens": 0,
+     "completion_tokens": 181,
+     "reasoning_tokens": 169,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "below_zero",
+   "loc": 28,
+   "loop_count": 2,
+   "total_ast_mutants": 42,
+   "gt_killable_mutants": 38,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures fresh(s)\nensures s.Length == |operations| + 1\nensures s[0] == 0\nensures forall i :: 0 <= i < |operations| ==> s[i + 1] == s[i] + operations[i]\nensures result <==> exists i :: 0 <= i < s.Length && s[i] < 0",
+   "final_raw_score": 0.9048,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1184,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(s)\nensures s.Length == |operations| + 1\nensures s[0] == 0\nensures forall i :: 0 <= i < |operations| ==> s[i + 1] == s[i] + operations[i]\nensures result <==> exists i :: 0 <= i < s.Length && s[i] < 0",
+     "reasoning_chain": "**Calculating Prefix Sums**\n\nI'm currently focused on implementing the prefix sum calculation for the `operations` sequence. My approach involves creating an array `s` that will store these sums. `s[0... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(s)\nensures s.Length == |operations| + 1\nensures s[0] == 0\nensures forall i :: 0 <= i < |operations| ==> s[i + 1] == s[i] + operations[i]\nensures result <==> exists i :: 0 <= i < s.Length && s[i] < 0",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 179.6313,
+     "prompt_tokens": 492,
+     "cached_tokens": 0,
+     "completion_tokens": 692,
+     "reasoning_tokens": 604,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9048,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 12,
+       "killed": 9
+      },
+      "AOR": {
+       "total": 12,
+       "killed": 12
+      },
+      "CR": {
+       "total": 15,
+       "killed": 14
+      },
+      "CID": {
+       "total": 2,
+       "killed": 2
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "binary_search",
+   "loc": 16,
+   "loop_count": 1,
+   "total_ast_mutants": 17,
+   "gt_killable_mutants": 16,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures 0 <= n <= a.Length\nensures forall i :: 0 <= i < n ==> a[i] < key\nensures forall i :: n <= i < a.Length ==> a[i] >= key",
+   "final_raw_score": 0.9412,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 642,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures 0 <= n <= a.Length\nensures forall i :: 0 <= i < n ==> a[i] < key\nensures forall i :: n <= i < a.Length ==> a[i] >= key",
+     "reasoning_chain": "**Exploring Binary Search Logic**\n\nI'm currently refining the binary search implementation, focusing on the core logic for a sorted integer array. My thoughts are centered on ensuring correct boundary... [truncated for submission size]",
+     "candidate_specs": "requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures 0 <= n <= a.Length\nensures forall i :: 0 <= i < n ==> a[i] < key\nensures forall i :: n <= i < a.Length ==> a[i] >= key",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 94.5568,
+     "prompt_tokens": 312,
+     "cached_tokens": 0,
+     "completion_tokens": 330,
+     "reasoning_tokens": 251,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9412,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 5
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "bubble_sort",
+   "loc": 26,
+   "loop_count": 2,
+   "total_ast_mutants": 35,
+   "gt_killable_mutants": 33,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == multiset(old(a[..]))",
+   "final_raw_score": 0.9429,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 793,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == multiset(old(a[..]))",
+     "reasoning_chain": "**Refining Specifications**\n\nI'm currently focused on precisely defining the postconditions for `BubbleSort`. My aim is to ensure the formal specification rigorously captures the non-decreasing order ... [truncated for submission size]",
+     "candidate_specs": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == multiset(old(a[..]))",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 210.5334,
+     "prompt_tokens": 507,
+     "cached_tokens": 0,
+     "completion_tokens": 286,
+     "reasoning_tokens": 234,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9429,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 9,
+       "killed": 7
+      },
+      "AOR": {
+       "total": 12,
+       "killed": 12
+      },
+      "CR": {
+       "total": 14,
+       "killed": 14
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "cal_ans",
+   "loc": 9,
+   "loop_count": 1,
+   "total_ast_mutants": 24,
+   "gt_killable_mutants": 21,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures x == 191 / 7\nensures y == 191 % 7",
+   "final_raw_score": 0.875,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 630,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures x == 191 / 7\nensures y == 191 % 7",
+     "reasoning_chain": "**Defining CalDiv Specifications**\n\nI'm currently focusing on formalizing the specifications for the `CalDiv()` method. My goal is to precisely define its behavior for calculating the quotient and rem... [truncated for submission size]",
+     "candidate_specs": "ensures x == 191 / 7\nensures y == 191 % 7",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 113.1012,
+     "prompt_tokens": 249,
+     "cached_tokens": 0,
+     "completion_tokens": 381,
+     "reasoning_tokens": 358,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.875,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 15,
+       "killed": 13
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "cal_sum",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 9,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires N >= 0\nensures s == N * (N + 1) / 2",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 600,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires N >= 0\nensures s == N * (N + 1) / 2",
+     "reasoning_chain": "**Developing Formal Specifications**\n\nI am currently focused on generating formal specifications for the `Sum` method. My aim is to clearly define its intent\u2014to compute the sum of integers from 1 to N... [truncated for submission size]",
+     "candidate_specs": "requires N >= 0\nensures s == N * (N + 1) / 2",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 45.7785,
+     "prompt_tokens": 235,
+     "cached_tokens": 0,
+     "completion_tokens": 365,
+     "reasoning_tokens": 344,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 1,
+       "killed": 1
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "canyon_search",
+   "loc": 18,
+   "loop_count": 1,
+   "total_ast_mutants": 45,
+   "gt_killable_mutants": 38,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0 && b.Length > 0\nrequires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nrequires forall i, j :: 0 <= i < j < b.Length ==> b[i] <= b[j]\nensures exists i, j :: 0 <= i < a.Length && 0 <= j < b.Length && d == (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])\nensures forall i, j :: 0 <= i < a.Length && 0 <= j < b.Length ==> d <= (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])",
+   "final_raw_score": 0.8444,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1267,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0 && b.Length > 0\nrequires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nrequires forall i, j :: 0 <= i < j < b.Length ==> b[i] <= b[j]\nensures exists i, j :: 0 <= i < a.Length && 0 <= j < b.Length && d == (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])\nensures forall i, j :: 0 <= i < a.Length && 0 <= j < b.Length ==> d <= (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])",
+     "reasoning_chain": "**Refining Minimum Difference Calculation**\n\nI'm currently focused on optimizing the `CanyonSearch` function. The core logic involves efficiently finding the minimum absolute difference between elemen... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0 && b.Length > 0\nrequires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nrequires forall i, j :: 0 <= i < j < b.Length ==> b[i] <= b[j]\nensures exists i, j :: 0 <= i < a.Length && 0 <= j < b.Length && d == (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])\nensures forall i, j :: 0 <= i < a.Length && 0 <= j < b.Length ==> d <= (if a[i] < b[j] then b[j] - a[i] else a[i] - b[j])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 201.1429,
+     "prompt_tokens": 516,
+     "cached_tokens": 0,
+     "completion_tokens": 751,
+     "reasoning_tokens": 562,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8444,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 21,
+       "killed": 14
+      },
+      "AOR": {
+       "total": 12,
+       "killed": 12
+      },
+      "CR": {
+       "total": 12,
+       "killed": 12
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "compare",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 2,
+   "gt_killable_mutants": 2,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures eq <==> (a == b)",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 337,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures eq <==> (a == b)",
+     "reasoning_chain": "**Developing equality checks**\n\nI'm currently focusing on the core logic for comparing two elements of a generic type. The primary goal is to establish a straightforward equality check, returning `tru... [truncated for submission size]",
+     "candidate_specs": "ensures eq <==> (a == b)",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 2.5555,
+     "prompt_tokens": 184,
+     "cached_tokens": 0,
+     "completion_tokens": 153,
+     "reasoning_tokens": 142,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 1,
+       "killed": 1
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "convert_map_key",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires forall x: nat, y: nat :: f(x) == f(y) ==> x == y\nensures forall k :: k in inputs ==> f(k) in r && r[f(k)] == inputs[k]\nensures forall k' :: k' in r ==> exists k :: k in inputs && f(k) == k' && r[k'] == inputs[k]",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1697,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires forall x: nat, y: nat :: f(x) == f(y) ==> x == y\nensures forall k :: k in inputs ==> f(k) in r && r[f(k)] == inputs[k]\nensures forall k' :: k' in r ==> exists k :: k in inputs && f(k) == k' && r[k'] == inputs[k]",
+     "reasoning_chain": "**Defining Conversion Requirements**\n\nI'm currently focusing on establishing the necessary requirements for the `convert_map_key` function. My primary objective is to define precise \"requires\" and \"en... [truncated for submission size]",
+     "candidate_specs": "requires forall x: nat, y: nat :: f(x) == f(y) ==> x == y\nensures forall k :: k in inputs ==> f(k) in r && r[f(k)] == inputs[k]\nensures forall k' :: k' in r ==> exists k :: k in inputs && f(k) == k' && r[k'] == inputs[k]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 4.9663,
+     "prompt_tokens": 230,
+     "cached_tokens": 0,
+     "completion_tokens": 1467,
+     "reasoning_tokens": 1377,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "copy_part",
+   "loc": 24,
+   "loop_count": 2,
+   "total_ast_mutants": 24,
+   "gt_killable_mutants": 22,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires sStart + len <= src.Length\nrequires dStart + len <= dest.Length\nensures r.Length == dest.Length\nensures r[..dStart] == dest[..dStart]\nensures r[dStart .. dStart + len] == src[sStart .. sStart + len]\nensures r[dStart + len..] == dest[dStart + len..]\nensures len == 0 ==> r == dest\nensures len > 0 ==> fresh(r)",
+   "final_raw_score": 0.9167,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1078,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires sStart + len <= src.Length\nrequires dStart + len <= dest.Length\nensures r.Length == dest.Length\nensures r[..dStart] == dest[..dStart]\nensures r[dStart .. dStart + len] == src[sStart .. sStart + len]\nensures r[dStart + len..] == dest[dStart + len..]\nensures len == 0 ==> r == dest\nensures len > 0 ==> fresh(r)",
+     "reasoning_chain": "**Drafting Dafny Specifications**\n\nI'm currently working on formulating the formal Dafny specifications for the `copy` method. My focus is on defining the necessary `requires` and `ensures` clauses, e... [truncated for submission size]",
+     "candidate_specs": "requires sStart + len <= src.Length\nrequires dStart + len <= dest.Length\nensures r.Length == dest.Length\nensures r[..dStart] == dest[..dStart]\nensures r[dStart .. dStart + len] == src[sStart .. sStart + len]\nensures r[dStart + len..] == dest[dStart + len..]\nensures len == 0 ==> r == dest\nensures len > 0 ==> fresh(r)",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 141.355,
+     "prompt_tokens": 460,
+     "cached_tokens": 0,
+     "completion_tokens": 618,
+     "reasoning_tokens": 506,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9167,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 7,
+       "killed": 5
+      },
+      "AOR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CR": {
+       "total": 7,
+       "killed": 7
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "count_lessthan",
+   "loc": 21,
+   "loop_count": 1,
+   "total_ast_mutants": 27,
+   "gt_killable_mutants": 26,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures count == |set x | x in numbers && x < threshold|",
+   "final_raw_score": 0.963,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 551,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures count == |set x | x in numbers && x < threshold|",
+     "reasoning_chain": "**Refining Algorithm Postcondition**\n\nI'm currently solidifying the postcondition for the `CountLessThan` method. My focus is on precisely articulating that the returned `count` accurately reflects th... [truncated for submission size]",
+     "candidate_specs": "ensures count == |set x | x in numbers && x < threshold|",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 165.656,
+     "prompt_tokens": 343,
+     "cached_tokens": 0,
+     "completion_tokens": 208,
+     "reasoning_tokens": 192,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.963,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 12,
+       "killed": 11
+      },
+      "AOR": {
+       "total": 10,
+       "killed": 10
+      },
+      "CR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "double_quadruple",
+   "loc": 4,
+   "loop_count": 0,
+   "total_ast_mutants": 10,
+   "gt_killable_mutants": 10,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures a == 2 * x\nensures b == 4 * x",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 357,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures a == 2 * x\nensures b == 4 * x",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures a == 2 * x\nensures b == 4 * x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 28.132,
+     "prompt_tokens": 191,
+     "cached_tokens": 0,
+     "completion_tokens": 166,
+     "reasoning_tokens": 149,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "even_list",
+   "loc": 23,
+   "loop_count": 1,
+   "total_ast_mutants": 29,
+   "gt_killable_mutants": 29,
+   "task_success": false,
+   "total_turns_taken": 1,
+   "final_specs": "",
+   "final_raw_score": 0.0,
+   "final_adj_score": 0.0,
+   "task_total_tokens": 1442,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(evenNumbers)\nensures exists indices: seq<int> ::\n  |indices| == evenNumbers.Length &&\n  (forall k, l :: 0 <= k < l < |indices| ==> 0 <= indices[k] < indices[l] < arr.Length) &&\n  (forall k :: 0 <= k < |indices| ==> evenNumbers[k] == arr[indices[k]]) &&\n  (forall i :: 0 <= i < arr.Length ==> (arr[i] % 2 == 0 <==> i in indices))",
+     "reasoning_chain": "**Defining Method Requirements**\n\nI'm currently focused on formally specifying the `FindEvenNumbers` method. My thoughts are centering on defining the precise `requires` and `ensures` clauses that acc... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(evenNumbers)\nensures exists indices: seq<int> ::\n  |indices| == evenNumbers.Length &&\n  (forall k, l :: 0 <= k < l < |indices| ==> 0 <= indices[k] < indices[l] < arr.Length) &&\n  (forall k :: 0 <= k < |indices| ==> evenNumbers[k] == arr[indices[k]]) &&\n  (forall i :: 0 <= i < arr.Length ==> (arr[i] % 2 == 0 <==> i in indices))",
+     "is_sound": false,
+     "verifier_error": "/var/folders/g5/kfyzb4013m73y5fcmgxlsqsr0000gn/T/tmp4kat62nf.dfy(6,59): Error: index out of range\n  |\n6 |   (forall k :: 0 <= k < |indices| ==> evenNumbers[k] == arr[indices[k]]) &&\n  |                                                            ^\n\n/var/folders/g5/kfyzb4013m73y5fcmgxlsqsr0000gn/T/tmp4kat62nf.dfy(8,0): Error: a postcondition could not be proved on this return path\n  |\n8 | {\n  | ^\n\n/var/folders/g5/kfyzb4013m73y5fcmgxlsqsr0000gn/T/tmp4kat62nf.dfy(3,8): Related location: this is the postcondition that could not be proved\n  |\n3 | ensures exists indices: seq<int> ::\n  |         ^^^^^^\n\n\nDafny program verifier finished with 0 verified, 2 errors",
+     "solver_latency_sec": 6.6405,
+     "prompt_tokens": 535,
+     "cached_tokens": 0,
+     "completion_tokens": 907,
+     "reasoning_tokens": 780,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.0,
+     "adj_mutation_score": 0.0,
+     "operator_kill_breakdown": {},
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "find",
+   "loc": 13,
+   "loop_count": 1,
+   "total_ast_mutants": 19,
+   "gt_killable_mutants": 16,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures -1 <= index < a.Length\nensures index >= 0 ==> a[index] == key && (forall i :: 0 <= i < index ==> a[i] != key)\nensures index == -1 ==> forall i :: 0 <= i < a.Length ==> a[i] != key",
+   "final_raw_score": 0.8421,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1063,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures -1 <= index < a.Length\nensures index >= 0 ==> a[index] == key && (forall i :: 0 <= i < index ==> a[i] != key)\nensures index == -1 ==> forall i :: 0 <= i < a.Length ==> a[i] != key",
+     "reasoning_chain": "**Developing Dafny Specification**\n\nI'm currently focusing on crafting formal `requires` and `ensures` clauses for the `Find` method in Dafny. The goal is to precisely capture the method's intent: loc... [truncated for submission size]",
+     "candidate_specs": "ensures -1 <= index < a.Length\nensures index >= 0 ==> a[index] == key && (forall i :: 0 <= i < index ==> a[i] != key)\nensures index == -1 ==> forall i :: 0 <= i < a.Length ==> a[i] != key",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 93.3852,
+     "prompt_tokens": 276,
+     "cached_tokens": 0,
+     "completion_tokens": 787,
+     "reasoning_tokens": 717,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8421,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 7,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 2,
+       "killed": 2
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "has_close_elements",
+   "loc": 25,
+   "loop_count": 2,
+   "total_ast_mutants": 32,
+   "gt_killable_mutants": 29,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires threshold >= 0.0\nensures res <==> exists i: int, j: int :: 0 <= i < j < |numbers| && (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) < threshold",
+   "final_raw_score": 0.9062,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 914,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires threshold >= 0.0\nensures res <==> exists i: int, j: int :: 0 <= i < j < |numbers| && (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) < threshold",
+     "reasoning_chain": "**Finding close elements**\n\nI'm currently exploring algorithms to efficiently detect if any two distinct numbers within a sequence fall within a specified threshold. My focus is on optimizing this sea... [truncated for submission size]",
+     "candidate_specs": "requires threshold >= 0.0\nensures res <==> exists i: int, j: int :: 0 <= i < j < |numbers| && (if numbers[i] - numbers[j] < 0.0 then numbers[j] - numbers[i] else numbers[i] - numbers[j]) < threshold",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 157.4375,
+     "prompt_tokens": 484,
+     "cached_tokens": 0,
+     "completion_tokens": 430,
+     "reasoning_tokens": 358,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9062,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 12,
+       "killed": 9
+      },
+      "AOR": {
+       "total": 10,
+       "killed": 10
+      },
+      "CR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "insert",
+   "loc": 27,
+   "loop_count": 2,
+   "total_ast_mutants": 19,
+   "gt_killable_mutants": 18,
+   "task_success": false,
+   "total_turns_taken": 1,
+   "final_specs": "requires 0 <= at <= l\nrequires 0 <= p <= nl.Length\nrequires 0 <= l + p <= line.Length\nmodifies line\nensures line[0..at] == old(line[0..at])\nensures line[at..at+p] == nl[0..p]\nensures line[at+p..l+p] == old(line[at..l])",
+   "final_raw_score": 0.8947,
+   "final_adj_score": 0.9444,
+   "task_total_tokens": 1703,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires 0 <= at <= l\nrequires 0 <= p <= nl.Length\nrequires 0 <= l + p <= line.Length\nmodifies line\nensures line[0..at] == old(line[0..at])\nensures line[at..at+p] == nl[0..p]\nensures line[at+p..l+p] == old(line[at..l])",
+     "reasoning_chain": "**Drafting Dafny Specifications**\n\nI'm currently working on formally specifying the `insert` method in Dafny. My focus is on defining the `requires`, `ensures`, and `modifies` clauses based on the pro... [truncated for submission size]",
+     "candidate_specs": "requires 0 <= at <= l\nrequires 0 <= p <= nl.Length\nrequires 0 <= l + p <= line.Length\nmodifies line\nensures line[0..at] == old(line[0..at])\nensures line[at..at+p] == nl[0..p]\nensures line[at+p..l+p] == old(line[at..l])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 133.174,
+     "prompt_tokens": 577,
+     "cached_tokens": 0,
+     "completion_tokens": 1126,
+     "reasoning_tokens": 1035,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8947,
+     "adj_mutation_score": 0.9444,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": [
+      "ROR_L18_79b7e425"
+     ]
+    }
+   ]
+  },
+  {
+   "task_name": "integer_square_root",
+   "loc": 8,
+   "loop_count": 1,
+   "total_ast_mutants": 18,
+   "gt_killable_mutants": 18,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r * r <= N\nensures (r + 1) * (r + 1) > N",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 607,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r * r <= N\nensures (r + 1) * (r + 1) > N",
+     "reasoning_chain": "**Developing Square Root Specification**\n\nI'm currently focusing on defining the Dafny method specifications, specifically the `requires` and `ensures` clauses for the `SquareRoot(N: nat)` function. M... [truncated for submission size]",
+     "candidate_specs": "ensures r * r <= N\nensures (r + 1) * (r + 1) > N",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 88.8873,
+     "prompt_tokens": 195,
+     "cached_tokens": 0,
+     "completion_tokens": 412,
+     "reasoning_tokens": 387,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 3
+      },
+      "AOR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CR": {
+       "total": 7,
+       "killed": 7
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "is_even",
+   "loc": 6,
+   "loop_count": 0,
+   "total_ast_mutants": 6,
+   "gt_killable_mutants": 6,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures is_even <==> x % 2 == 0",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 547,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures is_even <==> x % 2 == 0",
+     "reasoning_chain": "**Developing Logic for Evenness**\n\nI'm currently focusing on defining the core logic for determining if an integer `x` is even. My current approach utilizes Dafny's modulo operator (`%`) to check if `... [truncated for submission size]",
+     "candidate_specs": "ensures is_even <==> x % 2 == 0",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 28.2644,
+     "prompt_tokens": 193,
+     "cached_tokens": 0,
+     "completion_tokens": 354,
+     "reasoning_tokens": 339,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 1,
+       "killed": 1
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "is_palindrome",
+   "loc": 20,
+   "loop_count": 1,
+   "total_ast_mutants": 23,
+   "gt_killable_mutants": 23,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures result <==> (forall k :: 0 <= k < |x| ==> x[k] == x[|x| - 1 - k])",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 613,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures result <==> (forall k :: 0 <= k < |x| ==> x[k] == x[|x| - 1 - k])",
+     "reasoning_chain": "**Defining Palindrome Properties**\n\nI'm currently focusing on translating the concept of a palindrome into formal Dafny specifications. My primary goal is to define robust `requires` and `ensures` cla... [truncated for submission size]",
+     "candidate_specs": "ensures result <==> (forall k :: 0 <= k < |x| ==> x[k] == x[|x| - 1 - k])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 116.3998,
+     "prompt_tokens": 328,
+     "cached_tokens": 0,
+     "completion_tokens": 285,
+     "reasoning_tokens": 250,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 5,
+       "killed": 5
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CID": {
+       "total": 2,
+       "killed": 2
+      },
+      "RSM": {
+       "total": 2,
+       "killed": 2
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "linear_search1",
+   "loc": 12,
+   "loop_count": 1,
+   "total_ast_mutants": 9,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures 0 <= n <= a.Length\nensures n < a.Length ==> a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 992,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures 0 <= n <= a.Length\nensures n < a.Length ==> a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+     "reasoning_chain": "**Developing Dafny Specs**\n\nI'm currently focused on generating the `requires` and `ensures` clauses for the `LinearSearch` method. My aim is to accurately capture the behavior of searching for an ele... [truncated for submission size]",
+     "candidate_specs": "ensures 0 <= n <= a.Length\nensures n < a.Length ==> a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 50.3251,
+     "prompt_tokens": 254,
+     "cached_tokens": 0,
+     "completion_tokens": 738,
+     "reasoning_tokens": 693,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 2,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "linear_search2",
+   "loc": 12,
+   "loop_count": 1,
+   "total_ast_mutants": 9,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires exists i :: 0 <= i < a.Length && a[i] == e\nensures 0 <= n < a.Length\nensures a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 553,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires exists i :: 0 <= i < a.Length && a[i] == e\nensures 0 <= n < a.Length\nensures a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+     "reasoning_chain": "**Developing Formal Specifications**\n\nI am currently working on defining the `requires` and `ensures` clauses for the `LinearSearch` method. My focus is on precisely capturing the precondition that th... [truncated for submission size]",
+     "candidate_specs": "requires exists i :: 0 <= i < a.Length && a[i] == e\nensures 0 <= n < a.Length\nensures a[n] == e\nensures forall i :: 0 <= i < n ==> a[i] != e",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 48.0717,
+     "prompt_tokens": 265,
+     "cached_tokens": 0,
+     "completion_tokens": 288,
+     "reasoning_tokens": 229,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 2,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "linear_search3",
+   "loc": 14,
+   "loop_count": 1,
+   "total_ast_mutants": 7,
+   "gt_killable_mutants": 7,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires exists i :: 0 <= i < a.Length && P(a[i])\nensures 0 <= n < a.Length\nensures P(a[n])\nensures forall k :: 0 <= k < n ==> !P(a[k])",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 878,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires exists i :: 0 <= i < a.Length && P(a[i])\nensures 0 <= n < a.Length\nensures P(a[n])\nensures forall k :: 0 <= k < n ==> !P(a[k])",
+     "reasoning_chain": "**Developing Specifications**\n\nI am focusing on defining the formal `requires`, `ensures`, and `reads` clauses for the `LinearSearch3` Dafny method. My current efforts are centered on precisely captur... [truncated for submission size]",
+     "candidate_specs": "requires exists i :: 0 <= i < a.Length && P(a[i])\nensures 0 <= n < a.Length\nensures P(a[n])\nensures forall k :: 0 <= k < n ==> !P(a[k])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 43.6358,
+     "prompt_tokens": 301,
+     "cached_tokens": 0,
+     "completion_tokens": 577,
+     "reasoning_tokens": 517,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "longest_prefix",
+   "loc": 13,
+   "loop_count": 1,
+   "total_ast_mutants": 9,
+   "gt_killable_mutants": 8,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures |prefix| <= |str1| && |prefix| <= |str2|\nensures prefix == str1[..|prefix|] && prefix == str2[..|prefix|]\nensures prefix == str1 || prefix == str2 || str1[|prefix|] != str2[|prefix|]",
+   "final_raw_score": 0.8889,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 973,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures |prefix| <= |str1| && |prefix| <= |str2|\nensures prefix == str1[..|prefix|] && prefix == str2[..|prefix|]\nensures prefix == str1 || prefix == str2 || str1[|prefix|] != str2[|prefix|]",
+     "reasoning_chain": "**Exploring Longest Common Prefix**\n\nI'm currently dissecting the core logic for finding the longest common prefix between two character sequences. My focus is on handling edge cases, particularly emp... [truncated for submission size]",
+     "candidate_specs": "ensures |prefix| <= |str1| && |prefix| <= |str2|\nensures prefix == str1[..|prefix|] && prefix == str2[..|prefix|]\nensures prefix == str1 || prefix == str2 || str1[|prefix|] != str2[|prefix|]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 44.3889,
+     "prompt_tokens": 381,
+     "cached_tokens": 0,
+     "completion_tokens": 592,
+     "reasoning_tokens": 521,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8889,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 4,
+       "killed": 3
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 1,
+       "killed": 1
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "max_array",
+   "loc": 13,
+   "loop_count": 1,
+   "total_ast_mutants": 13,
+   "gt_killable_mutants": 11,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0\nensures forall k :: 0 <= k < a.Length ==> m >= a[k]\nensures exists k :: 0 <= k < a.Length && m == a[k]",
+   "final_raw_score": 0.8462,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 588,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0\nensures forall k :: 0 <= k < a.Length ==> m >= a[k]\nensures exists k :: 0 <= k < a.Length && m == a[k]",
+     "reasoning_chain": "**Defining Max Array**\n\nI am currently focusing on defining the specifications for the `maxArray` method. My goal is to clearly articulate its requirements and guarantees, specifically ensuring that t... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0\nensures forall k :: 0 <= k < a.Length ==> m >= a[k]\nensures exists k :: 0 <= k < a.Length && m == a[k]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 69.5842,
+     "prompt_tokens": 291,
+     "cached_tokens": 0,
+     "completion_tokens": 297,
+     "reasoning_tokens": 247,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8462,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "min_array",
+   "loc": 14,
+   "loop_count": 1,
+   "total_ast_mutants": 14,
+   "gt_killable_mutants": 12,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0\nensures exists i :: 0 <= i < a.Length && r == a[i]\nensures forall i :: 0 <= i < a.Length ==> r <= a[i]",
+   "final_raw_score": 0.8571,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 601,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0\nensures exists i :: 0 <= i < a.Length && r == a[i]\nensures forall i :: 0 <= i < a.Length ==> r <= a[i]",
+     "reasoning_chain": "**Developing Minimum Array Logic**\n\nI'm currently refining the logic for identifying the minimum element within a given integer array, ensuring the method signature `minArray(a: array<int>) returns (r... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0\nensures exists i :: 0 <= i < a.Length && r == a[i]\nensures forall i :: 0 <= i < a.Length ==> r <= a[i]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 75.3704,
+     "prompt_tokens": 282,
+     "cached_tokens": 0,
+     "completion_tokens": 319,
+     "reasoning_tokens": 269,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8571,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "min_of_two",
+   "loc": 7,
+   "loop_count": 0,
+   "total_ast_mutants": 6,
+   "gt_killable_mutants": 5,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures z <= x && z <= y\nensures z == x || z == y",
+   "final_raw_score": 0.8333,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 520,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures z <= x && z <= y\nensures z == x || z == y",
+     "reasoning_chain": "**Refining Minimum Logic**\n\nI'm currently dissecting the `Min` method's signature and its core purpose: to identify the smaller of two input integers. My focus is on verifying the implementation, spec... [truncated for submission size]",
+     "candidate_specs": "ensures z <= x && z <= y\nensures z == x || z == y",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 26.9857,
+     "prompt_tokens": 179,
+     "cached_tokens": 0,
+     "completion_tokens": 341,
+     "reasoning_tokens": 322,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.8333,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 2,
+       "killed": 2
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "modify_2d_array",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": false,
+   "total_turns_taken": 1,
+   "final_specs": "",
+   "final_raw_score": 0.0,
+   "final_adj_score": 0.0,
+   "task_total_tokens": 1394,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires index1 < arr.Length\nrequires forall i :: 0 <= i < arr.Length ==> arr[i] != null\nrequires forall i, j :: 0 <= i < arr.Length && 0 <= j < arr.Length && i != j ==> arr[i] != arr[j]\nrequires index2 < arr[index1].Length\nmodifies arr[index1]\nensures arr[index1][index2] == val\nensures forall i, j :: 0 <= i < arr.Length && 0 <= j < arr[i].Length && (i != index1 || j != index2) ==> arr[i][j] == old(arr[i][j])",
+     "reasoning_chain": "**Defining Array Modification**\n\nI'm currently formalizing the specification for `modify_array_element`. My focus is on precisely defining the preconditions and postconditions to accurately capture th... [truncated for submission size]",
+     "candidate_specs": "requires index1 < arr.Length\nrequires forall i :: 0 <= i < arr.Length ==> arr[i] != null\nrequires forall i, j :: 0 <= i < arr.Length && 0 <= j < arr.Length && i != j ==> arr[i] != arr[j]\nrequires index2 < arr[index1].Length\nmodifies arr[index1]\nensures arr[index1][index2] == val\nensures forall i, j :: 0 <= i < arr.Length && 0 <= j < arr[i].Length && (i != index1 || j != index2) ==> arr[i][j] == old(arr[i][j])",
+     "is_sound": false,
+     "verifier_error": "/var/folders/g5/kfyzb4013m73y5fcmgxlsqsr0000gn/T/tmpacgifnh3.dfy(3,52): Warning: the type of the other operand is a non-null type, so this comparison with 'null' will always return 'true'\n  |\n3 | requires forall i :: 0 <= i < arr.Length ==> arr[i] != null\n  |                                                     ^^\n\n\nDafny program verifier finished with 2 verified, 0 errors\nCompilation failed because warnings were found and --allow-warnings is false",
+     "solver_latency_sec": 4.6798,
+     "prompt_tokens": 236,
+     "cached_tokens": 0,
+     "completion_tokens": 1158,
+     "reasoning_tokens": 1003,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.0,
+     "adj_mutation_score": 0.0,
+     "operator_kill_breakdown": {},
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "multi_return",
+   "loc": 4,
+   "loop_count": 0,
+   "total_ast_mutants": 4,
+   "gt_killable_mutants": 4,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures more == x + y\nensures less == x - y",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 304,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures more == x + y\nensures less == x - y",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures more == x + y\nensures less == x - y",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 6.3082,
+     "prompt_tokens": 177,
+     "cached_tokens": 0,
+     "completion_tokens": 127,
+     "reasoning_tokens": 112,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "online_max",
+   "loc": 28,
+   "loop_count": 2,
+   "total_ast_mutants": 31,
+   "gt_killable_mutants": 26,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0\nrequires 0 < x < a.Length\nensures x <= p < a.Length\nensures forall j :: 0 <= j < x ==> a[j] <= m\nensures exists j :: 0 <= j < x && a[j] == m\nensures forall j :: x <= j < p ==> a[j] <= m\nensures p < a.Length - 1 ==> a[p] > m",
+   "final_raw_score": 0.871,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 2431,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0\nrequires 0 < x < a.Length\nensures x <= p < a.Length\nensures forall j :: 0 <= j < x ==> a[j] <= m\nensures exists j :: 0 <= j < x && a[j] == m\nensures forall j :: x <= j < p ==> a[j] <= m\nensures p < a.Length - 1 ==> a[p] > m",
+     "reasoning_chain": "**Defining onlineMax Logic**\n\nI'm currently focusing on defining the core logic for `onlineMax`. My thoughts are revolving around the method signature, specifically how to best handle the input array ... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0\nrequires 0 < x < a.Length\nensures x <= p < a.Length\nensures forall j :: 0 <= j < x ==> a[j] <= m\nensures exists j :: 0 <= j < x && a[j] == m\nensures forall j :: x <= j < p ==> a[j] <= m\nensures p < a.Length - 1 ==> a[p] > m",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 151.9669,
+     "prompt_tokens": 444,
+     "cached_tokens": 0,
+     "completion_tokens": 1987,
+     "reasoning_tokens": 1884,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.871,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 12,
+       "killed": 9
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 10,
+       "killed": 9
+      },
+      "CID": {
+       "total": 2,
+       "killed": 2
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "only_once",
+   "loc": 21,
+   "loop_count": 1,
+   "total_ast_mutants": 17,
+   "gt_killable_mutants": 16,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures b <==> multiset(a[..])[key] == 1",
+   "final_raw_score": 0.9412,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 615,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures b <==> multiset(a[..])[key] == 1",
+     "reasoning_chain": "**Refining `only_once` Logic**\n\nI'm currently focused on the implementation details for the `only_once` method. My goal is to ensure it accurately identifies if a given `key` appears precisely one tim... [truncated for submission size]",
+     "candidate_specs": "ensures b <==> multiset(a[..])[key] == 1",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 89.9672,
+     "prompt_tokens": 327,
+     "cached_tokens": 0,
+     "completion_tokens": 288,
+     "reasoning_tokens": 270,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9412,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 5,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "quotient",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 10,
+   "gt_killable_mutants": 10,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires y > 0\nensures x == q * y + r\nensures q >= 0\nensures 0 <= r < y",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 905,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires y > 0\nensures x == q * y + r\nensures q >= 0\nensures 0 <= r < y",
+     "reasoning_chain": "**Developing Dafny Specification**\n\nI'm currently focusing on crafting the formal Dafny specifications for the quotient and remainder method. My aim is to accurately capture the essential pre- and pos... [truncated for submission size]",
+     "candidate_specs": "requires y > 0\nensures x == q * y + r\nensures q >= 0\nensures 0 <= r < y",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 49.7323,
+     "prompt_tokens": 267,
+     "cached_tokens": 0,
+     "completion_tokens": 638,
+     "reasoning_tokens": 607,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 3
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "remove_front",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 17,
+   "gt_killable_mutants": 16,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0\nensures fresh(c)\nensures c.Length == a.Length - 1\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i + 1]",
+   "final_raw_score": 0.9412,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 623,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0\nensures fresh(c)\nensures c.Length == a.Length - 1\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i + 1]",
+     "reasoning_chain": "**Refining Array Manipulation**\n\nI'm currently focusing on the `remove_front` operation. My current thought is to ensure the array has at least one element before attempting removal, a crucial precond... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0\nensures fresh(c)\nensures c.Length == a.Length - 1\nensures forall i :: 0 <= i < c.Length ==> c[i] == a[i + 1]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 93.4365,
+     "prompt_tokens": 257,
+     "cached_tokens": 0,
+     "completion_tokens": 366,
+     "reasoning_tokens": 311,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9412,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 8,
+       "killed": 8
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "replace",
+   "loc": 15,
+   "loop_count": 1,
+   "total_ast_mutants": 16,
+   "gt_killable_mutants": 15,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "modifies arr\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) > k ==> arr[i] == -1\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) <= k ==> arr[i] == old(arr[i])",
+   "final_raw_score": 0.9375,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 788,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "modifies arr\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) > k ==> arr[i] == -1\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) <= k ==> arr[i] == old(arr[i])",
+     "reasoning_chain": "**Modifying Array Logic**\n\nI'm refining the logic for the `replace` function. The core idea is to iterate through the array, replacing any integer strictly exceeding `k` with a `-1`. Elements that mee... [truncated for submission size]",
+     "candidate_specs": "modifies arr\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) > k ==> arr[i] == -1\nensures forall i :: 0 <= i < arr.Length ==> old(arr[i]) <= k ==> arr[i] == old(arr[i])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 84.1073,
+     "prompt_tokens": 352,
+     "cached_tokens": 0,
+     "completion_tokens": 436,
+     "reasoning_tokens": 365,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9375,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 5
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "return_seven",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 3,
+   "gt_killable_mutants": 3,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures seven == 7",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 430,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures seven == 7",
+     "reasoning_chain": "**Developing Method Logic**\n\nI've focused on implementing the core logic for method M. The current thought is to ensure it consistently returns the integer 7, as per the specified requirement, regardl... [truncated for submission size]",
+     "candidate_specs": "ensures seven == 7",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 17.4493,
+     "prompt_tokens": 158,
+     "cached_tokens": 0,
+     "completion_tokens": 272,
+     "reasoning_tokens": 266,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "reverse",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 23,
+   "gt_killable_mutants": 22,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "modifies a\nensures forall i :: 0 <= i < a.Length ==> a[i] == old(a[a.Length - 1 - i])",
+   "final_raw_score": 0.9565,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 604,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "modifies a\nensures forall i :: 0 <= i < a.Length ==> a[i] == old(a[a.Length - 1 - i])",
+     "reasoning_chain": "**Refining Reverse Specification**\n\nI'm currently focusing on the detailed specification for the `reverse` method. My thoughts are on explicitly stating the pre- and post-conditions, particularly ensu... [truncated for submission size]",
+     "candidate_specs": "modifies a\nensures forall i :: 0 <= i < a.Length ==> a[i] == old(a[a.Length - 1 - i])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 127.1061,
+     "prompt_tokens": 308,
+     "cached_tokens": 0,
+     "completion_tokens": 296,
+     "reasoning_tokens": 259,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9565,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 10,
+       "killed": 10
+      },
+      "CR": {
+       "total": 10,
+       "killed": 10
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "rotate",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 10,
+   "gt_killable_mutants": 9,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length > 0\nrequires offset >= 0\nensures b.Length == a.Length\nensures fresh(b)\nensures forall i :: 0 <= i < a.Length ==> b[i] == a[(i + offset) % a.Length]",
+   "final_raw_score": 0.9,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1301,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length > 0\nrequires offset >= 0\nensures b.Length == a.Length\nensures fresh(b)\nensures forall i :: 0 <= i < a.Length ==> b[i] == a[(i + offset) % a.Length]",
+     "reasoning_chain": "**Developing Rotation Logic**\n\nI am currently focused on implementing the array rotation logic, specifically the left rotation by a given offset. The method signature is defined, and I'm working throu... [truncated for submission size]",
+     "candidate_specs": "requires a.Length > 0\nrequires offset >= 0\nensures b.Length == a.Length\nensures fresh(b)\nensures forall i :: 0 <= i < a.Length ==> b[i] == a[(i + offset) % a.Length]",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 77.2891,
+     "prompt_tokens": 257,
+     "cached_tokens": 0,
+     "completion_tokens": 1044,
+     "reasoning_tokens": 982,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 3,
+       "killed": 2
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "selectionsort",
+   "loc": 22,
+   "loop_count": 2,
+   "total_ast_mutants": 19,
+   "gt_killable_mutants": 18,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == old(multiset(a[..]))",
+   "final_raw_score": 0.9474,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 705,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == old(multiset(a[..]))",
+     "reasoning_chain": "**Refining Selection Sort Contract**\n\nI'm currently focusing on the formal specification for `SelectionSort`. My current task is to solidify the `ensures` clause, particularly ensuring that the elemen... [truncated for submission size]",
+     "candidate_specs": "modifies a\nensures forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]\nensures multiset(a[..]) == old(multiset(a[..]))",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 128.7494,
+     "prompt_tokens": 394,
+     "cached_tokens": 0,
+     "completion_tokens": 311,
+     "reasoning_tokens": 259,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9474,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 5,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 7,
+       "killed": 7
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "seq_to_array",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 7,
+   "gt_killable_mutants": 7,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures fresh(a)\nensures a[..] == xs",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 535,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures fresh(a)\nensures a[..] == xs",
+     "reasoning_chain": "**Developing Formal Specifications**\n\nI am currently working on generating the formal specifications for the `ToArray<T>` method. My focus is on establishing the necessary `ensures` clauses to accurat... [truncated for submission size]",
+     "candidate_specs": "ensures fresh(a)\nensures a[..] == xs",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 33.1995,
+     "prompt_tokens": 187,
+     "cached_tokens": 0,
+     "completion_tokens": 348,
+     "reasoning_tokens": 333,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 6
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 1,
+       "killed": 1
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "set_to_seq",
+   "loc": 11,
+   "loop_count": 1,
+   "total_ast_mutants": 11,
+   "gt_killable_mutants": 11,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures multiset(xs) == multiset(s)\nensures |xs| == |s|",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 875,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures multiset(xs) == multiset(s)\nensures |xs| == |s|",
+     "reasoning_chain": "**Refining Conversion Logic**\n\nI'm currently scrutinizing the implementation for converting a set to a sequence, specifically examining how `multiset(left) + multiset(xs)` ensures element preservation... [truncated for submission size]",
+     "candidate_specs": "ensures multiset(xs) == multiset(s)\nensures |xs| == |s|",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 36.0951,
+     "prompt_tokens": 249,
+     "cached_tokens": 0,
+     "completion_tokens": 626,
+     "reasoning_tokens": 603,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 7,
+       "killed": 7
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "slope_search",
+   "loc": 14,
+   "loop_count": 1,
+   "total_ast_mutants": 18,
+   "gt_killable_mutants": 17,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires forall i, j1, j2 :: 0 <= i < a.Length0 && 0 <= j1 <= j2 < a.Length1 ==> a[i, j1] <= a[i, j2]\nrequires forall i1, i2, j :: 0 <= i1 <= i2 < a.Length0 && 0 <= j < a.Length1 ==> a[i1, j] <= a[i2, j]\nrequires exists i, j :: 0 <= i < a.Length0 && 0 <= j < a.Length1 && a[i, j] == key\nensures 0 <= m < a.Length0 && 0 <= n < a.Length1\nensures a[m, n] == key",
+   "final_raw_score": 0.9444,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1186,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires forall i, j1, j2 :: 0 <= i < a.Length0 && 0 <= j1 <= j2 < a.Length1 ==> a[i, j1] <= a[i, j2]\nrequires forall i1, i2, j :: 0 <= i1 <= i2 < a.Length0 && 0 <= j < a.Length1 ==> a[i1, j] <= a[i2, j]\nrequires exists i, j :: 0 <= i < a.Length0 && 0 <= j < a.Length1 && a[i, j] == key\nensures 0 <= m < a.Length0 && 0 <= n < a.Length1\nensures a[m, n] == key",
+     "reasoning_chain": "**Developing Dafny Specifications**\n\nI'm currently focusing on crafting robust Dafny specifications for the `SlopeSearch` method. My aim is to accurately capture the preconditions (`requires`) and pos... [truncated for submission size]",
+     "candidate_specs": "requires forall i, j1, j2 :: 0 <= i < a.Length0 && 0 <= j1 <= j2 < a.Length1 ==> a[i, j1] <= a[i, j2]\nrequires forall i1, i2, j :: 0 <= i1 <= i2 < a.Length0 && 0 <= j < a.Length1 ==> a[i1, j] <= a[i2, j]\nrequires exists i, j :: 0 <= i < a.Length0 && 0 <= j < a.Length1 && a[i, j] == key\nensures 0 <= m < a.Length0 && 0 <= n < a.Length1\nensures a[m, n] == key",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 100.7331,
+     "prompt_tokens": 347,
+     "cached_tokens": 0,
+     "completion_tokens": 839,
+     "reasoning_tokens": 670,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.9444,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 4,
+       "killed": 3
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 7,
+       "killed": 7
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "swap",
+   "loc": 7,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures x == Y\nensures y == X",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 454,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures x == Y\nensures y == X",
+     "reasoning_chain": "**Refining Swap Logic**\n\nI'm currently refining the swap logic for integers `X` and `Y`. My latest focus is on ensuring the implementation correctly exchanges their values, a seemingly simple but cruc... [truncated for submission size]",
+     "candidate_specs": "ensures x == Y\nensures y == X",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 4.0403,
+     "prompt_tokens": 195,
+     "cached_tokens": 0,
+     "completion_tokens": 259,
+     "reasoning_tokens": 248,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "swap_arith",
+   "loc": 6,
+   "loop_count": 0,
+   "total_ast_mutants": 6,
+   "gt_killable_mutants": 6,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures x == Y\nensures y == X",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 293,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures x == Y\nensures y == X",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures x == Y\nensures y == X",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 31.2128,
+     "prompt_tokens": 198,
+     "cached_tokens": 0,
+     "completion_tokens": 95,
+     "reasoning_tokens": 84,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 6,
+       "killed": 6
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "swap_bitvector",
+   "loc": 6,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures x == Y\nensures y == X",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 376,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures x == Y\nensures y == X",
+     "reasoning_chain": "**Swapping Bitvectors**\n\nI'm currently focusing on defining the formal specifications for the `SwapBitvectors` method in Dafny. My primary goal is to capture the essence of a bitvector swap using `req... [truncated for submission size]",
+     "candidate_specs": "ensures x == Y\nensures y == X",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 4.9741,
+     "prompt_tokens": 196,
+     "cached_tokens": 0,
+     "completion_tokens": 180,
+     "reasoning_tokens": 169,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "swap_in_array",
+   "loc": 5,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires 0 <= i < arr.Length\nrequires 0 <= j < arr.Length\nmodifies arr\nensures arr[i] == old(arr[j])\nensures arr[j] == old(arr[i])\nensures forall k :: 0 <= k < arr.Length && k != i && k != j ==> arr[k] == old(arr[k])",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 689,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires 0 <= i < arr.Length\nrequires 0 <= j < arr.Length\nmodifies arr\nensures arr[i] == old(arr[j])\nensures arr[j] == old(arr[i])\nensures forall k :: 0 <= k < arr.Length && k != i && k != j ==> arr[k] == old(arr[k])",
+     "reasoning_chain": "**Swapping elements**\n\nI'm focusing on the core logic of the swap operation. My current thought centers on implementing the temporary variable assignment to correctly exchange the values at the specif... [truncated for submission size]",
+     "candidate_specs": "requires 0 <= i < arr.Length\nrequires 0 <= j < arr.Length\nmodifies arr\nensures arr[i] == old(arr[j])\nensures arr[j] == old(arr[i])\nensures forall k :: 0 <= k < arr.Length && k != i && k != j ==> arr[k] == old(arr[k])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 4.8894,
+     "prompt_tokens": 197,
+     "cached_tokens": 0,
+     "completion_tokens": 492,
+     "reasoning_tokens": 406,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "swap_sim",
+   "loc": 4,
+   "loop_count": 0,
+   "total_ast_mutants": 0,
+   "gt_killable_mutants": 0,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures x == Y\nensures y == X",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 388,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures x == Y\nensures y == X",
+     "reasoning_chain": "**Defining Swap Method**\n\nI am currently focusing on formally specifying the `SwapSimultaneous` method. My thoughts are centered on defining its signature and accurately capturing its behavior in the ... [truncated for submission size]",
+     "candidate_specs": "ensures x == Y\nensures y == X",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 3.98,
+     "prompt_tokens": 193,
+     "cached_tokens": 0,
+     "completion_tokens": 195,
+     "reasoning_tokens": 184,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "test_array",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 3,
+   "gt_killable_mutants": 3,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires j < a.Length\nmodifies a\nensures a[j] == 60\nensures forall i :: 0 <= i < a.Length && i != j ==> a[i] == old(a[i])",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 677,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires j < a.Length\nmodifies a\nensures a[j] == 60\nensures forall i :: 0 <= i < a.Length && i != j ==> a[i] == old(a[i])",
+     "reasoning_chain": "**Defining Array Specification**\n\nI'm currently working on defining the formal specification for the `TestArrayElements` method. My focus is on precisely documenting the expected state change of the a... [truncated for submission size]",
+     "candidate_specs": "requires j < a.Length\nmodifies a\nensures a[j] == 60\nensures forall i :: 0 <= i < a.Length && i != j ==> a[i] == old(a[i])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 19.9371,
+     "prompt_tokens": 185,
+     "cached_tokens": 0,
+     "completion_tokens": 492,
+     "reasoning_tokens": 440,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "triple",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 5,
+   "gt_killable_mutants": 5,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r == 3 * x",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 342,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r == 3 * x",
+     "reasoning_chain": "**Developing Dafny Specification**\n\nI'm currently focused on generating a robust Dafny specification. My immediate priority is to formulate the `ensures` clause, aiming for precision and clarity to ac... [truncated for submission size]",
+     "candidate_specs": "ensures r == 3 * x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 25.9989,
+     "prompt_tokens": 155,
+     "cached_tokens": 0,
+     "completion_tokens": 187,
+     "reasoning_tokens": 179,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "triple2",
+   "loc": 10,
+   "loop_count": 0,
+   "total_ast_mutants": 32,
+   "gt_killable_mutants": 25,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r == 3 * x",
+   "final_raw_score": 0.7812,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 274,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r == 3 * x",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures r == 3 * x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 120.2381,
+     "prompt_tokens": 223,
+     "cached_tokens": 0,
+     "completion_tokens": 51,
+     "reasoning_tokens": 43,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.7812,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 6,
+       "killed": 3
+      },
+      "AOR": {
+       "total": 10,
+       "killed": 10
+      },
+      "CR": {
+       "total": 16,
+       "killed": 12
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "triple3",
+   "loc": 9,
+   "loop_count": 0,
+   "total_ast_mutants": 11,
+   "gt_killable_mutants": 11,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r == 3 * x",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 309,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r == 3 * x",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures r == 3 * x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 53.0043,
+     "prompt_tokens": 195,
+     "cached_tokens": 0,
+     "completion_tokens": 114,
+     "reasoning_tokens": 106,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 1,
+       "killed": 1
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 5,
+       "killed": 5
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "triple4",
+   "loc": 4,
+   "loop_count": 0,
+   "total_ast_mutants": 7,
+   "gt_killable_mutants": 7,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r == 3 * x",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 277,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r == 3 * x",
+     "reasoning_chain": "",
+     "candidate_specs": "ensures r == 3 * x",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 33.8795,
+     "prompt_tokens": 169,
+     "cached_tokens": 0,
+     "completion_tokens": 108,
+     "reasoning_tokens": 100,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 4,
+       "killed": 4
+      },
+      "CR": {
+       "total": 3,
+       "killed": 3
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "two_sum",
+   "loc": 21,
+   "loop_count": 2,
+   "total_ast_mutants": 30,
+   "gt_killable_mutants": 23,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires exists i0, j0 :: 0 <= i0 < j0 < nums.Length && nums[i0] + nums[j0] == target\nensures 0 <= i < j < nums.Length\nensures nums[i] + nums[j] == target\nensures forall ii, jj :: 0 <= ii < i && ii < jj < nums.Length ==> nums[ii] + nums[jj] != target\nensures forall jj :: i < jj < j ==> nums[i] + nums[jj] != target",
+   "final_raw_score": 0.7667,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 1156,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires exists i0, j0 :: 0 <= i0 < j0 < nums.Length && nums[i0] + nums[j0] == target\nensures 0 <= i < j < nums.Length\nensures nums[i] + nums[j] == target\nensures forall ii, jj :: 0 <= ii < i && ii < jj < nums.Length ==> nums[ii] + nums[jj] != target\nensures forall jj :: i < jj < j ==> nums[i] + nums[jj] != target",
+     "reasoning_chain": "**Developing Dafny Specification**\n\nI'm currently focusing on crafting robust Dafny specifications for the `twoSum` function. My primary goal is to ensure the `requires` clause accurately captures the... [truncated for submission size]",
+     "candidate_specs": "requires exists i0, j0 :: 0 <= i0 < j0 < nums.Length && nums[i0] + nums[j0] == target\nensures 0 <= i < j < nums.Length\nensures nums[i] + nums[j] == target\nensures forall ii, jj :: 0 <= ii < i && ii < jj < nums.Length ==> nums[ii] + nums[jj] != target\nensures forall jj :: i < jj < j ==> nums[i] + nums[jj] != target",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 122.2659,
+     "prompt_tokens": 418,
+     "cached_tokens": 0,
+     "completion_tokens": 738,
+     "reasoning_tokens": 618,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 0.7667,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 7,
+       "killed": 4
+      },
+      "AOR": {
+       "total": 10,
+       "killed": 8
+      },
+      "CR": {
+       "total": 11,
+       "killed": 9
+      },
+      "CID": {
+       "total": 1,
+       "killed": 1
+      },
+      "RSM": {
+       "total": 1,
+       "killed": 1
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "update_array",
+   "loc": 4,
+   "loop_count": 0,
+   "total_ast_mutants": 17,
+   "gt_killable_mutants": 17,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "requires a.Length >= 8\nmodifies a\nensures a[4] == old(a[4]) + 3\nensures a[7] == 516\nensures forall i :: 0 <= i < a.Length && i != 4 && i != 7 ==> a[i] == old(a[i])",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 609,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "requires a.Length >= 8\nmodifies a\nensures a[4] == old(a[4]) + 3\nensures a[7] == 516\nensures forall i :: 0 <= i < a.Length && i != 4 && i != 7 ==> a[i] == old(a[i])",
+     "reasoning_chain": "**Updating Array Elements**\n\nI've finalized the logic for updating array elements. Specifically, index 7 is now set to 516, and index 4 sees a value increase of 3. All other positions remain unchanged... [truncated for submission size]",
+     "candidate_specs": "requires a.Length >= 8\nmodifies a\nensures a[4] == old(a[4]) + 3\nensures a[7] == 516\nensures forall i :: 0 <= i < a.Length && i != 4 && i != 7 ==> a[i] == old(a[i])",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 83.4092,
+     "prompt_tokens": 209,
+     "cached_tokens": 0,
+     "completion_tokens": 400,
+     "reasoning_tokens": 323,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 15,
+       "killed": 15
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  },
+  {
+   "task_name": "update_map",
+   "loc": 3,
+   "loop_count": 0,
+   "total_ast_mutants": 2,
+   "gt_killable_mutants": 2,
+   "task_success": true,
+   "total_turns_taken": 1,
+   "final_specs": "ensures r.Keys == m1.Keys + m2.Keys\nensures forall k :: k in r ==> r[k] == (if k in m2 then m2[k] else m1[k])\nensures r == m1 + m2",
+   "final_raw_score": 1.0,
+   "final_adj_score": 1.0,
+   "task_total_tokens": 892,
+   "task_cached_tokens": 0,
+   "task_effective_cache_hit_ratio": 0.0,
+   "turn_history": [
+    {
+     "turn_number": 1,
+     "prompt_sent": [
+      {
+       "role": "summary",
+       "content": "2 messages in turn context"
+      }
+     ],
+     "raw_response": "ensures r.Keys == m1.Keys + m2.Keys\nensures forall k :: k in r ==> r[k] == (if k in m2 then m2[k] else m1[k])\nensures r == m1 + m2",
+     "reasoning_chain": "**Formalizing Map Updates**\n\nI'm currently focusing on defining the formal Dafny specifications, specifically the `requires` and `ensures` clauses, for the `update_map` method. My aim is to accurately... [truncated for submission size]",
+     "candidate_specs": "ensures r.Keys == m1.Keys + m2.Keys\nensures forall k :: k in r ==> r[k] == (if k in m2 then m2[k] else m1[k])\nensures r == m1 + m2",
+     "is_sound": true,
+     "verifier_error": null,
+     "solver_latency_sec": 15.025,
+     "prompt_tokens": 235,
+     "cached_tokens": 0,
+     "completion_tokens": 657,
+     "reasoning_tokens": 598,
+     "cache_hit_rate": 0.0,
+     "raw_mutation_score": 1.0,
+     "adj_mutation_score": 1.0,
+     "operator_kill_breakdown": {
+      "ROR": {
+       "total": 0,
+       "killed": 0
+      },
+      "AOR": {
+       "total": 2,
+       "killed": 2
+      },
+      "CR": {
+       "total": 0,
+       "killed": 0
+      },
+      "CID": {
+       "total": 0,
+       "killed": 0
+      },
+      "RSM": {
+       "total": 0,
+       "killed": 0
+      }
+     },
+     "surviving_killable_ids": []
+    }
+   ]
+  }
+ ]
+}

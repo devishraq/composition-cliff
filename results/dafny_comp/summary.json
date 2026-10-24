@@ -1,0 +1,162 @@
+[
+  {
+    "model": "deepseek/deepseek-v4-flash-0731",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 77,
+    "hardened_pct": 25.67,
+    "avg_raw_mutation_score": 0.2516,
+    "avg_adj_mutation_score": 0.2954,
+    "avg_turns": 2.64
+  },
+  {
+    "model": "deepseek/deepseek-v4-flash-0731",
+    "eval_mode": "mutation_cegis",
+    "total_tasks": 300,
+    "hardened_count": 71,
+    "hardened_pct": 23.67,
+    "avg_raw_mutation_score": 0.2065,
+    "avg_adj_mutation_score": 0.2525,
+    "avg_turns": 3.05
+  },
+  {
+    "model": "deepseek/deepseek-v4-flash-0731",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 42,
+    "hardened_pct": 14.0,
+    "avg_raw_mutation_score": 0.1709,
+    "avg_adj_mutation_score": 0.1943,
+    "avg_turns": 1.0
+  },
+  {
+    "model": "google/gemini-3.7-flash",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 130,
+    "hardened_pct": 43.33,
+    "avg_raw_mutation_score": 0.4649,
+    "avg_adj_mutation_score": 0.5886,
+    "avg_turns": 2.86
+  },
+  {
+    "model": "google/gemini-3.7-flash",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 124,
+    "hardened_pct": 41.33,
+    "avg_raw_mutation_score": 0.4782,
+    "avg_adj_mutation_score": 0.6178,
+    "avg_turns": 1.0
+  },
+  {
+    "model": "inclusionai/ling-3.0-flash",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 77,
+    "hardened_pct": 25.67,
+    "avg_raw_mutation_score": 0.2176,
+    "avg_adj_mutation_score": 0.2697,
+    "avg_turns": 3.53
+  },
+  {
+    "model": "inclusionai/ling-3.0-flash",
+    "eval_mode": "mutation_cegis",
+    "total_tasks": 300,
+    "hardened_count": 75,
+    "hardened_pct": 25.0,
+    "avg_raw_mutation_score": 0.2118,
+    "avg_adj_mutation_score": 0.2613,
+    "avg_turns": 3.45
+  },
+  {
+    "model": "inclusionai/ling-3.0-flash",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 44,
+    "hardened_pct": 14.67,
+    "avg_raw_mutation_score": 0.1705,
+    "avg_adj_mutation_score": 0.2145,
+    "avg_turns": 1.0
+  },
+  {
+    "model": "openai/gpt-5.6-luna",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 94,
+    "hardened_pct": 31.33,
+    "avg_raw_mutation_score": 0.2848,
+    "avg_adj_mutation_score": 0.3421,
+    "avg_turns": 3.44
+  },
+  {
+    "model": "openai/gpt-5.6-luna",
+    "eval_mode": "mutation_cegis",
+    "total_tasks": 300,
+    "hardened_count": 86,
+    "hardened_pct": 28.67,
+    "avg_raw_mutation_score": 0.2625,
+    "avg_adj_mutation_score": 0.3287,
+    "avg_turns": 3.49
+  },
+  {
+    "model": "openai/gpt-5.6-luna",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 57,
+    "hardened_pct": 19.0,
+    "avg_raw_mutation_score": 0.2189,
+    "avg_adj_mutation_score": 0.2693,
+    "avg_turns": 1.0
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 74,
+    "hardened_pct": 24.67,
+    "avg_raw_mutation_score": 0.2335,
+    "avg_adj_mutation_score": 0.2645,
+    "avg_turns": 3.59
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "eval_mode": "mutation_cegis",
+    "total_tasks": 300,
+    "hardened_count": 95,
+    "hardened_pct": 31.67,
+    "avg_raw_mutation_score": 0.3042,
+    "avg_adj_mutation_score": 0.3408,
+    "avg_turns": 3.35
+  },
+  {
+    "model": "qwen/qwen3.7-flash",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 64,
+    "hardened_pct": 21.33,
+    "avg_raw_mutation_score": 0.2576,
+    "avg_adj_mutation_score": 0.3104,
+    "avg_turns": 1.0
+  },
+  {
+    "model": "z-ai/glm-5.3-flash",
+    "eval_mode": "compiler_only",
+    "total_tasks": 300,
+    "hardened_count": 122,
+    "hardened_pct": 40.67,
+    "avg_raw_mutation_score": 0.4217,
+    "avg_adj_mutation_score": 0.4956,
+    "avg_turns": 3.12
+  },
+  {
+    "model": "z-ai/glm-5.3-flash",
+    "eval_mode": "zero_shot",
+    "total_tasks": 300,
+    "hardened_count": 98,
+    "hardened_pct": 32.67,
+    "avg_raw_mutation_score": 0.3831,
+    "avg_adj_mutation_score": 0.4797,
+    "avg_turns": 1.0
+  }
+]
