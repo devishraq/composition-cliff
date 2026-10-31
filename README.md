@@ -12,6 +12,10 @@ composition-cliff/
 ├── dataset/
 │   ├── clover_bench/          # Track A: 60 single-method Dafny programs (from CloverBench)
 │   └── dafny_comp/            # Track B: 300 multi-procedure inter-dependent call graphs (DAFNYCOMP-300)
+├── paper/                     # Paper sources (LaTeX) and camera-ready PDF
+│   ├── Breaking_The_Composition_Cliff_NeurIPS_2026_Camera_Ready.pdf
+│   ├── main.tex
+│   └── references.bib
 ├── results/
 │   ├── clover_bench/          # Complete evaluation data across 6 frontier models for Track A
 │   ├── dafny_comp/            # Complete evaluation data across 6 frontier models for Track B
@@ -23,6 +27,7 @@ composition-cliff/
 ├── run_parallel_models.py     # High-concurrency parallel model sweep orchestrator
 ├── analyze_specification_quality.py # AST parser for quantifiers, equalities, and vacuous pass analysis
 ├── test_harness.py            # Unit test suite verifying mutator and verifier integration
+├── LICENSE                    # MIT License
 └── README.md                  # Reproduction instructions
 ```
 
@@ -130,4 +135,26 @@ This script computes:
 1. **First-Order Logical Depth:** Counts quantifier clauses and equality assertions on Track A.
 2. **Vacuous Pass vs. SMT Timeout Breakdown:** Analyzes the tasks where Mode 1 passed with trivial bounds while Mode 2 hit inductive SMT timeout ceilings.
 3. Outputs structured JSON results to `results/specification_quality_analysis.json`.
+
+---
+
+## 6. Citation
+
+If you use this benchmark or codebase in your research, please cite:
+
+```bibtex
+@inproceedings{smsp2026composition,
+  title={Breaking the Composition Cliff: Mutation-Guided Specification Synthesis for Multi-Function Programs},
+  author={Ishraq Tanvir},
+  booktitle={NeurIPS 2026 Workshop on Who Verifies the Agents? Toward Reliable Agent Development},
+  year={2026}
+}
+```
+
+---
+
+## 7. License
+
+This repository is licensed under the [MIT License](LICENSE).
+
 

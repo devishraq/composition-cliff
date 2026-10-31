@@ -39,17 +39,14 @@ Thumbs.db
 .vscode/
 .commandcode/
 .playwright-mcp/
+.tempmediaStorage/
 *.swp
 *.swo
 *~
 
 # ==============================================================================
-# Paper, TeX, LaTeX Caches & Submission Artifacts
+# TeX & LaTeX Build Artifacts
 # ==============================================================================
-paper/
-Formatting_Instructions_For_NeurIPS_2026/
-*.pdf
-*.tex
 *.aux
 *.bbl
 *.blg
@@ -65,13 +62,20 @@ Formatting_Instructions_For_NeurIPS_2026/
 *.vrb
 *.bst
 
-# OpenReview Submissions, Drafts & Conference Metadata
+# ==============================================================================
+# Root Drafts, Archives & Temporary Files
+# ==============================================================================
+Formatting_Instructions_For_NeurIPS_2026/
 370_Breaking_the_Composition_open-review*
 Breaking_The_Composition_Cliff_Supplementary_Materials*
 *.zip
-abstract.txt
-abstract.tex
-abstract.pdf
-tldr.txt
-merge.txt
-merge.py
+/abstract.txt
+/abstract.tex
+/abstract.pdf
+/tldr.txt
+/merge.txt
+/merge.py
+/Breaking_The_Composition_Cliff_Abstract.pdf
+/Breaking_The_Composition_Cliff_NeurIPS_2026.pdf
+frontend/
+.tempmediaStorage/
