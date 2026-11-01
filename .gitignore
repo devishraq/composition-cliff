@@ -39,6 +39,8 @@ Thumbs.db
 .vscode/
 .commandcode/
 .playwright-mcp/
+.tempmediaStorage/
+frontend/
 *.swp
 *.swo
 *~
@@ -49,6 +51,7 @@ Thumbs.db
 paper/
 Formatting_Instructions_For_NeurIPS_2026/
 *.pdf
+!Breaking_The_Composition_Cliff_NeurIPS_2026_Camera_Ready.pdf
 *.tex
 *.aux
 *.bbl
