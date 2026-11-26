@@ -159,6 +159,15 @@ def run_docker_mode(tasks_dir: Path, only, platform, timeout, max_files):
                          answer_files=list(files)))
         continue
       for path, content in files.items():
+        # Control: if the verifier still passes with this file emptied, it never
+        # reads it (e.g. the solver script), so mutants of it prove nothing.
+        _start(snap, base, platform)
+        _sh(["docker", "exec", base, "bash", "-c", f": > '{path}'"])
+        ctrl = _verify(base, tdir, timeout)
+        _sh(["docker", "rm", "-f", base])
+        if ctrl:
+          print(f"   skip {path}: verifier passes with it emptied (not load-bearing)")
+          continue
         for m in mutants_for(content):
           if m.content == content:
             continue
