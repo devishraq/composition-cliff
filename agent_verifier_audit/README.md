@@ -73,5 +73,8 @@ uv run python -m agent_verifier_audit.audit docker \
     --only count-dataset-tokens sqlite-db-truncate
 ```
 
-Docker mode needs Docker and network access for the task images; it has not yet been run
-across the full benchmark.
+Docker mode needs Docker and network access for the task images. It has been smoke-tested on
+`count-dataset-tokens` and `sqlite-db-truncate` (Apple Silicon, `--platform linux/amd64`), where it
+reproduces the file-mode survivors inside the real containers (6 survivors of 9 rejectable mutants
+on those two tasks, which were picked because file mode had flagged them, so 0.333 is not a
+benchmark-wide rate). It has not yet been run across the full benchmark.
