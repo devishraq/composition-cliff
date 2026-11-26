@@ -24,6 +24,7 @@ composition-cliff/
 ├── run_parallel_models.py     # High-concurrency parallel model sweep orchestrator
 ├── analyze_specification_quality.py # AST parser for quantifiers, equalities, and vacuous pass analysis
 ├── test_harness.py            # Unit test suite verifying mutator and verifier integration
+├── agent_verifier_audit/      # Extension: mutation audit of agent-benchmark verifiers (Terminal-Bench)
 ├── LICENSE                    # MIT License
 └── README.md                  # Reproduction instructions
 ```
@@ -135,7 +136,13 @@ This script computes:
 
 ---
 
-## 6. Citation
+## 6. Extension: Mutation-Auditing Agent Benchmark Verifiers
+
+`agent_verifier_audit/` applies the Mutation-CEGIS idea to agent benchmarks: instead of mutating a program to test a specification, it mutates an agent's output to test a task's verifier. On 10 answer-file tasks from Terminal-Bench 2.1, 2 verifiers accept wrong or gamed answers (6 of 40 rejectable mutants survive). See [`agent_verifier_audit/README.md`](agent_verifier_audit/README.md).
+
+---
+
+## 7. Citation
 
 If you use this benchmark or codebase in your research, please cite:
 
@@ -150,7 +157,7 @@ If you use this benchmark or codebase in your research, please cite:
 
 ---
 
-## 7. License
+## 8. License
 
 This repository is licensed under the [MIT License](LICENSE).
 
