@@ -1,0 +1,57 @@
+{
+ "_about": "Oracle answers for Terminal-Bench 2.1 tasks whose verifiers only read answer files under /app. Values are the answers the verifiers themselves expect (tests/test_outputs.py at harbor-framework/terminal-bench-2-1@12b7565). neutral_operators marks mutants the task instruction explicitly allows.",
+ "count-dataset-tokens": {
+  "files": {
+   "answer.txt": "79586"
+  }
+ },
+ "sqlite-db-truncate": {
+  "files": {
+   "recover.json": "[{\"word\": \"testword02\", \"value\": 10.0}, {\"word\": \"testword03\", \"value\": 25.0}, {\"word\": \"testword04\", \"value\": 42.0}, {\"word\": \"testword05\", \"value\": 50.0}, {\"word\": \"testword06\", \"value\": 75.0}, {\"word\": \"testword07\", \"value\": 99.0}, {\"word\": \"testword08\", \"value\": 99.99}, {\"word\": \"testword09\", \"value\": 0.5}]"
+  }
+ },
+ "crack-7z-hash": {
+  "files": {
+   "solution.txt": "honeybear"
+  }
+ },
+ "gcode-to-text": {
+  "files": {
+   "out.txt": "flag{gc0d3_iz_ch4LLenGiNg}"
+  }
+ },
+ "chess-best-move": {
+  "files": {
+   "move.txt": "g2g4 e2e4"
+  }
+ },
+ "code-from-image": {
+  "files": {
+   "output.txt": "bee26a133f103b9ecda444c70ec22cafef6e31a3de7af6d047974dc90ce3defe"
+  }
+ },
+ "mteb-leaderboard": {
+  "files": {
+   "result.txt": "GritLM/GritLM-7B"
+  }
+ },
+ "mteb-retrieve": {
+  "files": {
+   "result.txt": "MTEB: Massive Text Embedding Benchmark"
+  }
+ },
+ "password-recovery": {
+  "files": {
+   "recovered_passwords.txt": "8XDP5Q2RT9ZK7VB3BV4WW54"
+  },
+  "neutral_operators": [
+   "HDG"
+  ],
+  "note": "instruction says 'You are allowed to make multiple guesses'"
+ },
+ "vulnerable-secret": {
+  "files": {
+   "results.txt": "FLAG{b4ff3r_0v3rfl0w_m4st3r_k3y_2024}"
+  }
+ }
+}

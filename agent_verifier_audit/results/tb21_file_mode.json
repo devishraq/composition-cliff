@@ -1,0 +1,586 @@
+{
+ "summary": {
+  "tasks_audited": 10,
+  "killable_mutants": 40,
+  "surviving_mutants": 6,
+  "mutation_score": 0.85,
+  "tasks_with_survivors": [
+   "count-dataset-tokens",
+   "sqlite-db-truncate"
+  ],
+  "per_task": {
+   "chess-best-move": {
+    "killable": 4,
+    "survived": 0
+   },
+   "code-from-image": {
+    "killable": 4,
+    "survived": 0
+   },
+   "count-dataset-tokens": {
+    "killable": 6,
+    "survived": 4
+   },
+   "crack-7z-hash": {
+    "killable": 4,
+    "survived": 0
+   },
+   "gcode-to-text": {
+    "killable": 4,
+    "survived": 0
+   },
+   "mteb-leaderboard": {
+    "killable": 4,
+    "survived": 0
+   },
+   "mteb-retrieve": {
+    "killable": 4,
+    "survived": 0
+   },
+   "password-recovery": {
+    "killable": 3,
+    "survived": 0
+   },
+   "sqlite-db-truncate": {
+    "killable": 3,
+    "survived": 2
+   },
+   "vulnerable-secret": {
+    "killable": 4,
+    "survived": 0
+   }
+  }
+ },
+ "mutants": [
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "APD",
+   "expectation": "reject",
+   "description": "digit appended: different number containing the answer",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "answer.txt",
+   "operator": "PPD",
+   "expectation": "reject",
+   "description": "digit prepended: different number containing the answer",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "SUP",
+   "expectation": "reject",
+   "description": "all correct rows + 50 fabricated rows",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "SUP-1",
+   "expectation": "reject",
+   "description": "one correct row missing + 50 fabricated rows",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "VAL",
+   "expectation": "reject",
+   "description": "every row has a wrong numeric value",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "DUP",
+   "expectation": "neutral",
+   "description": "every row duplicated",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "DRP",
+   "expectation": "neutral",
+   "description": "one correct row missing (partial credit)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "recover.json",
+   "operator": "ORD",
+   "expectation": "accept",
+   "description": "same rows, reversed order",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "solution.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "solution.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "solution.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "solution.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "solution.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "out.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "out.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "out.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "out.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "out.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "move.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "move.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "move.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "move.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "move.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "output.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "output.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "output.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "output.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "output.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-leaderboard",
+   "file": "result.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-leaderboard",
+   "file": "result.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-leaderboard",
+   "file": "result.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-leaderboard",
+   "file": "result.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-leaderboard",
+   "file": "result.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "result.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "result.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "result.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "result.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "result.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "password-recovery",
+   "file": "recovered_passwords.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "password-recovery",
+   "file": "recovered_passwords.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "password-recovery",
+   "file": "recovered_passwords.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "password-recovery",
+   "file": "recovered_passwords.txt",
+   "operator": "HDG",
+   "expectation": "neutral",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "password-recovery",
+   "file": "recovered_passwords.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "results.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "results.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "results.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "results.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "results.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  }
+ ]
+}
