@@ -1,0 +1,3114 @@
+{
+ "summary": {
+  "tasks_audited": 57,
+  "killable_mutants": 254,
+  "surviving_mutants": 27,
+  "mutation_score": 0.894,
+  "tasks_with_survivors": [
+   "adaptive-rejection-sampler",
+   "break-filter-js-from-html",
+   "count-dataset-tokens",
+   "dna-assembly",
+   "dna-insert",
+   "extract-moves-from-video",
+   "feal-linear-cryptanalysis",
+   "make-mips-interpreter",
+   "openssl-selfsigned-cert",
+   "sqlite-db-truncate",
+   "winning-avg-corewars"
+  ],
+  "per_task": {
+   "adaptive-rejection-sampler": {
+    "killable": 4,
+    "survived": 3
+   },
+   "bn-fit-modify": {
+    "killable": 8,
+    "survived": 0
+   },
+   "break-filter-js-from-html": {
+    "killable": 4,
+    "survived": 2
+   },
+   "build-pov-ray": {
+    "killable": 4,
+    "survived": 0
+   },
+   "cancel-async-tasks": {
+    "killable": 4,
+    "survived": 0
+   },
+   "chess-best-move": {
+    "killable": 4,
+    "survived": 0
+   },
+   "cobol-modernization": {
+    "killable": 4,
+    "survived": 0
+   },
+   "code-from-image": {
+    "killable": 4,
+    "survived": 0
+   },
+   "constraints-scheduling": {
+    "killable": 4,
+    "survived": 0
+   },
+   "count-dataset-tokens": {
+    "killable": 6,
+    "survived": 4
+   },
+   "crack-7z-hash": {
+    "killable": 4,
+    "survived": 0
+   },
+   "custom-memory-heap-crash": {
+    "killable": 4,
+    "survived": 0
+   },
+   "db-wal-recovery": {
+    "killable": 3,
+    "survived": 0
+   },
+   "dna-assembly": {
+    "killable": 4,
+    "survived": 2
+   },
+   "dna-insert": {
+    "killable": 4,
+    "survived": 2
+   },
+   "extract-elf": {
+    "killable": 4,
+    "survived": 0
+   },
+   "extract-moves-from-video": {
+    "killable": 4,
+    "survived": 3
+   },
+   "feal-differential-cryptanalysis": {
+    "killable": 4,
+    "survived": 0
+   },
+   "feal-linear-cryptanalysis": {
+    "killable": 4,
+    "survived": 4
+   },
+   "financial-document-processor": {
+    "killable": 4,
+    "survived": 0
+   },
+   "fix-code-vulnerability": {
+    "killable": 4,
+    "survived": 0
+   },
+   "fix-ocaml-gc": {
+    "killable": 4,
+    "survived": 0
+   },
+   "gcode-to-text": {
+    "killable": 4,
+    "survived": 0
+   },
+   "git-leak-recovery": {
+    "killable": 4,
+    "survived": 0
+   },
+   "gpt2-codegolf": {
+    "killable": 4,
+    "survived": 0
+   },
+   "headless-terminal": {
+    "killable": 4,
+    "survived": 0
+   },
+   "large-scale-text-editing": {
+    "killable": 4,
+    "survived": 0
+   },
+   "largest-eigenval": {
+    "killable": 4,
+    "survived": 0
+   },
+   "log-summary-date-ranges": {
+    "killable": 4,
+    "survived": 0
+   },
+   "make-mips-interpreter": {
+    "killable": 4,
+    "survived": 1
+   },
+   "model-extraction-relu-logits": {
+    "killable": 4,
+    "survived": 0
+   },
+   "modernize-scientific-stack": {
+    "killable": 4,
+    "survived": 0
+   },
+   "mteb-retrieve": {
+    "killable": 4,
+    "survived": 0
+   },
+   "multi-source-data-merger": {
+    "killable": 4,
+    "survived": 0
+   },
+   "openssl-selfsigned-cert": {
+    "killable": 12,
+    "survived": 1
+   },
+   "overfull-hbox": {
+    "killable": 4,
+    "survived": 0
+   },
+   "path-tracing": {
+    "killable": 4,
+    "survived": 0
+   },
+   "path-tracing-reverse": {
+    "killable": 4,
+    "survived": 0
+   },
+   "polyglot-c-py": {
+    "killable": 4,
+    "survived": 0
+   },
+   "polyglot-rust-c": {
+    "killable": 4,
+    "survived": 0
+   },
+   "portfolio-optimization": {
+    "killable": 4,
+    "survived": 0
+   },
+   "pytorch-model-cli": {
+    "killable": 6,
+    "survived": 0
+   },
+   "query-optimize": {
+    "killable": 4,
+    "survived": 0
+   },
+   "raman-fitting": {
+    "killable": 4,
+    "survived": 0
+   },
+   "regex-log": {
+    "killable": 4,
+    "survived": 0
+   },
+   "reshard-c4-data": {
+    "killable": 8,
+    "survived": 0
+   },
+   "sam-cell-seg": {
+    "killable": 4,
+    "survived": 0
+   },
+   "sanitize-git-repo": {
+    "killable": 12,
+    "survived": 0
+   },
+   "schemelike-metacircular-eval": {
+    "killable": 4,
+    "survived": 0
+   },
+   "sparql-university": {
+    "killable": 4,
+    "survived": 0
+   },
+   "sqlite-db-truncate": {
+    "killable": 3,
+    "survived": 2
+   },
+   "torch-pipeline-parallelism": {
+    "killable": 4,
+    "survived": 0
+   },
+   "torch-tensor-parallelism": {
+    "killable": 4,
+    "survived": 0
+   },
+   "tune-mjcf": {
+    "killable": 4,
+    "survived": 0
+   },
+   "video-processing": {
+    "killable": 4,
+    "survived": 0
+   },
+   "vulnerable-secret": {
+    "killable": 4,
+    "survived": 0
+   },
+   "winning-avg-corewars": {
+    "killable": 4,
+    "survived": 3
+   }
+  }
+ },
+ "mutants": [
+  {
+   "task": "adaptive-rejection-sampler",
+   "file": "/app/normal_samples.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "adaptive-rejection-sampler",
+   "file": "/app/normal_samples.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "adaptive-rejection-sampler",
+   "file": "/app/normal_samples.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "adaptive-rejection-sampler",
+   "file": "/app/normal_samples.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/intervened_dag.csv",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/intervened_dag.csv",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/intervened_dag.csv",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/intervened_dag.csv",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/learned_dag.csv",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/learned_dag.csv",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/learned_dag.csv",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "bn-fit-modify",
+   "file": "/app/learned_dag.csv",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "break-filter-js-from-html",
+   "file": "/app/out.html",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "break-filter-js-from-html",
+   "file": "/app/out.html",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "break-filter-js-from-html",
+   "file": "/app/out.html",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "break-filter-js-from-html",
+   "file": "/app/out.html",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "build-cython-ext",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/pyknotid/LICENSE.txt",
+    "/app/pyknotid/README.rst",
+    "/app/pyknotid/pyknotid/make/periodic_knot.py"
+   ]
+  },
+  {
+   "task": "build-pov-ray",
+   "file": "/app/povray-2.2/knownbug.doc",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": true
+  },
+  {
+   "task": "build-pov-ray",
+   "file": "/app/povray-2.2/knownbug.doc",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "build-pov-ray",
+   "file": "/app/povray-2.2/knownbug.doc",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "build-pov-ray",
+   "file": "/app/povray-2.2/knownbug.doc",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "build-pov-ray",
+   "file": "/app/povray-2.2/knownbug.doc",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "caffe-cifar-10",
+   "error": "Command '['docker', 'exec', 'vaudit-caffe-cifar-10', 'bash', '/solution/solve.sh']' timed out after 900 seconds"
+  },
+  {
+   "task": "cancel-async-tasks",
+   "file": "/app/run.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cancel-async-tasks",
+   "file": "/app/run.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cancel-async-tasks",
+   "file": "/app/run.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cancel-async-tasks",
+   "file": "/app/run.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "/app/move.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "/app/move.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "/app/move.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "/app/move.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "chess-best-move",
+   "file": "/app/move.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cobol-modernization",
+   "file": "/app/program.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cobol-modernization",
+   "file": "/app/program.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cobol-modernization",
+   "file": "/app/program.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "cobol-modernization",
+   "file": "/app/program.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "/app/output.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "/app/output.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "/app/output.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "code-from-image",
+   "file": "/app/output.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "compile-compcert",
+   "error": "Command '['docker', 'exec', 'vaudit-compile-compcert', 'bash', '/solution/solve.sh']' timed out after 900 seconds"
+  },
+  {
+   "task": "configure-git-webserver",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "constraints-scheduling",
+   "file": "/app/meeting_scheduled.ics",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "constraints-scheduling",
+   "file": "/app/meeting_scheduled.ics",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "constraints-scheduling",
+   "file": "/app/meeting_scheduled.ics",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "constraints-scheduling",
+   "file": "/app/meeting_scheduled.ics",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "APD",
+   "expectation": "reject",
+   "description": "digit appended: different number containing the answer",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "count-dataset-tokens",
+   "file": "/app/answer.txt",
+   "operator": "PPD",
+   "expectation": "reject",
+   "description": "digit prepended: different number containing the answer",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "/app/solution.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "/app/solution.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "/app/solution.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "/app/solution.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "crack-7z-hash",
+   "file": "/app/solution.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "custom-memory-heap-crash",
+   "file": "/app/user.cpp",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "custom-memory-heap-crash",
+   "file": "/app/user.cpp",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "custom-memory-heap-crash",
+   "file": "/app/user.cpp",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "custom-memory-heap-crash",
+   "file": "/app/user.cpp",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "SUP",
+   "expectation": "reject",
+   "description": "all correct rows + 50 fabricated rows",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "SUP-1",
+   "expectation": "reject",
+   "description": "one correct row missing + 50 fabricated rows",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "VAL",
+   "expectation": "reject",
+   "description": "every row has a wrong numeric value",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "DUP",
+   "expectation": "neutral",
+   "description": "every row duplicated",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "DRP",
+   "expectation": "neutral",
+   "description": "one correct row missing (partial credit)",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "db-wal-recovery",
+   "file": "/app/recovered.json",
+   "operator": "ORD",
+   "expectation": "accept",
+   "description": "same rows, reversed order",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": true
+  },
+  {
+   "task": "dna-assembly",
+   "file": "/app/primers.fasta",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "dna-assembly",
+   "file": "/app/primers.fasta",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "dna-assembly",
+   "file": "/app/primers.fasta",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "dna-assembly",
+   "file": "/app/primers.fasta",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "dna-insert",
+   "file": "/app/primers.fasta",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "dna-insert",
+   "file": "/app/primers.fasta",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "dna-insert",
+   "file": "/app/primers.fasta",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "dna-insert",
+   "file": "/app/primers.fasta",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-elf",
+   "file": "/app/extract.js",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-elf",
+   "file": "/app/extract.js",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-elf",
+   "file": "/app/extract.js",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-elf",
+   "file": "/app/extract.js",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-moves-from-video",
+   "file": "/app/solution.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "extract-moves-from-video",
+   "file": "/app/solution.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "extract-moves-from-video",
+   "file": "/app/solution.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "extract-moves-from-video",
+   "file": "/app/solution.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "feal-differential-cryptanalysis",
+   "file": "/app/attack.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "feal-differential-cryptanalysis",
+   "file": "/app/attack.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "feal-differential-cryptanalysis",
+   "file": "/app/attack.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "feal-differential-cryptanalysis",
+   "file": "/app/attack.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "feal-linear-cryptanalysis",
+   "file": "/app/plaintexts.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "feal-linear-cryptanalysis",
+   "file": "/app/plaintexts.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "feal-linear-cryptanalysis",
+   "file": "/app/plaintexts.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "feal-linear-cryptanalysis",
+   "file": "/app/plaintexts.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "filter-js-from-html",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/filter.py"
+   ]
+  },
+  {
+   "task": "financial-document-processor",
+   "file": "/app/invoices/summary.csv",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "financial-document-processor",
+   "file": "/app/invoices/summary.csv",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "financial-document-processor",
+   "file": "/app/invoices/summary.csv",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "financial-document-processor",
+   "file": "/app/invoices/summary.csv",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-code-vulnerability",
+   "file": "/app/report.jsonl",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-code-vulnerability",
+   "file": "/app/report.jsonl",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-code-vulnerability",
+   "file": "/app/report.jsonl",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-code-vulnerability",
+   "file": "/app/report.jsonl",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-ocaml-gc",
+   "file": "/app/ocaml/runtime/shared_heap.c",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-ocaml-gc",
+   "file": "/app/ocaml/runtime/shared_heap.c",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-ocaml-gc",
+   "file": "/app/ocaml/runtime/shared_heap.c",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "fix-ocaml-gc",
+   "file": "/app/ocaml/runtime/shared_heap.c",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "/app/out.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "/app/out.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "/app/out.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gcode-to-text",
+   "file": "/app/out.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "git-leak-recovery",
+   "file": "/app/repo/.git/packed-refs",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "git-leak-recovery",
+   "file": "/app/repo/.git/packed-refs",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "git-leak-recovery",
+   "file": "/app/repo/.git/packed-refs",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "git-leak-recovery",
+   "file": "/app/repo/.git/packed-refs",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "git-multibranch",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "gpt2-codegolf",
+   "file": "/app/gpt2.c",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gpt2-codegolf",
+   "file": "/app/gpt2.c",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gpt2-codegolf",
+   "file": "/app/gpt2.c",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gpt2-codegolf",
+   "file": "/app/gpt2.c",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "gpt2-codegolf",
+   "file": "/app/gpt2.c",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "headless-terminal",
+   "file": "/app/headless_terminal.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "headless-terminal",
+   "file": "/app/headless_terminal.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "headless-terminal",
+   "file": "/app/headless_terminal.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "headless-terminal",
+   "file": "/app/headless_terminal.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "hf-model-inference",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/app.log",
+    "/app/app.py",
+    "/app/model_cache/sentiment_model/config.json"
+   ]
+  },
+  {
+   "task": "install-windows-3.11",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "kv-store-grpc",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/kv-store.proto",
+    "/app/kv_store_pb2.py",
+    "/app/kv_store_pb2_grpc.py"
+   ]
+  },
+  {
+   "task": "large-scale-text-editing",
+   "file": "/app/apply_macros.vim",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "large-scale-text-editing",
+   "file": "/app/apply_macros.vim",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "large-scale-text-editing",
+   "file": "/app/apply_macros.vim",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "large-scale-text-editing",
+   "file": "/app/apply_macros.vim",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "largest-eigenval",
+   "file": "/app/eigen.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "largest-eigenval",
+   "file": "/app/eigen.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "largest-eigenval",
+   "file": "/app/eigen.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "largest-eigenval",
+   "file": "/app/eigen.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "log-summary-date-ranges",
+   "file": "/app/summary.csv",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "log-summary-date-ranges",
+   "file": "/app/summary.csv",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "log-summary-date-ranges",
+   "file": "/app/summary.csv",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "log-summary-date-ranges",
+   "file": "/app/summary.csv",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mailman",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "make-mips-interpreter",
+   "file": "/app/vm.js",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "make-mips-interpreter",
+   "file": "/app/vm.js",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "make-mips-interpreter",
+   "file": "/app/vm.js",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "make-mips-interpreter",
+   "file": "/app/vm.js",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mcmc-sampling-stan",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "model-extraction-relu-logits",
+   "file": "/app/steal.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "model-extraction-relu-logits",
+   "file": "/app/steal.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "model-extraction-relu-logits",
+   "file": "/app/steal.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "model-extraction-relu-logits",
+   "file": "/app/steal.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "modernize-scientific-stack",
+   "file": "/app/analyze_climate_modern.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "modernize-scientific-stack",
+   "file": "/app/analyze_climate_modern.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "modernize-scientific-stack",
+   "file": "/app/analyze_climate_modern.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "modernize-scientific-stack",
+   "file": "/app/analyze_climate_modern.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "/app/result.txt",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "/app/result.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "/app/result.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "/app/result.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "mteb-retrieve",
+   "file": "/app/result.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "multi-source-data-merger",
+   "file": "/app/conflicts.json",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "multi-source-data-merger",
+   "file": "/app/conflicts.json",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "multi-source-data-merger",
+   "file": "/app/conflicts.json",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "multi-source-data-merger",
+   "file": "/app/conflicts.json",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "multi-source-data-merger",
+   "file": "/app/conflicts.json",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "nginx-request-logging",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/check_cert.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/check_cert.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/check_cert.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/check_cert.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.crt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.crt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.crt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.crt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.key",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.key",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.key",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "file": "/app/ssl/server.key",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "overfull-hbox",
+   "file": "/app/input.tex",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "overfull-hbox",
+   "file": "/app/input.tex",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "overfull-hbox",
+   "file": "/app/input.tex",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "overfull-hbox",
+   "file": "/app/input.tex",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing",
+   "file": "/app/image.c",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing",
+   "file": "/app/image.c",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing",
+   "file": "/app/image.c",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing",
+   "file": "/app/image.c",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing-reverse",
+   "file": "/app/mystery.c",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing-reverse",
+   "file": "/app/mystery.c",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing-reverse",
+   "file": "/app/mystery.c",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "path-tracing-reverse",
+   "file": "/app/mystery.c",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-c-py",
+   "file": "/app/polyglot/main.py.c",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-c-py",
+   "file": "/app/polyglot/main.py.c",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-c-py",
+   "file": "/app/polyglot/main.py.c",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-c-py",
+   "file": "/app/polyglot/main.py.c",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-rust-c",
+   "file": "/app/polyglot/main.rs",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-rust-c",
+   "file": "/app/polyglot/main.rs",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-rust-c",
+   "file": "/app/polyglot/main.rs",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "polyglot-rust-c",
+   "file": "/app/polyglot/main.rs",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "portfolio-optimization",
+   "file": "/app/portfolio_optimized.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "portfolio-optimization",
+   "file": "/app/portfolio_optimized.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "portfolio-optimization",
+   "file": "/app/portfolio_optimized.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "portfolio-optimization",
+   "file": "/app/portfolio_optimized.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "protein-assembly",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/gblock.py",
+    "/app/pdb_ids.py",
+    "/app/sequences.csv"
+   ]
+  },
+  {
+   "task": "prove-plus-comm",
+   "skipped": true,
+   "oracle_passes": true,
+   "answer_files": []
+  },
+  {
+   "task": "pypi-server",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": []
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "APD",
+   "expectation": "reject",
+   "description": "digit appended: different number containing the answer",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "pytorch-model-cli",
+   "file": "/app/prediction.txt",
+   "operator": "PPD",
+   "expectation": "reject",
+   "description": "digit prepended: different number containing the answer",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "qemu-alpine-ssh",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/connect",
+    "/app/wait"
+   ]
+  },
+  {
+   "task": "qemu-startup",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/wait"
+   ]
+  },
+  {
+   "task": "query-optimize",
+   "file": "/app/sol.sql",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "query-optimize",
+   "file": "/app/sol.sql",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "query-optimize",
+   "file": "/app/sol.sql",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "query-optimize",
+   "file": "/app/sol.sql",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "raman-fitting",
+   "file": "/app/results.json",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "raman-fitting",
+   "file": "/app/results.json",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "raman-fitting",
+   "file": "/app/results.json",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "raman-fitting",
+   "file": "/app/results.json",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "raman-fitting",
+   "file": "/app/results.json",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "regex-chess",
+   "skipped": true,
+   "oracle_passes": true,
+   "answer_files": []
+  },
+  {
+   "task": "regex-log",
+   "file": "/app/regex.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "regex-log",
+   "file": "/app/regex.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "regex-log",
+   "file": "/app/regex.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "regex-log",
+   "file": "/app/regex.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/compress.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/compress.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/compress.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/compress.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/decompress.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/decompress.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/decompress.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "reshard-c4-data",
+   "file": "/app/decompress.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "rstan-to-pystan",
+   "skipped": true,
+   "oracle_passes": false,
+   "answer_files": [
+    "/app/sigma_est.csv",
+    "/app/alpha_est.csv",
+    "/app/gp_ard_regression.stan"
+   ]
+  },
+  {
+   "task": "sam-cell-seg",
+   "file": "/app/convert_masks.py",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sam-cell-seg",
+   "file": "/app/convert_masks.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sam-cell-seg",
+   "file": "/app/convert_masks.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sam-cell-seg",
+   "file": "/app/convert_masks.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sam-cell-seg",
+   "file": "/app/convert_masks.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/exp_data/datasets/tokenized/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": true
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/exp_data/datasets/tokenized/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/exp_data/datasets/tokenized/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/exp_data/datasets/tokenized/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/exp_data/datasets/tokenized/rw_v2_fasttext_openhermes_vs_rw_v2_bigram_0.1_arcade100k.json",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/process.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/process.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/process.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/process.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/ray_cluster.yaml",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/ray_cluster.yaml",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/ray_cluster.yaml",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sanitize-git-repo",
+   "file": "/app/dclm/ray_processing/ray_cluster.yaml",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "schemelike-metacircular-eval",
+   "file": "/app/eval.scm",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "schemelike-metacircular-eval",
+   "file": "/app/eval.scm",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "schemelike-metacircular-eval",
+   "file": "/app/eval.scm",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "schemelike-metacircular-eval",
+   "file": "/app/eval.scm",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sparql-university",
+   "file": "/app/solution.sparql",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sparql-university",
+   "file": "/app/solution.sparql",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sparql-university",
+   "file": "/app/solution.sparql",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sparql-university",
+   "file": "/app/solution.sparql",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "SUP",
+   "expectation": "reject",
+   "description": "all correct rows + 50 fabricated rows",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "SUP-1",
+   "expectation": "reject",
+   "description": "one correct row missing + 50 fabricated rows",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "VAL",
+   "expectation": "reject",
+   "description": "every row has a wrong numeric value",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "DUP",
+   "expectation": "neutral",
+   "description": "every row duplicated",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "DRP",
+   "expectation": "neutral",
+   "description": "one correct row missing (partial credit)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "file": "/app/recover.json",
+   "operator": "ORD",
+   "expectation": "accept",
+   "description": "same rows, reversed order",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "file": "/app/pipeline_parallel.py",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "file": "/app/pipeline_parallel.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "file": "/app/pipeline_parallel.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "file": "/app/pipeline_parallel.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "file": "/app/pipeline_parallel.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "file": "/app/parallel_linear.py",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "file": "/app/parallel_linear.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "file": "/app/parallel_linear.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "file": "/app/parallel_linear.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "file": "/app/parallel_linear.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "tune-mjcf",
+   "file": "/app/model.xml",
+   "operator": "WS",
+   "expectation": "accept",
+   "description": "trailing newline (semantically identical)",
+   "verifier_passed": true,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "tune-mjcf",
+   "file": "/app/model.xml",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "tune-mjcf",
+   "file": "/app/model.xml",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "tune-mjcf",
+   "file": "/app/model.xml",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "tune-mjcf",
+   "file": "/app/model.xml",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "video-processing",
+   "file": "/app/jump_analyzer.py",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "video-processing",
+   "file": "/app/jump_analyzer.py",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "video-processing",
+   "file": "/app/jump_analyzer.py",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "video-processing",
+   "file": "/app/jump_analyzer.py",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "/app/results.txt",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "/app/results.txt",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "/app/results.txt",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "vulnerable-secret",
+   "file": "/app/results.txt",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "winning-avg-corewars",
+   "file": "/app/my_warrior.red",
+   "operator": "CHF",
+   "expectation": "reject",
+   "description": "last character changed",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "winning-avg-corewars",
+   "file": "/app/my_warrior.red",
+   "operator": "TRN",
+   "expectation": "reject",
+   "description": "last character dropped",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "winning-avg-corewars",
+   "file": "/app/my_warrior.red",
+   "operator": "HDG",
+   "expectation": "reject",
+   "description": "hedged: correct answer listed among wrong candidates",
+   "verifier_passed": true,
+   "survived": true,
+   "false_reject": false
+  },
+  {
+   "task": "winning-avg-corewars",
+   "file": "/app/my_warrior.red",
+   "operator": "LOG",
+   "expectation": "reject",
+   "description": "answer buried inside a log dump",
+   "verifier_passed": false,
+   "survived": false,
+   "false_reject": false
+  },
+  {
+   "task": "write-compressor",
+   "error": "'utf-8' codec can't decode byte 0xbd in position 1: invalid start byte"
+  }
+ ]
+}

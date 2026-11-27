@@ -51,6 +51,37 @@ files under `/app` and whose expected answer is stated in the verifier. Mutants 
 hand-designed operators, not exhaustive; a surviving mutant is evidence of weakness, and a
 killed set is not proof of strength. Container-state tasks need docker mode.
 
+## Results on Terminal-Bench 2.1 (Docker mode, all 89 tasks)
+
+Run on Apple Silicon with `--platform linux/amd64`; raw output in `results/tb21_docker_full.json`.
+
+| Outcome | Tasks |
+|---|---|
+| Mutated and scored | 57 |
+| Reference solution passes but writes no checkable answer file (code, binaries or state only) | 14 |
+| Reference solution fails in this harness (services, VMs, long builds) | 15 |
+| Error: 900 s timeout (2), binary-file decode bug in this tool (1, fixed in this commit) | 3 |
+
+Of the 57 scored tasks, 11 had at least one mutant survive (27 of 256 rejectable mutants, 0.894
+mutation score). **Survival is not the same as a weak verifier.** Reading the test files of the 11:
+
+- **Accepts wrong answers (verifier checks containment, not equality):** `count-dataset-tokens`
+  (`79586` only has to appear in the file), `sqlite-db-truncate` (correct rows plus 50 fabricated
+  rows pass), `feal-linear-cryptanalysis` (each expected token only has to appear somewhere in the
+  file).
+- **Tolerant by design, so not a flaw:** `extract-moves-from-video` (Levenshtein similarity),
+  `adaptive-rejection-sampler` (statistical test), `winning-avg-corewars` (win-rate thresholds),
+  `break-filter-js-from-html` (runs the page and checks an alert fires).
+- **Not triaged:** `dna-assembly`, `dna-insert`, `make-mips-interpreter`, `openssl-selfsigned-cert`.
+  Their survivors are mostly last-character edits, which are probably a trailing newline or a
+  value range, but this has not been checked.
+- **False rejects (rejects an equivalent answer):** `build-pov-ray` and `sanitize-git-repo`
+  (trailing newline), `db-wal-recovery` (row order). These may be intended.
+
+Docker mode skips any file the verifier still accepts when emptied, so solver scripts are not
+counted as answers. Only answer files up to 64 kB are mutated, so tasks whose output is a large
+file or a service are not covered.
+
 ## Usage
 
 ```bash

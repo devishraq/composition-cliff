@@ -80,7 +80,7 @@ def run_file_mode(tasks_dir: Path, oracles: dict, only):
 
 # ----------------------------------------------------------------------------- docker mode
 def _sh(cmd, timeout=None, input_=None):
-  return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, input=input_)
+  return subprocess.run(cmd, capture_output=True, text=True, errors="replace", timeout=timeout, input=input_)
 
 
 def _image_for(tdir: Path, platform):
